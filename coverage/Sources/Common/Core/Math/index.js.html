@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.05% </span>
+        <span class="strong">6% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>67/1107</span>
+        <span class='fraction'>67/1117</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">3.83% </span>
+        <span class="strong">3.72% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>13/339</span>
+        <span class='fraction'>13/349</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">19.78% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>18/90</span>
+        <span class='fraction'>18/91</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.37% </span>
+        <span class="strong">6.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>67/1051</span>
+        <span class='fraction'>67/1059</span>
       </div>
     </div>
   </div>
@@ -2205,7 +2205,23 @@
 2160
 2161
 2162
-2163</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+2163
+2164
+2165
+2166
+2167
+2168
+2169
+2170
+2171
+2172
+2173
+2174
+2175
+2176
+2177
+2178
+2179</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -2270,6 +2286,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4367,6 +4398,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import seedrandom from 'seedrandom';
 import macro from 'vtk.js/Sources/macro';
 &nbsp;
@@ -4418,9 +4450,9 @@ export function degreesFromRadians(rad) <span class="fstat-no" title="function n
 &nbsp;
 export const { round, floor, ceil, min, max } = Math;
 &nbsp;
-export function arrayMin(arr) <span class="fstat-no" title="function not covered" >{</span>
+export function arrayMin(arr, offset = 0, stride = 1) <span class="fstat-no" title="function not covered" >{</span>
   let minValue = <span class="cstat-no" title="statement not covered" >Infinity;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0,</span> len = <span class="cstat-no" title="statement not covered" >arr.length;</span> i &lt; len; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >offset,</span> len = <span class="cstat-no" title="statement not covered" >arr.length;</span> i &lt; len; i += stride) {</span>
 <span class="cstat-no" title="statement not covered" >    if (arr[i] &lt; minValue) {</span>
 <span class="cstat-no" title="statement not covered" >      minValue = arr[i];</span>
     }
@@ -4429,15 +4461,30 @@ export function arrayMin(arr) <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >  return minValue;</span>
 }
 &nbsp;
-export function arrayMax(arr) <span class="fstat-no" title="function not covered" >{</span>
+export function arrayMax(arr, offset = 0, stride = 1) <span class="fstat-no" title="function not covered" >{</span>
   let maxValue = <span class="cstat-no" title="statement not covered" >-Infinity;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0,</span> len = <span class="cstat-no" title="statement not covered" >arr.length;</span> i &lt; len; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >offset,</span> len = <span class="cstat-no" title="statement not covered" >arr.length;</span> i &lt; len; i += stride) {</span>
 <span class="cstat-no" title="statement not covered" >    if (maxValue &lt; arr[i]) {</span>
 <span class="cstat-no" title="statement not covered" >      maxValue = arr[i];</span>
     }
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return maxValue;</span>
+}
+&nbsp;
+export function arrayRange(arr, offset = 0, stride = 1) <span class="fstat-no" title="function not covered" >{</span>
+  let minValue = <span class="cstat-no" title="statement not covered" >Infinity;</span>
+  let maxValue = <span class="cstat-no" title="statement not covered" >-Infinity;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >offset,</span> len = <span class="cstat-no" title="statement not covered" >arr.length;</span> i &lt; len; i += stride) {</span>
+<span class="cstat-no" title="statement not covered" >    if (arr[i] &lt; minValue) {</span>
+<span class="cstat-no" title="statement not covered" >      minValue = arr[i];</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (maxValue &lt; arr[i]) {</span>
+<span class="cstat-no" title="statement not covered" >      maxValue = arr[i];</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return [minValue, maxValue];</span>
 }
 &nbsp;
 export const ceilLog2 = notImplemented('ceilLog2');
@@ -6439,6 +6486,7 @@ export default {
   max,
   arrayMin,
   arrayMax,
+  arrayRange,
   isPowerOfTwo,
   nearestPowerOfTwo,
   factorial,
@@ -6535,7 +6583,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Aug 22 2019 18:32:52 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 24 2019 01:12:22 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
