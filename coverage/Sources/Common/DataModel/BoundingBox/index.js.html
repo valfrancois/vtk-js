@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.54% </span>
+        <span class="strong">17.59% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>38/205</span>
+        <span class='fraction'>38/216</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/138</span>
+        <span class='fraction'>0/139</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>6/40</span>
+        <span class='fraction'>6/42</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.82% </span>
+        <span class="strong">17.77% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>35/186</span>
+        <span class='fraction'>35/197</span>
       </div>
     </div>
   </div>
@@ -521,7 +521,29 @@
 476
 477
 478
-479</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -613,9 +635,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1089,6 +1133,26 @@ function getCorners(bounds, corners) <span class="fstat-no" title="function not 
   }
 }
 &nbsp;
+// Computes the two corners with minimal and miximal coordinates
+function computeCornerPoints(point1, point2, bounds) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  point1[0] = bounds[0];</span>
+<span class="cstat-no" title="statement not covered" >  point1[1] = bounds[2];</span>
+<span class="cstat-no" title="statement not covered" >  point1[2] = bounds[4];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  point2[0] = bounds[1];</span>
+<span class="cstat-no" title="statement not covered" >  point2[1] = bounds[3];</span>
+<span class="cstat-no" title="statement not covered" >  point2[2] = bounds[5];</span>
+}
+&nbsp;
+function computeScale3(bounds, scale3 = []) <span class="fstat-no" title="function not covered" >{</span>
+  const center = <span class="cstat-no" title="statement not covered" >getCenter(bounds);</span>
+<span class="cstat-no" title="statement not covered" >  scale3[0] = bounds[1] - center[0];</span>
+<span class="cstat-no" title="statement not covered" >  scale3[1] = bounds[3] - center[1];</span>
+<span class="cstat-no" title="statement not covered" >  scale3[2] = bounds[5] - center[2];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return scale3;</span>
+}
+&nbsp;
 // ----------------------------------------------------------------------------
 // Static API
 // ----------------------------------------------------------------------------
@@ -1104,6 +1168,8 @@ export const STATIC = {
   getYRange,
   getZRange,
   getCorners,
+  computeCornerPoints,
+  computeScale3,
   INIT_BOUNDS,
 };
 &nbsp;
@@ -1483,7 +1549,7 @@ export default Object.assign({ newInstance, extend }, STATIC);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 15:08:13 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 22:26:57 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

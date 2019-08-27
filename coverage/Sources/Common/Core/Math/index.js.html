@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6% </span>
+        <span class="strong">5.92% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>67/1117</span>
+        <span class='fraction'>67/1131</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">3.72% </span>
+        <span class="strong">3.7% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>13/349</span>
+        <span class='fraction'>13/351</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">19.78% </span>
+        <span class="strong">19.15% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>18/91</span>
+        <span class='fraction'>18/94</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.33% </span>
+        <span class="strong">6.24% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>67/1059</span>
+        <span class='fraction'>67/1073</span>
       </div>
     </div>
   </div>
@@ -2221,7 +2221,34 @@
 2176
 2177
 2178
-2179</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+2179
+2180
+2181
+2182
+2183
+2184
+2185
+2186
+2187
+2188
+2189
+2190
+2191
+2192
+2193
+2194
+2195
+2196
+2197
+2198
+2199
+2200
+2201
+2202
+2203
+2204
+2205
+2206</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -4114,7 +4141,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4288,6 +4340,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -6289,6 +6343,15 @@ export function areBoundsInitialized(bounds) <span class="fstat-no" title="funct
 <span class="cstat-no" title="statement not covered" >  return !(bounds[1] - bounds[0] &lt; 0.0);</span>
 }
 &nbsp;
+export function computeBoundsFromPoints(point1, point2, bounds) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  bounds[0] = Math.min(point1[0], point2[0]);</span>
+<span class="cstat-no" title="statement not covered" >  bounds[1] = Math.max(point1[0], point2[0]);</span>
+<span class="cstat-no" title="statement not covered" >  bounds[2] = Math.min(point1[1], point2[1]);</span>
+<span class="cstat-no" title="statement not covered" >  bounds[3] = Math.max(point1[1], point2[1]);</span>
+<span class="cstat-no" title="statement not covered" >  bounds[4] = Math.min(point1[2], point2[2]);</span>
+<span class="cstat-no" title="statement not covered" >  bounds[5] = Math.max(point1[2], point2[2]);</span>
+}
+&nbsp;
 export function clampValue(value, minValue, maxValue) <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >  if (value &lt; minValue) {</span>
 <span class="cstat-no" title="statement not covered" >    return minValue;</span>
@@ -6297,6 +6360,22 @@ export function clampValue(value, minValue, maxValue) <span class="fstat-no" tit
 <span class="cstat-no" title="statement not covered" >    return maxValue;</span>
   }
 <span class="cstat-no" title="statement not covered" >  return value;</span>
+}
+&nbsp;
+export function clampVector(vector, minVector, maxVector, out = []) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  out[0] = clampValue(vector[0], minVector[0], maxVector[0]);</span>
+<span class="cstat-no" title="statement not covered" >  out[1] = clampValue(vector[1], minVector[1], maxVector[1]);</span>
+<span class="cstat-no" title="statement not covered" >  out[2] = clampValue(vector[2], minVector[2], maxVector[2]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return out;</span>
+}
+&nbsp;
+export function roundVector(vector, out = []) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  out[0] = Math.round(vector[0]);</span>
+<span class="cstat-no" title="statement not covered" >  out[1] = Math.round(vector[1]);</span>
+<span class="cstat-no" title="statement not covered" >  out[2] = Math.round(vector[2]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return out;</span>
 }
 &nbsp;
 export function clampAndNormalizeValue(value, range) <span class="fstat-no" title="function not covered" >{</span>
@@ -6555,7 +6634,9 @@ export default {
   lab2rgb,
   uninitializeBounds,
   areBoundsInitialized,
+  computeBoundsFromPoints,
   clampValue,
+  clampVector,
   clampAndNormalizeValue,
   getScalarTypeFittingRange,
   getAdjustedScalarRange,
@@ -6583,7 +6664,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 15:08:13 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 22:26:57 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
