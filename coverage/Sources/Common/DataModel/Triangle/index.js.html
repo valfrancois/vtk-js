@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.89% </span>
+        <span class="strong">51.98% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>119/225</span>
+        <span class='fraction'>118/227</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.25% </span>
+        <span class="strong">45.12% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>37/80</span>
+        <span class='fraction'>37/82</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">66.67% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.6% </span>
+        <span class="strong">52.91% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>119/222</span>
+        <span class='fraction'>118/223</span>
       </div>
     </div>
   </div>
@@ -438,7 +438,8 @@
 393
 394
 395
-396</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+396
+397</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -487,10 +488,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-yes">6×</span>
@@ -545,6 +546,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -577,7 +581,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -765,7 +769,7 @@
 <span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -783,7 +787,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -817,13 +821,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">178805×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -884,7 +886,7 @@ function vtkTriangle(publicAPI, model) {
   // Set our className
   model.classHierarchy.push('vtkTriangle');
 &nbsp;
-  publicAPI.getCellDimension = () =&gt; <span class="fstat-no" title="function not covered" >{};</span> // virtual
+  publicAPI.getCellDimension = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >2;</span></span>
   publicAPI.intersectWithLine = (p1, p2, tol, x, pcoords) =&gt; {
     const outObj = { subId: 0, t: 0, intersect: -1 };
     pcoords[2] = 0.0;
@@ -938,6 +940,9 @@ function vtkTriangle(publicAPI, model) {
     const dist2Pt1Pt2 = <span class="cstat-no" title="statement not covered" >vtkMath.distance2BetweenPoints(pt1, pt2);</span>
     const dist2Pt2Pt3 = <span class="cstat-no" title="statement not covered" >vtkMath.distance2BetweenPoints(pt2, pt3);</span>
     const dist2Pt3Pt1 = <span class="cstat-no" title="statement not covered" >vtkMath.distance2BetweenPoints(pt3, pt1);</span>
+<span class="cstat-no" title="statement not covered" >    if (!model.line) {</span>
+<span class="cstat-no" title="statement not covered" >      model.line = vtkLine.newInstance();</span>
+    }
 <span class="cstat-no" title="statement not covered" >    if (dist2Pt1Pt2 &gt; dist2Pt2Pt3 &amp;&amp; dist2Pt1Pt2 &gt; dist2Pt3Pt1) {</span>
 <span class="cstat-no" title="statement not covered" >      model.line.getPoints().setPoint(0, pt1);</span>
 <span class="cstat-no" title="statement not covered" >      model.line.getPoints().setPoint(1, pt2);</span>
@@ -1216,8 +1221,6 @@ export function extend(publicAPI, model, initialValues = {}) {
 &nbsp;
   vtkCell.extend(publicAPI, model, initialValues);
 &nbsp;
-  model.line = vtkLine.newInstance();
-&nbsp;
   vtkTriangle(publicAPI, model);
 }
 &nbsp;
@@ -1234,7 +1237,7 @@ export default Object.assign({ newInstance, extend }, STATIC);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 22:26:57 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 23:37:45 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.76% </span>
+        <span class="strong">7.01% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/222</span>
+        <span class='fraction'>15/214</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>2/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">7.01% </span>
+        <span class="strong">7.28% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>15/214</span>
+        <span class='fraction'>15/206</span>
       </div>
     </div>
   </div>
@@ -458,19 +458,7 @@
 413
 414
 415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+416</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -743,31 +731,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1165,7 +1141,6 @@ function vtkCellPicker(publicAPI, model) {
     } else <span class="cstat-no" title="statement not covered" >if (data.getPolys) {</span>
       const cellObject = <span class="cstat-no" title="statement not covered" >data.getPolys();</span>
       const points = <span class="cstat-no" title="statement not covered" >data.getPoints();</span>
-      const pointsData = <span class="cstat-no" title="statement not covered" >points.getData();</span>
       const cellData = <span class="cstat-no" title="statement not covered" >cellObject.getData();</span>
       let cellId = <span class="cstat-no" title="statement not covered" >0;</span>
       const pointsIdList = <span class="cstat-no" title="statement not covered" >[-1, -1, -1];</span>
@@ -1177,24 +1152,13 @@ function vtkCellPicker(publicAPI, model) {
         const nbPointsInCell = <span class="cstat-no" title="statement not covered" >cellData[i++];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        cellPoints.setNumberOfPoints(nbPointsInCell);</span>
-<span class="cstat-no" title="statement not covered" >        cellPoints.setNumberOfComponents(3);</span>
-        const cellPointsData = <span class="cstat-no" title="statement not covered" >new Array(nbPointsInCell * 3);</span>
         // Extract cell points
-        let cpt = <span class="cstat-no" title="statement not covered" >0;</span>
 <span class="cstat-no" title="statement not covered" >        for (let j = <span class="cstat-no" title="statement not covered" >0;</span> j &lt; nbPointsInCell; j++) {</span>
 <span class="cstat-no" title="statement not covered" >          pointsIdList[j] = cellData[i++];</span>
-<span class="cstat-no" title="statement not covered" >          cellPointsData[cpt++] = pointsData[pointsIdList[j] * 3];</span>
-<span class="cstat-no" title="statement not covered" >          cellPointsData[cpt++] = pointsData[pointsIdList[j] * 3 + 1];</span>
-<span class="cstat-no" title="statement not covered" >          cellPointsData[cpt++] = pointsData[pointsIdList[j] * 3 + 2];</span>
         }
-<span class="cstat-no" title="statement not covered" >        cellPoints.setData(cellPointsData);</span>
 &nbsp;
         // Create cell from points
-<span class="cstat-no" title="statement not covered" >        cell.initialize(</span>
-          cellPoints.getNumberOfPoints(),
-          pointsIdList,
-          cellPoints
-        );
+<span class="cstat-no" title="statement not covered" >        cell.initialize(points, pointsIdList);</span>
 &nbsp;
         let cellPicked;
 <span class="cstat-no" title="statement not covered" >        if (isPolyData) {</span>
@@ -1330,7 +1294,7 @@ export default Object.assign({ newInstance, extend }, STATIC);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 22:26:57 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 27 2019 23:37:45 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
