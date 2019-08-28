@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Common_DataModel_Cell.html</loc>
+    
+    <lastmod>2019-08-28T00:12:08.226Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Common_Core_DataArray.html</loc>
+    
+    <lastmod>2019-08-28T00:12:08.194Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_CellPicker.html</loc>
     
     <lastmod>2019-08-27T23:38:46.175Z</lastmod>
@@ -33,20 +47,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Common_DataModel_Line.html</loc>
     
     <lastmod>2019-08-27T23:38:45.963Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Common_DataModel_Cell.html</loc>
-    
-    <lastmod>2019-08-27T23:38:45.947Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Common_Core_DataArray.html</loc>
-    
-    <lastmod>2019-08-27T23:38:45.919Z</lastmod>
     
   </url>
   
