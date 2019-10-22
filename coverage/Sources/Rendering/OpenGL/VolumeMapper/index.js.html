@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0.57% </span>
+        <span class="strong">0.56% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/530</span>
+        <span class='fraction'>3/531</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/174</span>
+        <span class='fraction'>0/176</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0.58% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/516</span>
+        <span class='fraction'>3/517</span>
       </div>
     </div>
   </div>
@@ -1352,7 +1352,10 @@
 1307
 1308
 1309
-1310</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+1310
+1311
+1312
+1313</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1787,12 +1790,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1801,6 +1798,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1812,6 +1817,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3096,6 +3102,7 @@ function vtkOpenGLVolumeMapper(publicAPI, model) <span class="fstat-no" title="f
     let dcxmax = <span class="cstat-no" title="statement not covered" >-1.0;</span>
     let dcymin = <span class="cstat-no" title="statement not covered" >1.0;</span>
     let dcymax = <span class="cstat-no" title="statement not covered" >-1.0;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; 8; ++i) {</span>
 <span class="cstat-no" title="statement not covered" >      vec3.set(</span>
         pos,
@@ -3104,16 +3111,17 @@ function vtkOpenGLVolumeMapper(publicAPI, model) <span class="fstat-no" title="f
         bounds[4 + Math.floor(i / 4)]
       );
 <span class="cstat-no" title="statement not covered" >      vec3.transformMat4(pos, pos, model.modelToView);</span>
-<span class="cstat-no" title="statement not covered" >      vec3.normalize(dir, pos);</span>
+<span class="cstat-no" title="statement not covered" >      if (!cam.getParallelProjection()) {</span>
+<span class="cstat-no" title="statement not covered" >        vec3.normalize(dir, pos);</span>
 &nbsp;
-      // now find the projection of this point onto a
-      // nearZ distance plane. Since the camera is at 0,0,0
-      // in VC the ray is just t*pos and
-      // t is -nearZ/dir.z
-      // intersection becomes pos.x/pos.z
-      const t = <span class="cstat-no" title="statement not covered" >-crange[0] / pos[2];</span>
-<span class="cstat-no" title="statement not covered" >      vec3.scale(pos, dir, t);</span>
-&nbsp;
+        // now find the projection of this point onto a
+        // nearZ distance plane. Since the camera is at 0,0,0
+        // in VC the ray is just t*pos and
+        // t is -nearZ/dir.z
+        // intersection becomes pos.x/pos.z
+        const t = <span class="cstat-no" title="statement not covered" >-crange[0] / pos[2];</span>
+<span class="cstat-no" title="statement not covered" >        vec3.scale(pos, dir, t);</span>
+      }
       // now convert to DC
 <span class="cstat-no" title="statement not covered" >      vec3.transformMat4(pos, pos, keyMats.vcdc);</span>
 &nbsp;
@@ -3122,6 +3130,7 @@ function vtkOpenGLVolumeMapper(publicAPI, model) <span class="fstat-no" title="f
 <span class="cstat-no" title="statement not covered" >      dcymin = Math.min(pos[1], dcymin);</span>
 <span class="cstat-no" title="statement not covered" >      dcymax = Math.max(pos[1], dcymax);</span>
     }
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    program.setUniformf('dcxmin', dcxmin);</span>
 <span class="cstat-no" title="statement not covered" >    program.setUniformf('dcxmax', dcxmax);</span>
 <span class="cstat-no" title="statement not covered" >    program.setUniformf('dcymin', dcymin);</span>
@@ -3976,7 +3985,7 @@ export default { newInstance, extend };
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 17 2019 14:47:26 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Oct 22 2019 16:29:45 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
