@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
+    
+    <lastmod>2019-10-30T19:12:44.050Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_PolyDataMapper.html</loc>
     
     <lastmod>2019-10-30T10:03:40.574Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://kitware.github.io/vtk-js/examples/WidgetManager.html</loc>
     
     <lastmod>2019-10-29T22:21:25.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
-    
-    <lastmod>2019-10-29T22:21:24.325Z</lastmod>
     
   </url>
   
