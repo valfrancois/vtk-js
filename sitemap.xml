@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_CellArrayBufferObject.html</loc>
+    
+    <lastmod>2019-11-05T21:11:24.201Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/IO_Misc_ITKPolyDataReader.html</loc>
     
     <lastmod>2019-11-05T20:15:27.085Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ImageMapper.html</loc>
     
     <lastmod>2019-10-30T10:03:40.570Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_CellArrayBufferObject.html</loc>
-    
-    <lastmod>2019-10-30T10:03:40.558Z</lastmod>
     
   </url>
   
