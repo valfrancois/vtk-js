@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_HardwareSelector.html</loc>
     
-    <lastmod>2019-11-25T19:55:38.956Z</lastmod>
+    <lastmod>2019-11-25T20:55:21.287Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_HardwareSelector.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
     
-    <lastmod>2019-11-25T19:55:38.896Z</lastmod>
+    <lastmod>2019-11-25T19:55:38.956Z</lastmod>
     
   </url>
   
