@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Common/DataModel/PolyData/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Common/DataModel/PolyData/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>74/113</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.18% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.07% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>74/112</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-yes">357606×</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-yes">159×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178800×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-yes">715202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">357602×</span>
+<span class="cline-any cline-yes">357602×</span>
+<span class="cline-any cline-yes">357602×</span>
+<span class="cline-any cline-yes">357602×</span>
+<span class="cline-any cline-yes">357602×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtk from 'vtk.js/Sources/vtk';
+import vtkCellArray from 'vtk.js/Sources/Common/Core/CellArray';
+import vtkCellLinks from 'vtk.js/Sources/Common/DataModel/CellLinks';
+import vtkCellTypes from 'vtk.js/Sources/Common/DataModel/CellTypes';
+import vtkPointSet from 'vtk.js/Sources/Common/DataModel/PointSet';
+import vtkTriangle from 'vtk.js/Sources/Common/DataModel/Triangle';
+&nbsp;
+import { CellType } from 'vtk.js/Sources/Common/DataModel/CellTypes/Constants';
+import { POLYDATA_FIELDS } from 'vtk.js/Sources/Common/DataModel/PolyData/Constants';
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkPolyData methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkPolyData(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkPolyData');
+&nbsp;
+  function camelize(str) {
+    return str
+      .replace(/(?:^\w|[A-Z]|\b\w)/g, (letter) =&gt; letter.toUpperCase())
+      .replace(/\s+/g, '');
+  }
+&nbsp;
+  // build empty cell arrays and set methods
+  POLYDATA_FIELDS.forEach((type) =&gt; {
+    publicAPI[`getNumberOf${camelize(type)}`] = () =&gt;
+      model[type].getNumberOfCells();
+    if (!model[type]) {
+      model[type] = vtkCellArray.newInstance();
+    } else {
+      model[type] = vtk(model[type]);
+    }
+  });
+&nbsp;
+  publicAPI.getNumberOfCells = () =&gt;
+    POLYDATA_FIELDS.reduce(
+      (num, cellType) =&gt; num + model[cellType].getNumberOfCells(),
+      0
+    );
+&nbsp;
+  const superShallowCopy = publicAPI.shallowCopy;
+  publicAPI.shallowCopy = (other, debug = false) =&gt; {
+    superShallowCopy(other, debug);
+    POLYDATA_FIELDS.forEach((type) =&gt; {
+      model[type] = vtkCellArray.newInstance();
+      model[type].shallowCopy(other.getReferenceByName(type));
+    });
+  };
+&nbsp;
+  publicAPI.buildCells = () =&gt; {
+    // here are the number of cells we have
+    const nVerts = publicAPI.getNumberOfVerts();
+    const nLines = publicAPI.getNumberOfLines();
+    const nPolys = publicAPI.getNumberOfPolys();
+    const nStrips = publicAPI.getNumberOfStrips();
+&nbsp;
+    // pre-allocate the space we need
+    const nCells = nVerts + nLines + nPolys + nStrips;
+&nbsp;
+    const types = new Uint8Array(nCells);
+    let pTypes = types;
+    const locs = new Uint32Array(nCells);
+    let pLocs = locs;
+&nbsp;
+    // record locations and type of each cell.
+    // verts
+    let nextCellPts = 0;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (nVerts) {
+<span class="cstat-no" title="statement not covered" >      model.verts.getCellSizes().forEach((numCellPts, index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        pLocs[index] = nextCellPts;</span>
+<span class="cstat-no" title="statement not covered" >        pTypes[index] =</span>
+          numCellPts &gt; 1 ? CellType.VTK_POLY_VERTEX : CellType.VTK_VERTEX;
+<span class="cstat-no" title="statement not covered" >        nextCellPts += numCellPts + 1;</span>
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      pLocs = pLocs.subarray(nVerts);</span>
+<span class="cstat-no" title="statement not covered" >      pTypes = pTypes.subarray(nVerts);</span>
+    }
+&nbsp;
+    // lines
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (nLines) {
+<span class="cstat-no" title="statement not covered" >      model.lines.getCellSizes().forEach((numCellPts, index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        pLocs[index] = nextCellPts;</span>
+<span class="cstat-no" title="statement not covered" >        pTypes[index] =</span>
+          numCellPts &gt; 2 ? CellType.VTK_POLY_LINE : CellType.VTK_LINE;
+<span class="cstat-no" title="statement not covered" >        if (numCellPts === 1) {</span>
+<span class="cstat-no" title="statement not covered" >          console.log(</span>
+            'Building VTK_LINE ',
+            index,
+            ' with only one point, but VTK_LINE needs at least two points. Check the input.'
+          );
+        }
+<span class="cstat-no" title="statement not covered" >        nextCellPts += numCellPts + 1;</span>
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      pLocs = pLocs.subarray(nLines);</span>
+<span class="cstat-no" title="statement not covered" >      pTypes = pTypes.subarray(nLines);</span>
+    }
+&nbsp;
+    // polys
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (nPolys) {
+      model.polys.getCellSizes().forEach((numCellPts, index) =&gt; {
+        pLocs[index] = nextCellPts;
+        switch (numCellPts) {
+          case 3:
+            pTypes[index] = CellType.VTK_TRIANGLE;
+            break;
+<span class="branch-1 cbranch-no" title="branch not covered" >          case 4:</span>
+<span class="cstat-no" title="statement not covered" >            pTypes[index] = CellType.VTK_QUAD;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >          default:</span>
+<span class="cstat-no" title="statement not covered" >            pTypes[index] = CellType.VTK_POLYGON;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (numCellPts &lt; 3) {
+<span class="cstat-no" title="statement not covered" >          console.log(</span>
+            'Building VTK_TRIANGLE ',
+            index,
+            ' with less than three points, but VTK_TRIANGLE needs at least three points. Check the input.'
+          );
+        }
+        nextCellPts += numCellPts + 1;
+      });
+&nbsp;
+      pLocs += pLocs.subarray(nPolys);
+      pTypes += pTypes.subarray(nPolys);
+    }
+&nbsp;
+    // strips
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (nStrips) {
+<span class="cstat-no" title="statement not covered" >      pTypes.fill(CellType.VTK_TRIANGLE_STRIP, 0, nStrips);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      model.strips.getCellSizes().forEach((numCellPts, index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        pLocs[index] = nextCellPts;</span>
+<span class="cstat-no" title="statement not covered" >        nextCellPts += numCellPts + 1;</span>
+      });
+    }
+&nbsp;
+    // set up the cell types data structure
+    model.cells = vtkCellTypes.newInstance();
+    model.cells.setCellTypes(nCells, types, locs);
+  };
+&nbsp;
+  /**
+   * Create upward links from points to cells that use each point. Enables
+   * topologically complex queries.
+   */
+  publicAPI.buildLinks = (initialSize = 0) =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (model.cells === undefined) {
+<span class="cstat-no" title="statement not covered" >      publicAPI.buildCells();</span>
+    }
+&nbsp;
+    model.links = vtkCellLinks.newInstance();
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (initialSize &gt; 0) {
+<span class="cstat-no" title="statement not covered" >      model.links.allocate(initialSize);</span>
+    } else {
+      model.links.allocate(publicAPI.getPoints().getNumberOfPoints());
+    }
+&nbsp;
+    model.links.buildLinks(publicAPI);
+  };
+&nbsp;
+  // Returns an object made of the cellType and a subarray `cellPointIds` of
+  // the cell points.
+  publicAPI.getCellPoints = (cellId) =&gt; {
+    const cellType = model.cells.getCellType(cellId);
+    let cells = null;
+    switch (cellType) {
+<span class="branch-0 cbranch-no" title="branch not covered" >      case CellType.VTK_VERTEX:</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >      case CellType.VTK_POLY_VERTEX:</span>
+<span class="cstat-no" title="statement not covered" >        cells = model.verts;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+<span class="branch-2 cbranch-no" title="branch not covered" >      case CellType.VTK_LINE:</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >      case CellType.VTK_POLY_LINE:</span>
+<span class="cstat-no" title="statement not covered" >        cells = model.lines;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+      case CellType.VTK_TRIANGLE:
+      case CellType.VTK_QUAD:
+      case CellType.VTK_POLYGON:
+        cells = model.polys;
+        break;
+&nbsp;
+<span class="branch-7 cbranch-no" title="branch not covered" >      case CellType.VTK_TRIANGLE_STRIP:</span>
+<span class="cstat-no" title="statement not covered" >        cells = model.strips;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+<span class="branch-8 cbranch-no" title="branch not covered" >      default:</span>
+<span class="cstat-no" title="statement not covered" >        cells = null;</span>
+<span class="cstat-no" title="statement not covered" >        return { type: 0, cellPointIds: null };</span>
+    }
+    const loc = model.cells.getCellLocation(cellId);
+    const cellPointIds = cells.getCell(loc);
+    return { cellType, cellPointIds };
+  };
+&nbsp;
+  publicAPI.getPointCells = (ptId) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.links.getCells(ptId);</span></span>
+&nbsp;
+  publicAPI.getCellEdgeNeighbors = (cellId, point1, point2) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const link1 = <span class="cstat-no" title="statement not covered" >model.links.getLink(point1);</span>
+    const link2 = <span class="cstat-no" title="statement not covered" >model.links.getLink(point2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return link1.cells.filter(</span>
+      (cell) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >cell !== cellId &amp;&amp; link2.cells.indexOf(cell) !== -1</span></span>
+    );
+  };
+&nbsp;
+  /**
+   * If you know the type of cell, you may provide it to improve performances.
+   */
+  publicAPI.getCell = (cellId, cellHint = null) =&gt; {
+    const cellInfo = publicAPI.getCellPoints(cellId);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (cellInfo.cellType === CellType.VTK_TRIANGLE) {
+      const cell = cellHint || vtkTriangle.newInstance();
+      cell.initialize(publicAPI.getPoints(), cellInfo.cellPointIds);
+      return cell;
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  // verts: null,
+  // lines: null,
+  // polys: null,
+  // strips: null,
+  // cells: null,
+  // links: null,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Inheritance
+  vtkPointSet.extend(publicAPI, model, initialValues);
+  macro.get(publicAPI, model, ['cells', 'links']);
+  macro.setGet(publicAPI, model, ['verts', 'lines', 'polys', 'strips']);
+&nbsp;
+  // Object specific methods
+  vtkPolyData(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkPolyData');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

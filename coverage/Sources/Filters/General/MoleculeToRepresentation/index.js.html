@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Filters/General/MoleculeToRepresentation/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Filters/General/MoleculeToRepresentation/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/175</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.57% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/168</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkPolyData from 'vtk.js/Sources/Common/DataModel/PolyData';
+import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
+&nbsp;
+import atomElem from 'vtk.js/Utilities/XMLConverter/chemistry/elements.json';
+&nbsp;
+const { vtkErrorMacro, vtkDebugMacro } = macro;
+&nbsp;
+// ----------------------------------------------------------------------------
+// Globals
+// ----------------------------------------------------------------------------
+&nbsp;
+const ATOMS = {};
+atomElem.atoms.forEach((a) =&gt; {
+  ATOMS[a.atomicNumber] = a;
+});
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkMoleculeToRepresentation methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkMoleculeToRepresentation(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  const bondPositionData = <span class="cstat-no" title="statement not covered" >[];</span>
+  const bondScaleData = <span class="cstat-no" title="statement not covered" >[];</span>
+  const bondOrientationData = <span class="cstat-no" title="statement not covered" >[];</span>
+  const bondColorData = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkMoleculeToRepresentation');</span>
+&nbsp;
+  function addBond(
+    position,
+    orientation,
+    length,
+    color = [1.0, 1.0, 1.0],
+    radius = model.bondRadius
+  ) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    bondScaleData.push(length);</span>
+<span class="cstat-no" title="statement not covered" >    bondScaleData.push(radius);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    bondOrientationData.push(orientation[0]);</span>
+<span class="cstat-no" title="statement not covered" >    bondOrientationData.push(orientation[1]);</span>
+<span class="cstat-no" title="statement not covered" >    bondOrientationData.push(orientation[2]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    bondPositionData.push(position[0]);</span>
+<span class="cstat-no" title="statement not covered" >    bondPositionData.push(position[1]);</span>
+<span class="cstat-no" title="statement not covered" >    bondPositionData.push(position[2]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; color.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >      bondColorData.push(color[i] * 255);</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.requestData = (inData, outData) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    // input
+    const moleculedata = <span class="cstat-no" title="statement not covered" >inData[0];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!moleculedata) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Invalid or missing input');</span>
+<span class="cstat-no" title="statement not covered" >      return 1;</span>
+    }
+&nbsp;
+    // output
+    const SphereData = <span class="cstat-no" title="statement not covered" >vtkPolyData.newInstance();</span>
+    const StickData = <span class="cstat-no" title="statement not covered" >vtkPolyData.newInstance();</span>
+&nbsp;
+    // Fetch from input molecule data
+    let numPts = <span class="cstat-no" title="statement not covered" >0;</span>
+    let numBonds = <span class="cstat-no" title="statement not covered" >0;</span>
+    let pointsArray = <span class="cstat-no" title="statement not covered" >null;</span>
+    let atomicNumber = <span class="cstat-no" title="statement not covered" >null;</span>
+    let bondIndex = <span class="cstat-no" title="statement not covered" >null;</span>
+    let bondOrder = <span class="cstat-no" title="statement not covered" >null;</span>
+&nbsp;
+    // Empty arrays
+<span class="cstat-no" title="statement not covered" >    bondPositionData.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >    bondScaleData.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >    bondOrientationData.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >    bondColorData.length = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (moleculedata.getAtoms()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (moleculedata.getAtoms().coords !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        if (moleculedata.getAtoms().coords['3d'] !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >          pointsArray = moleculedata.getAtoms().coords['3d'];</span>
+<span class="cstat-no" title="statement not covered" >          numPts = pointsArray.length / 3;</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      if (moleculedata.getAtoms().elements !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        if (moleculedata.getAtoms().elements.number !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >          atomicNumber = moleculedata.getAtoms().elements.number;</span>
+        }
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    if (moleculedata.getBonds()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (moleculedata.getBonds().connections !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        if (moleculedata.getBonds().connections.index !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >          bondIndex = moleculedata.getBonds().connections.index;</span>
+<span class="cstat-no" title="statement not covered" >          numBonds = bondIndex.length / 2;</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      if (moleculedata.getBonds().order !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        bondOrder = moleculedata.getBonds().order;</span>
+      }
+    }
+&nbsp;
+    const pointsData = <span class="cstat-no" title="statement not covered" >[];</span>
+    const scaleData = <span class="cstat-no" title="statement not covered" >[];</span>
+    const colorData = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+    const radiusArray = <span class="cstat-no" title="statement not covered" >[];</span>
+    const covalentArray = <span class="cstat-no" title="statement not covered" >[];</span>
+    const colorArray = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    vtkDebugMacro('Checking for bonds with tolerance ', model.tolerance);</span>
+&nbsp;
+    // go through each points and fill from elements.json
+    /* eslint-disable no-continue */
+    let ptsIdx = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; numPts; i++) {</span>
+      // fetch from elements.json
+<span class="cstat-no" title="statement not covered" >      if (atomicNumber) {</span>
+<span class="cstat-no" title="statement not covered" >        radiusArray.push(ATOMS[atomicNumber[i]][model.radiusType]);</span>
+<span class="cstat-no" title="statement not covered" >        covalentArray.push(ATOMS[atomicNumber[i]].radiusCovalent);</span>
+<span class="cstat-no" title="statement not covered" >        colorArray.push(ATOMS[atomicNumber[i]].elementColor[0]);</span>
+<span class="cstat-no" title="statement not covered" >        colorArray.push(ATOMS[atomicNumber[i]].elementColor[1]);</span>
+<span class="cstat-no" title="statement not covered" >        colorArray.push(ATOMS[atomicNumber[i]].elementColor[2]);</span>
+      }
+&nbsp;
+      // skip atoms specified by hideElements
+      // model.hideHydrogen = false; // show hydrogen
+<span class="cstat-no" title="statement not covered" >      if (model.hideElements.indexOf(ATOMS[atomicNumber[i]].id) !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+      }
+&nbsp;
+      // points
+<span class="cstat-no" title="statement not covered" >      ptsIdx = i * 3;</span>
+<span class="cstat-no" title="statement not covered" >      pointsData.push(pointsArray[ptsIdx]);</span>
+<span class="cstat-no" title="statement not covered" >      pointsData.push(pointsArray[ptsIdx + 1]);</span>
+<span class="cstat-no" title="statement not covered" >      pointsData.push(pointsArray[ptsIdx + 2]);</span>
+&nbsp;
+      // radius
+<span class="cstat-no" title="statement not covered" >      if (radiusArray.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        scaleData.push(radiusArray[i] * model.atomicRadiusScaleFactor);</span>
+      }
+&nbsp;
+      // colors
+<span class="cstat-no" title="statement not covered" >      if (colorArray.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        ptsIdx = i * 3;</span>
+<span class="cstat-no" title="statement not covered" >        colorData.push(colorArray[ptsIdx] * 255);</span>
+<span class="cstat-no" title="statement not covered" >        colorData.push(colorArray[ptsIdx + 1] * 255);</span>
+<span class="cstat-no" title="statement not covered" >        colorData.push(colorArray[ptsIdx + 2] * 255);</span>
+      }
+    }
+&nbsp;
+    // if we don't have Bonds provided
+    // we fill up a bondIndex and a bondOrder
+<span class="cstat-no" title="statement not covered" >    if (!bondIndex) {</span>
+<span class="cstat-no" title="statement not covered" >      bondIndex = [];</span>
+<span class="cstat-no" title="statement not covered" >      bondOrder = [];</span>
+      // default bond display
+      /* eslint-disable no-continue */
+<span class="cstat-no" title="statement not covered" >      for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; numPts; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        for (let j = <span class="cstat-no" title="statement not covered" >i + 1;</span> j &lt; numPts; j++) {</span>
+          const cutoff = <span class="cstat-no" title="statement not covered" >covalentArray[i] + covalentArray[j] + model.tolerance;</span>
+          const jPtsIdx = <span class="cstat-no" title="statement not covered" >j * 3;</span>
+          const iPtsIdx = <span class="cstat-no" title="statement not covered" >i * 3;</span>
+          const diff = <span class="cstat-no" title="statement not covered" >[</span>
+            pointsArray[jPtsIdx],
+            pointsArray[jPtsIdx + 1],
+            pointsArray[jPtsIdx + 2],
+          ];
+<span class="cstat-no" title="statement not covered" >          diff[0] -= pointsArray[iPtsIdx];</span>
+<span class="cstat-no" title="statement not covered" >          diff[1] -= pointsArray[iPtsIdx + 1];</span>
+<span class="cstat-no" title="statement not covered" >          diff[2] -= pointsArray[iPtsIdx + 2];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (</span>
+            Math.abs(diff[0]) &gt; cutoff ||
+            Math.abs(diff[1]) &gt; cutoff ||
+            Math.abs(diff[2]) &gt; cutoff
+          ) {
+<span class="cstat-no" title="statement not covered" >            continue;</span>
+          }
+&nbsp;
+          // Check radius and add bond if needed
+          const cutoffSq = <span class="cstat-no" title="statement not covered" >cutoff * cutoff;</span>
+          const diffsq =
+<span class="cstat-no" title="statement not covered" >            diff[0] * diff[0] + diff[1] * diff[1] + diff[2] * diff[2];</span>
+<span class="cstat-no" title="statement not covered" >          if (diffsq &lt; cutoffSq &amp;&amp; diffsq &gt; 0.1) {</span>
+            // appendBond between i and j
+<span class="cstat-no" title="statement not covered" >            bondIndex.push(i);</span>
+<span class="cstat-no" title="statement not covered" >            bondIndex.push(j);</span>
+<span class="cstat-no" title="statement not covered" >            bondOrder.push(1);</span>
+          }
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      numBonds = bondIndex.length / 2;</span>
+    }
+&nbsp;
+    // now we have the bonds, draw them
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; numBonds; index++) {</span>
+      // appendBond between i and j
+      const i = <span class="cstat-no" title="statement not covered" >bondIndex[index * 2];</span>
+      const j = <span class="cstat-no" title="statement not covered" >bondIndex[index * 2 + 1];</span>
+&nbsp;
+      // Do not append if i or j belong to element to not display
+<span class="cstat-no" title="statement not covered" >      if (</span>
+        model.hideElements.indexOf(ATOMS[atomicNumber[i]].id) !== -1 ||
+        model.hideElements.indexOf(ATOMS[atomicNumber[j]].id) !== -1
+      ) {
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+      }
+&nbsp;
+      const jPtsIdx = <span class="cstat-no" title="statement not covered" >j * 3;</span>
+      const iPtsIdx = <span class="cstat-no" title="statement not covered" >i * 3;</span>
+      const diff = <span class="cstat-no" title="statement not covered" >[</span>
+        pointsArray[jPtsIdx],
+        pointsArray[jPtsIdx + 1],
+        pointsArray[jPtsIdx + 2],
+      ];
+<span class="cstat-no" title="statement not covered" >      diff[0] -= pointsArray[iPtsIdx];</span>
+<span class="cstat-no" title="statement not covered" >      diff[1] -= pointsArray[iPtsIdx + 1];</span>
+<span class="cstat-no" title="statement not covered" >      diff[2] -= pointsArray[iPtsIdx + 2];</span>
+      const diffsq = <span class="cstat-no" title="statement not covered" >diff[0] * diff[0] + diff[1] * diff[1] + diff[2] * diff[2];</span>
+&nbsp;
+      let bondDelta = <span class="cstat-no" title="statement not covered" >(2 + model.deltaBondFactor) * model.bondRadius;</span> // distance between 2 bonds
+&nbsp;
+      // scale bonds if total distance from bonds is bigger than 2r*factor with r = min(r_i, r_j)
+      const r = <span class="cstat-no" title="statement not covered" >Math.min(</span>
+        radiusArray[i] * model.atomicRadiusScaleFactor,
+        radiusArray[j] * model.atomicRadiusScaleFactor
+      );
+      const t = <span class="cstat-no" title="statement not covered" >(bondOrder[index] - 1) * bondDelta + 2 * model.bondRadius;</span>
+<span class="cstat-no" title="statement not covered" >      if (t &gt; 2 * r * 0.6) {</span>
+<span class="cstat-no" title="statement not covered" >        model.bondRadius *= (2 * r * 0.6) / t;</span>
+        // recompute bondDelta
+<span class="cstat-no" title="statement not covered" >        bondDelta = (2 + model.deltaBondFactor) * model.bondRadius; </span>// distance between 2 bonds
+      }
+&nbsp;
+      // Display multiple bond
+      // loop such as 0 11 22 if odd order / 00 11 22 33 if even order
+      // To make:     0 22 44 66 88 ...      11 33 55 77 ....
+      // because the offset has to be:
+      // (with bd= bondDelta. Note the minus is added just before creating bondPos)
+      //   - odd order: 0 2bd/2 -2bd/2 4bd/2 -4bd/2 ...
+      //   - even order:  1bd/2 -1bd/2 3bd/2 -3bd/2 ...
+      // Then, to transform loop to offset we have:
+      //   - odd order: x * 2 &lt;=&gt; x * 2 + 1 - 1
+      //   - even order: x * 2 + 1
+      // (with x the loop &lt;=&gt; floor(k/2))
+      const oddOrEven = <span class="cstat-no" title="statement not covered" >bondOrder[index] % 2;</span> // zero if even order / one if odd order
+<span class="cstat-no" title="statement not covered" >      for (let k = <span class="cstat-no" title="statement not covered" >oddOrEven;</span> k &lt; bondOrder[index] + oddOrEven; k++) {</span>
+        // dist from center to bond depending of number of bond
+        let offset = <span class="cstat-no" title="statement not covered" >((Math.floor(k / 2) * 2 + 1 - oddOrEven) * bondDelta) / 2;</span>
+&nbsp;
+        const vectUnitJI = <span class="cstat-no" title="statement not covered" >[</span>
+          diff[0] / Math.sqrt(diffsq),
+          diff[1] / Math.sqrt(diffsq),
+          diff[2] / Math.sqrt(diffsq),
+        ];
+        const vectUnitJIperp = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+        // Search perp to vectUnitJI: find axis != 0 to create vectUnitJIperp such as dot(vectUnitJIperp,vectUnitJI) = 0
+<span class="cstat-no" title="statement not covered" >        for (let coord = <span class="cstat-no" title="statement not covered" >0;</span> coord &lt; 3; coord++) {</span>
+<span class="cstat-no" title="statement not covered" >          if (Math.abs(vectUnitJI[coord]) &lt; 0.000001) {</span>
+<span class="cstat-no" title="statement not covered" >            continue;</span>
+          }
+<span class="cstat-no" title="statement not covered" >          vectUnitJIperp[coord] =</span>
+            -(
+              vectUnitJI[(coord + 2) % 3] * vectUnitJI[(coord + 2) % 3] +
+              vectUnitJI[(coord + 1) % 3] * vectUnitJI[(coord + 1) % 3]
+            ) / vectUnitJI[coord];
+<span class="cstat-no" title="statement not covered" >          vectUnitJIperp[(coord + 1) % 3] = vectUnitJI[(coord + 1) % 3];</span>
+<span class="cstat-no" title="statement not covered" >          vectUnitJIperp[(coord + 2) % 3] = vectUnitJI[(coord + 2) % 3];</span>
+<span class="cstat-no" title="statement not covered" >          vtkMath.normalize(vectUnitJIperp);</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        offset *= (-1) ** (k % 2);</span>
+        /*
+        If atoms have a color associated, and if the atoms involved in the bond
+        are different species, then each bond will be represented by
+        two sticks, so that they can be colored with the same color as the atoms
+        involved in the bond.
+        */
+        let bondPos;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (</span>
+          atomicNumber &amp;&amp;
+          atomicNumber[i] !== atomicNumber[j] &amp;&amp;
+          colorArray.length &gt; 0
+        ) {
+          const bondLength = <span class="cstat-no" title="statement not covered" >Math.sqrt(diffsq) / 2.0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          bondPos = [</span>
+            pointsArray[jPtsIdx] -
+              (bondLength * vectUnitJI[0]) / 2.0 +
+              offset * vectUnitJIperp[0],
+            pointsArray[jPtsIdx + 1] -
+              (bondLength * vectUnitJI[1]) / 2.0 +
+              offset * vectUnitJIperp[1],
+            pointsArray[jPtsIdx + 2] -
+              (bondLength * vectUnitJI[2]) / 2.0 +
+              offset * vectUnitJIperp[2],
+          ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          addBond(</span>
+            bondPos,
+            vectUnitJI,
+            bondLength,
+            colorArray.slice(jPtsIdx, jPtsIdx + 3)
+          );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          bondPos = [</span>
+            pointsArray[iPtsIdx] +
+              (bondLength * vectUnitJI[0]) / 2.0 +
+              offset * vectUnitJIperp[0],
+            pointsArray[iPtsIdx + 1] +
+              (bondLength * vectUnitJI[1]) / 2.0 +
+              offset * vectUnitJIperp[1],
+            pointsArray[iPtsIdx + 2] +
+              (bondLength * vectUnitJI[2]) / 2.0 +
+              offset * vectUnitJIperp[2],
+          ];
+<span class="cstat-no" title="statement not covered" >          addBond(</span>
+            bondPos,
+            vectUnitJI,
+            bondLength,
+            colorArray.slice(iPtsIdx, iPtsIdx + 3)
+          );
+        } else {
+          const bondLength = <span class="cstat-no" title="statement not covered" >Math.sqrt(diffsq);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          bondPos = [</span>
+            pointsArray[jPtsIdx] - diff[0] / 2.0 + offset * vectUnitJIperp[0],
+            pointsArray[jPtsIdx + 1] -
+              diff[1] / 2.0 +
+              offset * vectUnitJIperp[1],
+            pointsArray[jPtsIdx + 2] -
+              diff[2] / 2.0 +
+              offset * vectUnitJIperp[2],
+          ];
+<span class="cstat-no" title="statement not covered" >          if (colorArray.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            addBond(</span>
+              bondPos,
+              vectUnitJI,
+              bondLength,
+              colorArray.slice(iPtsIdx, iPtsIdx + 3)
+            );
+          } else {
+<span class="cstat-no" title="statement not covered" >            addBond(bondPos, vectUnitJI, bondLength);</span>
+          }
+        }
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    SphereData.getPoints().setData(pointsData, 3);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (radiusArray) {</span>
+      const scales = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+        numberOfComponents: 1,
+        values: scaleData,
+        name: publicAPI.getSphereScaleArrayName(),
+      });
+<span class="cstat-no" title="statement not covered" >      SphereData.getPointData().addArray(scales);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (colorArray.length &gt; 0) {</span>
+      const colors = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+        numberOfComponents: 3,
+        values: Uint8Array.from(colorData),
+        name: 'colors',
+      });
+<span class="cstat-no" title="statement not covered" >      SphereData.getPointData().setScalars(colors);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    StickData.getPoints().setData(bondPositionData, 3);</span>
+&nbsp;
+    const stickScales = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+      numberOfComponents: 2,
+      values: bondScaleData,
+      name: 'stickScales',
+    });
+<span class="cstat-no" title="statement not covered" >    StickData.getPointData().addArray(stickScales);</span>
+&nbsp;
+    const orientation = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+      numberOfComponents: 3,
+      values: bondOrientationData,
+      name: 'orientation',
+    });
+<span class="cstat-no" title="statement not covered" >    StickData.getPointData().addArray(orientation);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (colorArray.length &gt; 0) {</span>
+      const bondColors = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+        numberOfComponents: 3,
+        values: Uint8Array.from(bondColorData),
+        name: 'colors',
+      });
+<span class="cstat-no" title="statement not covered" >      StickData.getPointData().setScalars(bondColors);</span>
+    }
+&nbsp;
+    // Update output
+<span class="cstat-no" title="statement not covered" >    outData[0] = SphereData;</span>
+<span class="cstat-no" title="statement not covered" >    outData[1] = StickData;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return 1;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  sphereScaleArrayName: 'radius',
+  tolerance: 0.45,
+  atomicRadiusScaleFactor: 0.3,
+  bondRadius: 0.075,
+  deltaBondFactor: 0.6,
+  radiusType: 'radiusVDW',
+  hideElements: '',
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Build VTK API
+<span class="cstat-no" title="statement not covered" >  macro.obj(publicAPI, model);</span>
+<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, [</span>
+    'atomicRadiusScaleFactor',
+    'bondRadius',
+    'deltaBondFactor',
+    'hideElements',
+    'radiusType',
+    'sphereScaleArrayName',
+    'tolerance',
+  ]);
+<span class="cstat-no" title="statement not covered" >  macro.algo(publicAPI, model, 1, 2);</span>
+<span class="cstat-no" title="statement not covered" >  vtkMoleculeToRepresentation(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(
+  extend,
+  'vtkMoleculeToRepresentation'
+);
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

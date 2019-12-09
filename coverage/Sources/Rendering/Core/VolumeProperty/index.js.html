@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/Core/VolumeProperty/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/Core/VolumeProperty/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.31% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/116</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/113</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkColorTransferFunction from 'vtk.js/Sources/Rendering/Core/ColorTransferFunction';
+import vtkPiecewiseFunction from 'vtk.js/Sources/Common/DataModel/PiecewiseFunction';
+import Constants from 'vtk.js/Sources/Rendering/Core/VolumeProperty/Constants';
+&nbsp;
+const { InterpolationType } = Constants;
+const { vtkErrorMacro } = macro;
+&nbsp;
+const VTK_MAX_VRCOMP = 4;
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkVolumeProperty methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkVolumeProperty(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkVolumeProperty');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getMTime = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    let mTime = <span class="cstat-no" title="statement not covered" >model.mtime;</span>
+    let time;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; VTK_MAX_VRCOMP; index++) {</span>
+      // Color MTimes
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index].colorChannels === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        if (model.componentData[index].grayTransferFunction) {</span>
+          // time that Gray transfer function was last modified
+<span class="cstat-no" title="statement not covered" >          time = model.componentData[index].grayTransferFunction.getMTime();</span>
+<span class="cstat-no" title="statement not covered" >          mTime = mTime &gt; time ? mTime : time;</span>
+        }
+      } else <span class="cstat-no" title="statement not covered" >if (model.componentData[index].colorChannels === 3) {</span>
+<span class="cstat-no" title="statement not covered" >        if (model.componentData[index].rGBTransferFunction) {</span>
+          // time that RGB transfer function was last modified
+<span class="cstat-no" title="statement not covered" >          time = model.componentData[index].rGBTransferFunction.getMTime();</span>
+<span class="cstat-no" title="statement not covered" >          mTime = mTime &gt; time ? mTime : time;</span>
+        }
+      }
+&nbsp;
+      // Opacity MTimes
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index].scalarOpacity) {</span>
+        // time that Scalar opacity transfer function was last modified
+<span class="cstat-no" title="statement not covered" >        time = model.componentData[index].scalarOpacity.getMTime();</span>
+<span class="cstat-no" title="statement not covered" >        mTime = mTime &gt; time ? mTime : time;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index].gradientOpacity) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!model.componentData[index].disableGradientOpacity) {</span>
+          // time that Gradient opacity transfer function was last modified
+<span class="cstat-no" title="statement not covered" >          time = model.componentData[index].gradientOpacity.getMTime();</span>
+<span class="cstat-no" title="statement not covered" >          mTime = mTime &gt; time ? mTime : time;</span>
+        }
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return mTime;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getColorChannels = (index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (index &lt; 0 || index &gt; 3) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Bad index - must be between 0 and 3');</span>
+<span class="cstat-no" title="statement not covered" >      return 0;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.componentData[index].colorChannels;</span>
+  };
+&nbsp;
+  // Set the color of a volume to a gray transfer function
+<span class="cstat-no" title="statement not covered" >  publicAPI.setGrayTransferFunction = (index, func) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].grayTransferFunction !== func) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].grayTransferFunction = func;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].colorChannels !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].colorChannels = 1;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+&nbsp;
+  // Get the currently set gray transfer function. Create one if none set.
+<span class="cstat-no" title="statement not covered" >  publicAPI.getGrayTransferFunction = (index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].grayTransferFunction === null) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[</span>
+        index
+      ].grayTransferFunction = vtkPiecewiseFunction.newInstance();
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].grayTransferFunction.addPoint(0, 0.0);</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].grayTransferFunction.addPoint(1024, 1.0);</span>
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index].colorChannels !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >        model.componentData[index].colorChannels = 1;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.componentData[index].grayTransferFunction;</span>
+  };
+&nbsp;
+  // Set the color of a volume to an RGB transfer function
+<span class="cstat-no" title="statement not covered" >  publicAPI.setRGBTransferFunction = (index, func) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].rGBTransferFunction !== func) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].rGBTransferFunction = func;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].colorChannels !== 3) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].colorChannels = 3;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+&nbsp;
+  // Get the currently set RGB transfer function. Create one if none set.
+<span class="cstat-no" title="statement not covered" >  publicAPI.getRGBTransferFunction = (index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].rGBTransferFunction === null) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[</span>
+        index
+      ].rGBTransferFunction = vtkColorTransferFunction.newInstance();
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].rGBTransferFunction.addRGBPoint(</span>
+        0,
+        0.0,
+        0.0,
+        0.0
+      );
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].rGBTransferFunction.addRGBPoint(</span>
+        1024,
+        1.0,
+        1.0,
+        1.0
+      );
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index].colorChannels !== 3) {</span>
+<span class="cstat-no" title="statement not covered" >        model.componentData[index].colorChannels = 3;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.componentData[index].rGBTransferFunction;</span>
+  };
+&nbsp;
+  // Set the scalar opacity of a volume to a transfer function
+<span class="cstat-no" title="statement not covered" >  publicAPI.setScalarOpacity = (index, func) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].scalarOpacity !== func) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].scalarOpacity = func;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+&nbsp;
+  // Get the scalar opacity transfer function. Create one if none set.
+<span class="cstat-no" title="statement not covered" >  publicAPI.getScalarOpacity = (index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].scalarOpacity === null) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[</span>
+        index
+      ].scalarOpacity = vtkPiecewiseFunction.newInstance();
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].scalarOpacity.addPoint(0, 1.0);</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].scalarOpacity.addPoint(1024, 1.0);</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.componentData[index].scalarOpacity;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setComponentWeight = (index, value) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (index &lt; 0 || index &gt;= VTK_MAX_VRCOMP) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Invalid index');</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    const val = <span class="cstat-no" title="statement not covered" >Math.min(1, Math.max(0, value));</span>
+<span class="cstat-no" title="statement not covered" >    if (model.componentData[index].componentWeight !== val) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData[index].componentWeight = val;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getComponentWeight = (index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (index &lt; 0 || index &gt;= VTK_MAX_VRCOMP) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Invalid index');</span>
+<span class="cstat-no" title="statement not covered" >      return 0.0;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.componentData[index].componentWeight;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setInterpolationTypeToNearest = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setInterpolationType(InterpolationType.NEAREST);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setInterpolationTypeToLinear = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setInterpolationType(InterpolationType.LINEAR);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setInterpolationTypeToFastLinear = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setInterpolationType(InterpolationType.FAST_LINEAR);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getInterpolationTypeAsString = () =&gt;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    macro.enumToString(InterpolationType, model.interpolationType);</span></span>
+&nbsp;
+  const sets = <span class="cstat-no" title="statement not covered" >[</span>
+    'useGradientOpacity',
+    'scalarOpacityUnitDistance',
+    'gradientOpacityMinimumValue',
+    'gradientOpacityMinimumOpacity',
+    'gradientOpacityMaximumValue',
+    'gradientOpacityMaximumOpacity',
+  ];
+<span class="cstat-no" title="statement not covered" >  sets.forEach((val) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const cap = <span class="cstat-no" title="statement not covered" >macro.capitalize(val);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI[`set${cap}`] = (index, value) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >      if (model.componentData[index][`${val}`] !== value) {</span>
+<span class="cstat-no" title="statement not covered" >        model.componentData[index][`${val}`] = value;</span>
+<span class="cstat-no" title="statement not covered" >        publicAPI.modified();</span>
+      }
+    };
+  });
+&nbsp;
+  const gets = <span class="cstat-no" title="statement not covered" >[</span>
+    'useGradientOpacity',
+    'scalarOpacityUnitDistance',
+    'gradientOpacityMinimumValue',
+    'gradientOpacityMinimumOpacity',
+    'gradientOpacityMaximumValue',
+    'gradientOpacityMaximumOpacity',
+  ];
+<span class="cstat-no" title="statement not covered" >  gets.forEach((val) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const cap = <span class="cstat-no" title="statement not covered" >macro.capitalize(val);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI[`get${cap}`] = (index) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.componentData[index][`${val}`];</span></span></span>
+  });
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  independentComponents: 1,
+  interpolationType: InterpolationType.FAST_LINEAR,
+  shade: 0,
+  ambient: 0.1,
+  diffuse: 0.7,
+  specular: 0.2,
+  specularPower: 10.0,
+  useLabelOutline: false,
+  labelOutlineThickness: 1,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Build VTK API
+<span class="cstat-no" title="statement not covered" >  macro.obj(publicAPI, model);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!model.componentData) {</span>
+<span class="cstat-no" title="statement not covered" >    model.componentData = [];</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; VTK_MAX_VRCOMP; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >      model.componentData.push({</span>
+        colorChannels: 1,
+        grayTransferFunction: null,
+        rGBTransferFunction: null,
+        scalarOpacity: null,
+        scalarOpacityUnitDistance: 1.0,
+&nbsp;
+        gradientOpacityMinimumValue: 0,
+        gradientOpacityMinimumOpacity: 0.0,
+        gradientOpacityMaximumValue: 1.0,
+        gradientOpacityMaximumOpacity: 1.0,
+        useGradientOpacity: false,
+&nbsp;
+        componentWeight: 1.0,
+      });
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, [</span>
+    'independentComponents',
+    'interpolationType',
+    'shade',
+    'ambient',
+    'diffuse',
+    'specular',
+    'specularPower',
+    'useLabelOutline',
+    'labelOutlineThickness',
+  ]);
+&nbsp;
+  // Object methods
+<span class="cstat-no" title="statement not covered" >  vtkVolumeProperty(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkVolumeProperty');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default Object.assign({ newInstance, extend }, Constants);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

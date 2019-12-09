@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/OpenGL/Framebuffer/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/OpenGL/Framebuffer/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.63% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.7% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/74</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as macro from 'vtk.js/Sources/macro';
+import vtkOpenGLTexture from 'vtk.js/Sources/Rendering/OpenGL/Texture';
+import { VtkDataTypes } from 'vtk.js/Sources/Common/Core/DataArray/Constants';
+import { Filter } from 'vtk.js/Sources/Rendering/OpenGL/Texture/Constants';
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkFramebuffer methods
+// ----------------------------------------------------------------------------
+function vtkFramebuffer(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkFramebuffer');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getBothMode = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.context.FRAMEBUFFER;</span></span></span>
+  // publicAPI.getDrawMode = () =&gt; model.context.DRAW_FRAMEBUFFER;
+  // publicAPI.getReadMode = () =&gt; model.context.READ_FRAMEBUFFER;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.saveCurrentBindingsAndBuffers = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const mode =
+<span class="cstat-no" title="statement not covered" >      typeof modeIn !== 'undefined' ? modeIn : publicAPI.getBothMode();</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.saveCurrentBindings(mode);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.saveCurrentBuffers(mode);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.saveCurrentBindings = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const gl = <span class="cstat-no" title="statement not covered" >model.context;</span>
+<span class="cstat-no" title="statement not covered" >    model.previousDrawBinding = gl.getParameter(</span>
+      model.context.FRAMEBUFFER_BINDING
+    );
+<span class="cstat-no" title="statement not covered" >    model.previousActiveFramebuffer = model.openGLRenderWindow.getActiveFramebuffer();</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.saveCurrentBuffers = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    // noop on webgl 1
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.restorePreviousBindingsAndBuffers = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const mode =
+<span class="cstat-no" title="statement not covered" >      typeof modeIn !== 'undefined' ? modeIn : publicAPI.getBothMode();</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.restorePreviousBindings(mode);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.restorePreviousBuffers(mode);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.restorePreviousBindings = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const gl = <span class="cstat-no" title="statement not covered" >model.context;</span>
+<span class="cstat-no" title="statement not covered" >    gl.bindFramebuffer(gl.FRAMEBUFFER, model.previousDrawBinding);</span>
+<span class="cstat-no" title="statement not covered" >    model.openGLRenderWindow.setActiveFramebuffer(</span>
+      model.previousActiveFramebuffer
+    );
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.restorePreviousBuffers = (modeIn) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    // currently a noop on webgl1
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.bind = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    model.context.bindFramebuffer(</span>
+      model.context.FRAMEBUFFER,
+      model.glFramebuffer
+    );
+<span class="cstat-no" title="statement not covered" >    if (model.colorTexture) {</span>
+<span class="cstat-no" title="statement not covered" >      model.colorTexture.bind();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    model.openGLRenderWindow.setActiveFramebuffer(publicAPI);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.create = (width, height) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    model.glFramebuffer = model.context.createFramebuffer();</span>
+<span class="cstat-no" title="statement not covered" >    model.glFramebuffer.width = width;</span>
+<span class="cstat-no" title="statement not covered" >    model.glFramebuffer.height = height;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setColorBuffer = (texture, mode) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const gl = <span class="cstat-no" title="statement not covered" >model.context;</span>
+<span class="cstat-no" title="statement not covered" >    model.colorTexture = texture;</span>
+<span class="cstat-no" title="statement not covered" >    gl.framebufferTexture2D(</span>
+      gl.FRAMEBUFFER,
+      gl.COLOR_ATTACHMENT0,
+      gl.TEXTURE_2D,
+      texture.getHandle(),
+      0
+    );
+  };
+&nbsp;
+  // publicAPI.setDepthBuffer = (texture, mode) =&gt; {
+  //   const gl = model.context;
+  //   gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.TEXTURE_2D, texture.getHandle(), 0);
+  // };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getGLFramebuffer = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.glFramebuffer;</span></span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setOpenGLRenderWindow = (rw) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.openGLRenderWindow === rw) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    publicAPI.releaseGraphicsResources();</span>
+<span class="cstat-no" title="statement not covered" >    model.openGLRenderWindow = rw;</span>
+<span class="cstat-no" title="statement not covered" >    model.context = null;</span>
+<span class="cstat-no" title="statement not covered" >    if (rw) {</span>
+<span class="cstat-no" title="statement not covered" >      model.context = model.openGLRenderWindow.getContext();</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.releaseGraphicsResources = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.glFramebuffer) {</span>
+<span class="cstat-no" title="statement not covered" >      model.context.deleteFramebuffer(model.glFramebuffer);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (model.depthTexture) {</span>
+<span class="cstat-no" title="statement not covered" >      model.depthTexture.releaseGraphicsResources();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (model.colorTexture) {</span>
+<span class="cstat-no" title="statement not covered" >      model.colorTexture.releaseGraphicsResources();</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getSize = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const size = <span class="cstat-no" title="statement not covered" >[0, 0];</span>
+<span class="cstat-no" title="statement not covered" >    if (model.glFramebuffer !== null) {</span>
+<span class="cstat-no" title="statement not covered" >      size[0] = model.glFramebuffer.width;</span>
+<span class="cstat-no" title="statement not covered" >      size[1] = model.glFramebuffer.height;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return size;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.populateFramebuffer = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.bind();</span>
+    const gl = <span class="cstat-no" title="statement not covered" >model.context;</span>
+&nbsp;
+    const texture = <span class="cstat-no" title="statement not covered" >vtkOpenGLTexture.newInstance();</span>
+<span class="cstat-no" title="statement not covered" >    texture.setOpenGLRenderWindow(model.openGLRenderWindow);</span>
+<span class="cstat-no" title="statement not covered" >    texture.setMinificationFilter(Filter.LINEAR);</span>
+<span class="cstat-no" title="statement not covered" >    texture.setMagnificationFilter(Filter.LINEAR);</span>
+<span class="cstat-no" title="statement not covered" >    texture.create2DFromRaw(</span>
+      model.glFramebuffer.width,
+      model.glFramebuffer.height,
+      4,
+      VtkDataTypes.UNSIGNED_CHAR,
+      null
+    );
+<span class="cstat-no" title="statement not covered" >    publicAPI.setColorBuffer(texture);</span>
+&nbsp;
+    // for now do not count of having a depth buffer texture
+    // as they are not standard webgl 1
+<span class="cstat-no" title="statement not covered" >    model.depthTexture = gl.createRenderbuffer();</span>
+<span class="cstat-no" title="statement not covered" >    gl.bindRenderbuffer(gl.RENDERBUFFER, model.depthTexture);</span>
+<span class="cstat-no" title="statement not covered" >    gl.renderbufferStorage(</span>
+      gl.RENDERBUFFER,
+      gl.DEPTH_COMPONENT16,
+      model.glFramebuffer.width,
+      model.glFramebuffer.height
+    );
+<span class="cstat-no" title="statement not covered" >    gl.framebufferRenderbuffer(</span>
+      gl.FRAMEBUFFER,
+      gl.DEPTH_ATTACHMENT,
+      gl.RENDERBUFFER,
+      model.depthTexture
+    );
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+const DEFAULT_VALUES = {
+  openGLRenderWindow: null,
+  glFramebuffer: null,
+  colorTexture: null,
+  depthTexture: null,
+  previousDrawBinding: 0,
+  previousReadBinding: 0,
+  previousDrawBuffer: 0,
+  previousReadBuffer: 0,
+  previousActiveFramebuffer: null,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Build VTK API
+<span class="cstat-no" title="statement not covered" >  macro.obj(publicAPI, model);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, ['colorTexture']);</span>
+&nbsp;
+  // For more macro methods, see "Sources/macro.js"
+  // Object specific methods
+<span class="cstat-no" title="statement not covered" >  vtkFramebuffer(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+export const newInstance = macro.newInstance(extend, 'vtkFramebuffer');
+&nbsp;
+// ----------------------------------------------------------------------------
+export default Object.assign({ newInstance, extend });
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Imaging/Hybrid/SampleFunction/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Imaging/Hybrid/SampleFunction/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.12% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import vtkImageData from 'vtk.js/Sources/Common/DataModel/ImageData';
+&nbsp;
+const { vtkErrorMacro } = macro;
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkSampleFunction methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkSampleFunction(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkSampleFunction');</span>
+&nbsp;
+  // Capture "parentClass" api for internal use
+  const superClass = <span class="cstat-no" title="statement not covered" >Object.assign({}, publicAPI);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getMTime = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!(model.implicitFunction &amp;&amp; model.implicitFunction.getMTime)) {</span>
+<span class="cstat-no" title="statement not covered" >      return superClass.getMTime();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Math.max(superClass.getMTime(), model.implicitFunction.getMTime());</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.requestData = (inData, outData) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    // implement requestData
+    const imp = <span class="cstat-no" title="statement not covered" >model.implicitFunction;</span>
+<span class="cstat-no" title="statement not covered" >    if (!imp) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('An implicit function must be defined');</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    // Create a volume
+    const dims = <span class="cstat-no" title="statement not covered" >[</span>
+      model.sampleDimensions[0],
+      model.sampleDimensions[1],
+      model.sampleDimensions[2],
+    ];
+    const numScalars = <span class="cstat-no" title="statement not covered" >dims[0] * dims[1] * dims[2];</span>
+<span class="cstat-no" title="statement not covered" >    if (numScalars &lt; 1 || dims[1] &lt; 2 || dims[1] &lt; 2 || dims[2] &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Bad volume dimensions');</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+    const volume = <span class="cstat-no" title="statement not covered" >vtkImageData.newInstance();</span>
+    const origin = <span class="cstat-no" title="statement not covered" >[</span>
+      model.modelBounds[0],
+      model.modelBounds[2],
+      model.modelBounds[4],
+    ];
+    const spacing = <span class="cstat-no" title="statement not covered" >[</span>
+      (model.modelBounds[1] - model.modelBounds[0]) / (dims[0] - 1),
+      (model.modelBounds[3] - model.modelBounds[2]) / (dims[1] - 1),
+      (model.modelBounds[5] - model.modelBounds[4]) / (dims[2] - 1),
+    ];
+    const sliceSize = <span class="cstat-no" title="statement not covered" >dims[0] * dims[1];</span>
+<span class="cstat-no" title="statement not covered" >    volume.setDimensions(dims);</span>
+<span class="cstat-no" title="statement not covered" >    volume.setOrigin(origin);</span>
+<span class="cstat-no" title="statement not covered" >    volume.setSpacing(spacing);</span>
+&nbsp;
+    // Create scalars array
+    const s = <span class="cstat-no" title="statement not covered" >new window[model.pointType](numScalars);</span>
+    const scalars = <span class="cstat-no" title="statement not covered" >vtkDataArray.newInstance({</span>
+      name: 'Scalars',
+      values: s,
+      numberOfComponents: 1,
+    });
+<span class="cstat-no" title="statement not covered" >    volume.getPointData().setScalars(scalars);</span>
+&nbsp;
+    // Now loop over volume dimensions and generate scalar values
+    let sValue = <span class="cstat-no" title="statement not covered" >0.0;</span>
+    const xyz = <span class="cstat-no" title="statement not covered" >[0.0, 0.0, 0.0];</span>
+<span class="cstat-no" title="statement not covered" >    for (let k = <span class="cstat-no" title="statement not covered" >0;</span> k &lt; dims[2]; k++) {</span>
+<span class="cstat-no" title="statement not covered" >      xyz[2] = origin[2] + k * spacing[2];</span>
+<span class="cstat-no" title="statement not covered" >      for (let j = <span class="cstat-no" title="statement not covered" >0;</span> j &lt; dims[1]; j++) {</span>
+<span class="cstat-no" title="statement not covered" >        xyz[1] = origin[1] + j * spacing[1];</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; dims[0]; i++) {</span>
+<span class="cstat-no" title="statement not covered" >          xyz[0] = origin[0] + i * spacing[0];</span>
+<span class="cstat-no" title="statement not covered" >          sValue = imp.evaluateFunction(xyz);</span>
+<span class="cstat-no" title="statement not covered" >          s[i + j * dims[0] + k * sliceSize] = sValue;</span>
+        }
+      }
+    }
+&nbsp;
+    // Update output
+<span class="cstat-no" title="statement not covered" >    outData[0] = volume;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  implicitFunction: undefined,
+  sampleDimensions: [50, 50, 50],
+  modelBounds: [-1.0, 1.0, -1.0, 1.0, -1.0, 1.0],
+  pointType: 'Float32Array',
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Make this a VTK object
+<span class="cstat-no" title="statement not covered" >  macro.obj(publicAPI, model);</span>
+&nbsp;
+  // Also make it an algorithm with one input and one output
+<span class="cstat-no" title="statement not covered" >  macro.algo(publicAPI, model, 1, 1);</span>
+&nbsp;
+  // Generate macros for properties
+<span class="cstat-no" title="statement not covered" >  macro.setGetArray(publicAPI, model, ['sampleDimensions'], 3);</span>
+<span class="cstat-no" title="statement not covered" >  macro.setGetArray(publicAPI, model, ['modelBounds'], 6);</span>
+&nbsp;
+  // Object specific methods
+<span class="cstat-no" title="statement not covered" >  vtkSampleFunction(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkSampleFunction');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

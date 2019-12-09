@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/SceneGraph/ViewNode/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/SceneGraph/ViewNode/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/104</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.51% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/98</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+&nbsp;
+const { vtkErrorMacro } = macro;
+&nbsp;
+const PASS_TYPES = ['Build', 'Render'];
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkViewNode methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkViewNode(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkViewNode');
+&nbsp;
+  // Builds myself.
+  publicAPI.build = (prepass) =&gt; <span class="fstat-no" title="function not covered" >{};</span>
+&nbsp;
+  // Renders myself
+  publicAPI.render = (prepass) =&gt; <span class="fstat-no" title="function not covered" >{};</span>
+&nbsp;
+  publicAPI.traverse = (renderPass) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    // we can choose to do special
+    // traversal here based on pass
+    const passTraversal = <span class="cstat-no" title="statement not covered" >renderPass.getTraverseOperation();</span>
+    const fn = <span class="cstat-no" title="statement not covered" >publicAPI[passTraversal];</span>
+<span class="cstat-no" title="statement not covered" >    if (fn) {</span>
+<span class="cstat-no" title="statement not covered" >      fn(renderPass);</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    // default traversal
+<span class="cstat-no" title="statement not covered" >    publicAPI.apply(renderPass, true);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; model.children.length; index++) {</span>
+<span class="cstat-no" title="statement not covered" >      model.children[index].traverse(renderPass);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    publicAPI.apply(renderPass, false);</span>
+  };
+&nbsp;
+  publicAPI.apply = (renderPass, prepass) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const customRenderPass = <span class="cstat-no" title="statement not covered" >publicAPI[renderPass.getOperation()];</span>
+<span class="cstat-no" title="statement not covered" >    if (customRenderPass) {</span>
+<span class="cstat-no" title="statement not covered" >      customRenderPass(prepass, renderPass);</span>
+    }
+  };
+&nbsp;
+  publicAPI.getViewNodeFor = (dataObject) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (model.renderable === dataObject) {</span>
+<span class="cstat-no" title="statement not covered" >      return publicAPI;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; model.children.length; ++index) {</span>
+      const child = <span class="cstat-no" title="statement not covered" >model.children[index];</span>
+      const vn = <span class="cstat-no" title="statement not covered" >child.getViewNodeFor(dataObject);</span>
+<span class="cstat-no" title="statement not covered" >      if (vn) {</span>
+<span class="cstat-no" title="statement not covered" >        return vn;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return undefined;</span>
+  };
+&nbsp;
+  publicAPI.getFirstAncestorOfType = (type) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (!model.parent) {</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (model.parent.isA(type)) {</span>
+<span class="cstat-no" title="statement not covered" >      return model.parent;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return model.parent.getFirstAncestorOfType(type);</span>
+  };
+&nbsp;
+  publicAPI.addMissingNode = (dobj) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (!dobj) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+    const result = <span class="cstat-no" title="statement not covered" >model.renderableChildMap.get(dobj);</span>
+    // if found just mark as visited
+<span class="cstat-no" title="statement not covered" >    if (result !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >      result.setVisited(true);</span>
+    } else {
+      // otherwise create a node
+      const newNode = <span class="cstat-no" title="statement not covered" >publicAPI.createViewNode(dobj);</span>
+<span class="cstat-no" title="statement not covered" >      if (newNode) {</span>
+<span class="cstat-no" title="statement not covered" >        newNode.setParent(publicAPI);</span>
+<span class="cstat-no" title="statement not covered" >        newNode.setVisited(true);</span>
+<span class="cstat-no" title="statement not covered" >        model.renderableChildMap.set(dobj, newNode);</span>
+<span class="cstat-no" title="statement not covered" >        model.children.push(newNode);</span>
+      }
+    }
+  };
+&nbsp;
+  publicAPI.addMissingNodes = (dataObjs) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (!dataObjs || !dataObjs.length) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; dataObjs.length; ++index) {</span>
+      const dobj = <span class="cstat-no" title="statement not covered" >dataObjs[index];</span>
+      const result = <span class="cstat-no" title="statement not covered" >model.renderableChildMap.get(dobj);</span>
+      // if found just mark as visited
+<span class="cstat-no" title="statement not covered" >      if (result !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >        result.setVisited(true);</span>
+      } else {
+        // otherwise create a node
+        const newNode = <span class="cstat-no" title="statement not covered" >publicAPI.createViewNode(dobj);</span>
+<span class="cstat-no" title="statement not covered" >        if (newNode) {</span>
+<span class="cstat-no" title="statement not covered" >          newNode.setParent(publicAPI);</span>
+<span class="cstat-no" title="statement not covered" >          newNode.setVisited(true);</span>
+<span class="cstat-no" title="statement not covered" >          model.renderableChildMap.set(dobj, newNode);</span>
+<span class="cstat-no" title="statement not covered" >          model.children.push(newNode);</span>
+        }
+      }
+    }
+  };
+&nbsp;
+  publicAPI.prepareNodes = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; model.children.length; ++index) {</span>
+<span class="cstat-no" title="statement not covered" >      model.children[index].setVisited(false);</span>
+    }
+  };
+&nbsp;
+  publicAPI.setVisited = (val) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.visited = val;</span>
+  };
+&nbsp;
+  publicAPI.removeUnusedNodes = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    let deleted = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; model.children.length; ++index) {</span>
+      const child = <span class="cstat-no" title="statement not covered" >model.children[index];</span>
+      const visited = <span class="cstat-no" title="statement not covered" >child.getVisited();</span>
+<span class="cstat-no" title="statement not covered" >      if (!visited) {</span>
+        const renderable = <span class="cstat-no" title="statement not covered" >child.getRenderable();</span>
+<span class="cstat-no" title="statement not covered" >        if (renderable) {</span>
+<span class="cstat-no" title="statement not covered" >          model.renderableChildMap.delete(renderable);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!deleted) {</span>
+<span class="cstat-no" title="statement not covered" >          deleted = [];</span>
+        }
+<span class="cstat-no" title="statement not covered" >        deleted.push(child);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        child.setVisited(false);</span>
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (deleted) {</span>
+      // slow does alloc but not as common
+<span class="cstat-no" title="statement not covered" >      model.children = model.children.filter((el) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >!deleted.includes(el))</span></span>;</span>
+    }
+  };
+&nbsp;
+  publicAPI.createViewNode = (dataObj) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (!model.myFactory) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Cannot create view nodes without my own factory');</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+    const ret = <span class="cstat-no" title="statement not covered" >model.myFactory.createNode(dataObj);</span>
+<span class="cstat-no" title="statement not covered" >    if (ret) {</span>
+<span class="cstat-no" title="statement not covered" >      ret.setRenderable(dataObj);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return ret;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  parent: null,
+  renderable: null,
+  myFactory: null,
+  children: [],
+  visited: false,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Build VTK API
+  macro.obj(publicAPI, model);
+  macro.event(publicAPI, model, 'event');
+&nbsp;
+  model.renderableChildMap = new Map();
+&nbsp;
+  macro.get(publicAPI, model, ['visited']);
+  macro.setGet(publicAPI, model, ['parent', 'renderable', 'myFactory']);
+  macro.getArray(publicAPI, model, ['children']);
+&nbsp;
+  // Object methods
+  vtkViewNode(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+const newInstance = macro.newInstance(extend, 'vtkViewNode');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend, PASS_TYPES };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Proxy/Core/ProxyManager/core.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Proxy/Core/ProxyManager/</a> core.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.2% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/125</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.54% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.05% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.23% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/121</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+&nbsp;
+const { vtkErrorMacro } = macro;
+&nbsp;
+// ----------------------------------------------------------------------------
+// Proxy Registration Handling
+// ----------------------------------------------------------------------------
+&nbsp;
+export default function addRegistrationAPI(publicAPI, model) {
+  function registerProxy(proxy) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!proxy) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+    model.proxyIdMapping[proxy.getProxyId()] = proxy;
+    const group = proxy.getProxyGroup();
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!model.proxyByGroup[group]) {
+      model.proxyByGroup[group] = [];
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (model.proxyByGroup[group].indexOf(proxy) === -1) {
+      model.proxyByGroup[group].push(proxy);
+    }
+    proxy.setProxyManager(publicAPI);
+&nbsp;
+    // Make sure we invoke event after the current execution path
+    macro.setImmediate(() =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.invokeProxyRegistrationChange({</span>
+        action: 'register',
+        proxyId: proxy.getProxyId(),
+        proxyName: proxy.getProxyName(),
+        proxyGroup: proxy.getProxyGroup(),
+        proxy,
+      });
+    });
+  }
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  function unRegisterProxy(proxyOrId) <span class="fstat-no" title="function not covered" >{</span>
+    const id = <span class="cstat-no" title="statement not covered" >proxyOrId.getProxyId ? proxyOrId.getProxyId() : proxyOrId;</span>
+    const proxy = <span class="cstat-no" title="statement not covered" >model.proxyIdMapping[id];</span>
+&nbsp;
+    // Unregister proxy in any group
+<span class="cstat-no" title="statement not covered" >    Object.keys(model.proxyByGroup).forEach((groupName) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+      const proxyList = <span class="cstat-no" title="statement not covered" >model.proxyByGroup[groupName];</span>
+      const index = <span class="cstat-no" title="statement not covered" >proxyList.indexOf(proxy);</span>
+<span class="cstat-no" title="statement not covered" >      if (index !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >        proxyList.splice(index, 1);</span>
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    delete model.proxyIdMapping[id];</span>
+<span class="cstat-no" title="statement not covered" >    proxy.gcPropertyLinks('application');</span>
+<span class="cstat-no" title="statement not covered" >    proxy.gcPropertyLinks('source');</span>
+<span class="cstat-no" title="statement not covered" >    proxy.setProxyManager(null);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.invokeProxyRegistrationChange({</span>
+      action: 'unregister',
+      proxyId: id,
+      proxyName: proxy.getProxyName(),
+      proxyGroup: proxy.getProxyGroup(),
+    });
+<span class="cstat-no" title="statement not covered" >    return proxy;</span>
+  }
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.setActiveSource = (source) =&gt; {
+    if (model.activeSource !== source) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (model.activeSourceSubscription) {
+<span class="cstat-no" title="statement not covered" >        model.activeSourceSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >        model.activeSourceSubscription = null;</span>
+      }
+      model.activeSource = source;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (source) {
+        model.activeSourceSubscription = source.onModified(publicAPI.modified);
+      }
+      publicAPI.modified();
+      publicAPI.invokeActiveSourceChange(source);
+    }
+  };
+&nbsp;
+  publicAPI.setActiveView = (view) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (model.activeView !== view) {</span>
+<span class="cstat-no" title="statement not covered" >      if (model.activeViewSubscription) {</span>
+<span class="cstat-no" title="statement not covered" >        model.activeViewSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >        model.activeViewSubscription = null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      model.activeView = view;</span>
+<span class="cstat-no" title="statement not covered" >      if (view) {</span>
+<span class="cstat-no" title="statement not covered" >        model.activeViewSubscription = view.onModified(publicAPI.modified);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.invokeActiveViewChange(view);</span>
+    }
+  };
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.getProxyById = (id) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.proxyIdMapping[id];</span></span>
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.getProxyGroups = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >Object.keys(model.proxyByGroup);</span></span>
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.getProxyInGroup = (name) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    [].concat(model.proxyByGroup[name] || []);</span></span>
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.getSources = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >[].concat(model.proxyByGroup.Sources || []);</span></span>
+  publicAPI.getRepresentations = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    [].concat(model.proxyByGroup.Representations || []);</span></span>
+  publicAPI.getViews = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >[].concat(model.proxyByGroup.Views || []);</span></span>
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.createProxy = (group, name, options) =&gt; {
+    const { definitions } = model.proxyConfiguration;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!definitions[group] || !definitions[group][name]) {
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+    const definition = definitions[group][name];
+    const definitionOptions = Object.assign({}, definition.options, options);
+    const proxy = definition.class.newInstance(
+      Object.assign({}, definitionOptions, {
+        proxyGroup: group,
+        proxyName: name,
+        proxyManager: publicAPI,
+      })
+    );
+&nbsp;
+    // Handle proxy property settings
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (definition.proxyProps) {
+      const proxyMap = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >      Object.keys(definition.proxyProps).forEach((key) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+        const newProxyDef = <span class="cstat-no" title="statement not covered" >definition.proxyProps[key];</span>
+<span class="cstat-no" title="statement not covered" >        proxyMap[key] = publicAPI.createProxy(</span>
+          newProxyDef.group,
+          newProxyDef.name,
+          newProxyDef.options
+        );
+      });
+<span class="cstat-no" title="statement not covered" >      proxy.set(proxyMap);</span>
+    }
+&nbsp;
+    // Handle property setting
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (definition.props) {
+<span class="cstat-no" title="statement not covered" >      proxy.set(definition.props);</span>
+    }
+&nbsp;
+    registerProxy(proxy);
+&nbsp;
+    if (definitionOptions.activateOnCreate) {
+      proxy.activate();
+    }
+&nbsp;
+    return proxy;
+  };
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.getRepresentation = (source, view) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const sourceToUse = <span class="cstat-no" title="statement not covered" >source || publicAPI.getActiveSource();</span>
+    const viewToUse = <span class="cstat-no" title="statement not covered" >view || publicAPI.getActiveView();</span>
+&nbsp;
+    // Can only get a representation for a source and a view
+<span class="cstat-no" title="statement not covered" >    if (!sourceToUse || !viewToUse || !sourceToUse.getType()) {</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+&nbsp;
+    const sourceId = <span class="cstat-no" title="statement not covered" >sourceToUse.getProxyId();</span>
+    const viewId = <span class="cstat-no" title="statement not covered" >viewToUse.getProxyId();</span>
+&nbsp;
+    let viewRepMap = <span class="cstat-no" title="statement not covered" >model.sv2rMapping[sourceId];</span>
+<span class="cstat-no" title="statement not covered" >    if (!viewRepMap) {</span>
+<span class="cstat-no" title="statement not covered" >      viewRepMap = {};</span>
+<span class="cstat-no" title="statement not covered" >      model.sv2rMapping[sourceId] = viewRepMap;</span>
+    }
+    let rep = <span class="cstat-no" title="statement not covered" >viewRepMap[viewId];</span>
+<span class="cstat-no" title="statement not covered" >    if (!rep) {</span>
+      const viewName = <span class="cstat-no" title="statement not covered" >viewToUse.getProxyName();</span>
+      const sourceType = <span class="cstat-no" title="statement not covered" >sourceToUse.getType();</span>
+      const definition =
+<span class="cstat-no" title="statement not covered" >        model.proxyConfiguration.representations[viewName][sourceType];</span>
+<span class="cstat-no" title="statement not covered" >      if (!definition) {</span>
+<span class="cstat-no" title="statement not covered" >        vtkErrorMacro(</span>
+          `No definition for representation of ${sourceType} in view ${viewName}`
+        );
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      rep = publicAPI.createProxy(</span>
+        'Representations',
+        definition.name,
+        definition.options
+      );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      model.r2svMapping[rep.getProxyId()] = { sourceId, viewId };</span>
+<span class="cstat-no" title="statement not covered" >      viewRepMap[viewId] = rep;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      rep.setInput(sourceToUse);</span>
+<span class="cstat-no" title="statement not covered" >      viewToUse.addRepresentation(rep);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return rep;</span>
+  };
+&nbsp;
+  // --------------------------------------------------------------------------
+&nbsp;
+  publicAPI.deleteProxy = (proxy) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const group = <span class="cstat-no" title="statement not covered" >proxy.getProxyGroup().toLowerCase();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (group === 'views') {</span>
+<span class="cstat-no" title="statement not covered" >      proxy.getRepresentations().forEach((repProxy) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        publicAPI.deleteProxy(repProxy);</span>
+      });
+<span class="cstat-no" title="statement not covered" >      proxy.setContainer(null);</span>
+<span class="cstat-no" title="statement not covered" >      unRegisterProxy(proxy);</span>
+<span class="cstat-no" title="statement not covered" >      if (publicAPI.getActiveView() === proxy) {</span>
+<span class="cstat-no" title="statement not covered" >        publicAPI.setActiveView(publicAPI.getViews()[0]);</span>
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (group === 'representations') {</span>
+      const { sourceId, viewId } = <span class="cstat-no" title="statement not covered" >model.r2svMapping[proxy.getProxyId()];</span>
+      const view = <span class="cstat-no" title="statement not covered" >publicAPI.getProxyById(viewId);</span>
+<span class="cstat-no" title="statement not covered" >      view.removeRepresentation(proxy);</span>
+<span class="cstat-no" title="statement not covered" >      delete model.r2svMapping[proxy.getProxyId()];</span>
+<span class="cstat-no" title="statement not covered" >      delete model.sv2rMapping[sourceId][viewId];</span>
+<span class="cstat-no" title="statement not covered" >      unRegisterProxy(proxy);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (group === 'sources') {</span>
+      const viewToRep = <span class="cstat-no" title="statement not covered" >model.sv2rMapping[proxy.getProxyId()];</span>
+<span class="cstat-no" title="statement not covered" >      Object.keys(viewToRep).forEach((viewId) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        publicAPI.deleteProxy(viewToRep[viewId]);</span>
+      });
+<span class="cstat-no" title="statement not covered" >      unRegisterProxy(proxy);</span>
+<span class="cstat-no" title="statement not covered" >      if (publicAPI.getActiveSource() === proxy) {</span>
+<span class="cstat-no" title="statement not covered" >        publicAPI.setActiveSource(publicAPI.getSources()[0]);</span>
+      }
+    }
+&nbsp;
+    // Delete the object itself
+<span class="cstat-no" title="statement not covered" >    proxy.delete();</span>
+  };
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

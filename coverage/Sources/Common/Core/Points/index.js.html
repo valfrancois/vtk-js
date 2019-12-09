@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Common/Core/Points/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Common/Core/Points/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.96% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.39% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-yes">178868×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import { VtkDataTypes } from 'vtk.js/Sources/Common/Core/DataArray/Constants';
+&nbsp;
+const { vtkErrorMacro } = macro;
+&nbsp;
+const INVALID_BOUNDS = [1, -1, 1, -1, 1, -1];
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkPoints methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkPoints(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkPoints');
+&nbsp;
+  // Forwarding methods
+  publicAPI.getNumberOfPoints = publicAPI.getNumberOfTuples;
+&nbsp;
+  publicAPI.setNumberOfPoints = (nbPoints, dimension = 3) =&gt; {
+    if (publicAPI.getNumberOfPoints() !== nbPoints) {
+      model.size = nbPoints * dimension;
+      model.values = new window[model.dataType](model.size);
+      publicAPI.setNumberOfComponents(dimension);
+      publicAPI.modified();
+    }
+  };
+&nbsp;
+  publicAPI.setPoint = (idx, ...xyz) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const offset = <span class="cstat-no" title="statement not covered" >idx * model.numberOfComponents;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; model.numberOfComponents; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      model.values[offset + i] = xyz[i];</span>
+    }
+  };
+&nbsp;
+  publicAPI.getPoint = publicAPI.getTuple;
+&nbsp;
+  publicAPI.getBounds = () =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (publicAPI.getNumberOfComponents() === 3) {
+      const xRange = publicAPI.getRange(0);
+      model.bounds[0] = xRange[0];
+      model.bounds[1] = xRange[1];
+      const yRange = publicAPI.getRange(1);
+      model.bounds[2] = yRange[0];
+      model.bounds[3] = yRange[1];
+      const zRange = publicAPI.getRange(2);
+      model.bounds[4] = zRange[0];
+      model.bounds[5] = zRange[1];
+      return model.bounds;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (publicAPI.getNumberOfComponents() !== 2) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro(`getBounds called on an array with components of</span>
+        ${publicAPI.getNumberOfComponents()}`);
+<span class="cstat-no" title="statement not covered" >      return INVALID_BOUNDS;</span>
+    }
+&nbsp;
+    const xRange = <span class="cstat-no" title="statement not covered" >publicAPI.getRange(0);</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[0] = xRange[0];</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[1] = xRange[1];</span>
+    const yRange = <span class="cstat-no" title="statement not covered" >publicAPI.getRange(1);</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[2] = yRange[0];</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[3] = yRange[1];</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[4] = 0;</span>
+<span class="cstat-no" title="statement not covered" >    model.bounds[5] = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.bounds;</span>
+  };
+&nbsp;
+  // Trigger the computation of bounds
+  publicAPI.computeBounds = publicAPI.getBounds;
+&nbsp;
+  // Initialize
+  publicAPI.setNumberOfComponents(
+    model.numberOfComponents &lt; 2 ? 3 : model.numberOfComponents
+  );
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  empty: true,
+  numberOfComponents: 3,
+  dataType: VtkDataTypes.FLOAT,
+  bounds: [1, -1, 1, -1, 1, -1],
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  vtkDataArray.extend(publicAPI, model, initialValues);
+  vtkPoints(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkPoints');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

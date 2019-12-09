@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Imaging/Core/AbstractImageInterpolator/InterpolationInfo.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Imaging/Core/AbstractImageInterpolator/</a> InterpolationInfo.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ImageBorderMode, InterpolationMode } from './Constants';
+&nbsp;
+export const vtkInterpolationInfo = {
+  pointer: null,
+  extent: [0, -1, 0, -1, 0, -1],
+  increments: [0, 0, 0],
+  scalarType: null, // dataType
+  dataTypeSize: 1, // BYTES_PER_ELEMENT
+  numberOfComponents: 1,
+  borderMode: ImageBorderMode.CLAMP,
+  interpolationMode: InterpolationMode.LINEAR,
+  extraInfo: null,
+};
+&nbsp;
+export const vtkInterpolationWeights = Object.assign({}, vtkInterpolationInfo, {
+  positions: [0, 0, 0],
+  weights: null,
+  weightExtent: [0, -1, 0, -1, 0, -1],
+  kernelSize: [1, 1, 1],
+  workspace: null,
+  lastY: null,
+  lastZ: null,
+});
+&nbsp;
+export function vtkInterpolationMathFloor(x) <span class="fstat-no" title="function not covered" >{</span>
+  const integer = <span class="cstat-no" title="statement not covered" >Math.floor(x);</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    floored: integer,
+    error: x - integer,
+  };
+}
+&nbsp;
+export function vtkInterpolationMathRound(x) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  return Math.round(x);</span>
+}
+&nbsp;
+//----------------------------------------------------------------------------
+// Perform a clamp to limit an index to [b, c] and subtract b.
+&nbsp;
+export function vtkInterpolationMathClamp(a, b, c) <span class="fstat-no" title="function not covered" >{</span>
+  let clamp = <span class="cstat-no" title="statement not covered" >a &lt;= c ? a : c;</span>
+<span class="cstat-no" title="statement not covered" >  clamp -= b;</span>
+<span class="cstat-no" title="statement not covered" >  clamp = clamp &gt;= 0 ? clamp : 0;</span>
+<span class="cstat-no" title="statement not covered" >  return clamp;</span>
+}
+&nbsp;
+//----------------------------------------------------------------------------
+// Perform a wrap to limit an index to [b, c] and subtract b.
+&nbsp;
+export function vtkInterpolationMathWrap(a, b, c) <span class="fstat-no" title="function not covered" >{</span>
+  const range = <span class="cstat-no" title="statement not covered" >c - b + 1;</span>
+  let wrap = <span class="cstat-no" title="statement not covered" >a - b;</span>
+<span class="cstat-no" title="statement not covered" >  wrap %= range;</span>
+  // required for some % implementations
+<span class="cstat-no" title="statement not covered" >  wrap = wrap &gt;= 0 ? wrap : wrap + range;</span>
+<span class="cstat-no" title="statement not covered" >  return wrap;</span>
+}
+&nbsp;
+//----------------------------------------------------------------------------
+// Perform a mirror to limit an index to [b, c] and subtract b.
+&nbsp;
+export function vtkInterpolationMathMirror(a, b, c) <span class="fstat-no" title="function not covered" >{</span>
+  const range = <span class="cstat-no" title="statement not covered" >c - b;</span>
+  const ifzero = <span class="cstat-no" title="statement not covered" >range === 0 ? 1 : 0;</span>
+  const range2 = <span class="cstat-no" title="statement not covered" >2 * range + ifzero;</span>
+  let mirror = <span class="cstat-no" title="statement not covered" >a - b;</span>
+<span class="cstat-no" title="statement not covered" >  mirror = mirror &gt;= 0 ? mirror : -mirror;</span>
+<span class="cstat-no" title="statement not covered" >  mirror %= range2;</span>
+<span class="cstat-no" title="statement not covered" >  mirror = mirror &lt;= range ? mirror : range2 - mirror;</span>
+<span class="cstat-no" title="statement not covered" >  return mirror;</span>
+}
+&nbsp;
+export default {
+  vtkInterpolationInfo,
+  vtkInterpolationWeights,
+  vtkInterpolationMathFloor,
+  vtkInterpolationMathRound,
+  vtkInterpolationMathClamp,
+  vtkInterpolationMathWrap,
+  vtkInterpolationMathMirror,
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

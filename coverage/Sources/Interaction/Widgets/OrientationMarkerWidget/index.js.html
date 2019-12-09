@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Interaction/Widgets/OrientationMarkerWidget/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Interaction/Widgets/OrientationMarkerWidget/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.64% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/110</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/109</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkRenderer from 'vtk.js/Sources/Rendering/Core/Renderer';
+import Constants from 'vtk.js/Sources/Interaction/Widgets/OrientationMarkerWidget/Constants';
+&nbsp;
+const { vtkErrorMacro } = macro;
+const { Corners } = Constants;
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkOrientationMarkerWidget
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkOrientationMarkerWidget(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkOrientationMarkerWidget');</span>
+&nbsp;
+  // Private variables
+&nbsp;
+  const previousCameraInput = <span class="cstat-no" title="statement not covered" >[];</span>
+  const selfRenderer = <span class="cstat-no" title="statement not covered" >vtkRenderer.newInstance();</span>
+  let interactorUnsubscribe = <span class="cstat-no" title="statement not covered" >null;</span>
+  let viewUnsubscribe = <span class="cstat-no" title="statement not covered" >null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.computeViewport = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const [viewXSize, viewYSize] = <span class="cstat-no" title="statement not covered" >model.interactor.getView().getSize();</span>
+    const minViewSize = <span class="cstat-no" title="statement not covered" >Math.min(viewXSize, viewYSize);</span>
+&nbsp;
+    let pixelSize = <span class="cstat-no" title="statement not covered" >model.viewportSize * minViewSize;</span>
+    // clamp pixel size
+<span class="cstat-no" title="statement not covered" >    pixelSize = Math.max(</span>
+      Math.min(model.minPixelSize, minViewSize),
+      Math.min(model.maxPixelSize, pixelSize)
+    );
+&nbsp;
+    const xFrac = <span class="cstat-no" title="statement not covered" >pixelSize / viewXSize;</span>
+    const yFrac = <span class="cstat-no" title="statement not covered" >pixelSize / viewYSize;</span>
+    // [left bottom right top]
+<span class="cstat-no" title="statement not covered" >    switch (model.viewportCorner) {</span>
+      case Corners.TOP_LEFT:
+<span class="cstat-no" title="statement not covered" >        return [0, 1 - yFrac, xFrac, 1];</span>
+      case Corners.TOP_RIGHT:
+<span class="cstat-no" title="statement not covered" >        return [1 - xFrac, 1 - yFrac, 1, 1];</span>
+      case Corners.BOTTOM_LEFT:
+<span class="cstat-no" title="statement not covered" >        return [0, 0, xFrac, yFrac];</span>
+      case Corners.BOTTOM_RIGHT:
+<span class="cstat-no" title="statement not covered" >        return [1 - xFrac, 0, 1, yFrac];</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        vtkErrorMacro('Invalid widget corner');</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.updateViewport = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    selfRenderer.setViewport(...publicAPI.computeViewport());</span>
+<span class="cstat-no" title="statement not covered" >    model.interactor.render();</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.updateMarkerOrientation = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const currentCamera = <span class="cstat-no" title="statement not covered" >model.interactor</span>
+      .findPokedRenderer()
+      .getActiveCamera();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!currentCamera) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    const position = <span class="cstat-no" title="statement not covered" >currentCamera.getReferenceByName('position');</span>
+    const focalPoint = <span class="cstat-no" title="statement not covered" >currentCamera.getReferenceByName('focalPoint');</span>
+    const viewUp = <span class="cstat-no" title="statement not covered" >currentCamera.getReferenceByName('viewUp');</span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      previousCameraInput[0] !== position[0] ||
+      previousCameraInput[1] !== position[1] ||
+      previousCameraInput[2] !== position[2] ||
+      previousCameraInput[3] !== focalPoint[0] ||
+      previousCameraInput[4] !== focalPoint[1] ||
+      previousCameraInput[5] !== focalPoint[2] ||
+      previousCameraInput[6] !== viewUp[0] ||
+      previousCameraInput[7] !== viewUp[1] ||
+      previousCameraInput[8] !== viewUp[2]
+    ) {
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[0] = position[0];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[1] = position[1];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[2] = position[2];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[3] = focalPoint[0];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[4] = focalPoint[1];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[5] = focalPoint[2];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[6] = viewUp[0];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[7] = viewUp[1];</span>
+<span class="cstat-no" title="statement not covered" >      previousCameraInput[8] = viewUp[2];</span>
+      const activeCamera = <span class="cstat-no" title="statement not covered" >selfRenderer.getActiveCamera();</span>
+<span class="cstat-no" title="statement not covered" >      activeCamera.setPosition(position[0], position[1], position[2]);</span>
+<span class="cstat-no" title="statement not covered" >      activeCamera.setFocalPoint(focalPoint[0], focalPoint[1], focalPoint[2]);</span>
+<span class="cstat-no" title="statement not covered" >      activeCamera.setViewUp(viewUp[0], viewUp[1], viewUp[2]);</span>
+<span class="cstat-no" title="statement not covered" >      selfRenderer.resetCamera();</span>
+    }
+  };
+&nbsp;
+  /**
+   * Enables/Disables the orientation marker.
+   */
+<span class="cstat-no" title="statement not covered" >  publicAPI.setEnabled = (enabling) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (enabling) {</span>
+<span class="cstat-no" title="statement not covered" >      if (model.enabled) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!model.actor) {</span>
+<span class="cstat-no" title="statement not covered" >        vtkErrorMacro('Must set actor before enabling orientation marker.');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!model.interactor) {</span>
+<span class="cstat-no" title="statement not covered" >        vtkErrorMacro(</span>
+          'Must set interactor before enabling orientation marker.'
+        );
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+      const renderWindow = <span class="cstat-no" title="statement not covered" >model.interactor</span>
+        .findPokedRenderer()
+        .getRenderWindow();
+<span class="cstat-no" title="statement not covered" >      renderWindow.addRenderer(selfRenderer);</span>
+<span class="cstat-no" title="statement not covered" >      if (renderWindow.getNumberOfLayers() &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >        renderWindow.setNumberOfLayers(2);</span>
+      }
+      // Highest number is foreground
+<span class="cstat-no" title="statement not covered" >      selfRenderer.setLayer(renderWindow.getNumberOfLayers() - 1);</span>
+<span class="cstat-no" title="statement not covered" >      selfRenderer.setInteractive(false);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      selfRenderer.addViewProp(model.actor);</span>
+<span class="cstat-no" title="statement not covered" >      model.actor.setVisibility(true);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      ({ unsubscribe: interactorUnsubscribe } = model.interactor.onAnimation(</span>
+        publicAPI.updateMarkerOrientation
+      ));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      ({ unsubscribe: viewUnsubscribe } = model.interactor</span>
+        .getView()
+        .onModified(publicAPI.updateViewport));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      publicAPI.updateViewport();</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.updateMarkerOrientation();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      model.enabled = true;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      if (!model.enabled) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      model.enabled = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      viewUnsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >      viewUnsubscribe = null;</span>
+<span class="cstat-no" title="statement not covered" >      interactorUnsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >      interactorUnsubscribe = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      model.actor.setVisibility(false);</span>
+<span class="cstat-no" title="statement not covered" >      selfRenderer.removeViewProp(model.actor);</span>
+&nbsp;
+      const renderWindow = <span class="cstat-no" title="statement not covered" >model.interactor</span>
+        .findPokedRenderer()
+        .getRenderWindow();
+<span class="cstat-no" title="statement not covered" >      if (renderWindow) {</span>
+<span class="cstat-no" title="statement not covered" >        renderWindow.removeRenderer(selfRenderer);</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
+  };
+&nbsp;
+  /**
+   * Sets the viewport corner.
+   */
+<span class="cstat-no" title="statement not covered" >  publicAPI.setViewportCorner = (corner) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (corner === model.viewportCorner) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.viewportCorner = corner;</span>
+<span class="cstat-no" title="statement not covered" >    if (model.enabled) {</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.updateViewport();</span>
+    }
+  };
+&nbsp;
+  /**
+   * Sets the viewport size.
+   */
+<span class="cstat-no" title="statement not covered" >  publicAPI.setViewportSize = (sizeFactor) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const viewportSize = <span class="cstat-no" title="statement not covered" >Math.min(1, Math.max(0, sizeFactor));</span>
+<span class="cstat-no" title="statement not covered" >    if (viewportSize === model.viewportSize) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.viewportSize = viewportSize;</span>
+<span class="cstat-no" title="statement not covered" >    if (model.enabled) {</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.updateViewport();</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setActor = (actor) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const previousState = <span class="cstat-no" title="statement not covered" >model.enabled;</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setEnabled(false);</span>
+<span class="cstat-no" title="statement not covered" >    model.actor = actor;</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setEnabled(previousState);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getRenderer = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >selfRenderer;</span></span></span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+export const DEFAULT_VALUES = {
+  // actor: null,
+  // interactor: null,
+  viewportCorner: Constants.Corners.BOTTOM_LEFT,
+  viewportSize: 0.2,
+  minPixelSize: 50,
+  maxPixelSize: 200,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Build VTK API
+<span class="cstat-no" title="statement not covered" >  macro.obj(publicAPI, model);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  macro.get(publicAPI, model, ['enabled', 'viewportCorner', 'viewportSize']);</span>
+&nbsp;
+  // NOTE: setting these while the widget is enabled will
+  // not update the widget.
+<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, [</span>
+    'interactor',
+    'minPixelSize',
+    'maxPixelSize',
+  ]);
+<span class="cstat-no" title="statement not covered" >  macro.get(publicAPI, model, ['actor']);</span>
+&nbsp;
+  // Object methods
+<span class="cstat-no" title="statement not covered" >  vtkOrientationMarkerWidget(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(
+  extend,
+  'vtkOrientationMarkerWidget'
+);
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default Object.assign({ newInstance, extend }, Constants);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 17:31:23 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
