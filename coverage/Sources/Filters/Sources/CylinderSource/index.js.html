@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Filters/Sources/CylinderSource/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Filters/Sources/CylinderSource/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.11% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>111/112</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.64% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.05% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>104/105</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import vtkPolyData from 'vtk.js/Sources/Common/DataModel/PolyData';
+import vtkMatrixBuilder from 'vtk.js/Sources/Common/Core/MatrixBuilder';
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkCylinderSource methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkCylinderSource(publicAPI, model) {
+  // Set our classname
+  model.classHierarchy.push('vtkCylinderSource');
+&nbsp;
+  function requestData(inData, outData) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (model.deleted) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    let dataset = outData[0];
+&nbsp;
+    const angle = (2.0 * Math.PI) / model.resolution;
+    let numberOfPoints = 2 * model.resolution;
+    let numberOfPolys = 5 * model.resolution;
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (model.capping) {
+      numberOfPoints = 4 * model.resolution;
+      numberOfPolys = 7 * model.resolution + 2;
+    }
+&nbsp;
+    // Points
+    const points = new window[model.pointType](numberOfPoints * 3);
+&nbsp;
+    // Cells
+    let cellLocation = 0;
+    const polys = new Uint32Array(numberOfPolys);
+&nbsp;
+    // Normals
+    const normalsData = new Float32Array(numberOfPoints * 3);
+    const normals = vtkDataArray.newInstance({
+      numberOfComponents: 3,
+      values: normalsData,
+      name: 'Normals',
+    });
+&nbsp;
+    // Texture coords
+    const tcData = new Float32Array(numberOfPoints * 2);
+    const tcoords = vtkDataArray.newInstance({
+      numberOfComponents: 2,
+      values: tcData,
+      name: 'TCoords',
+    });
+&nbsp;
+    // Generate points for all sides
+    const nbot = [0.0, 0.0, 0.0];
+    const ntop = [0.0, 0.0, 0.0];
+    const xbot = [0.0, 0.0, 0.0];
+    const xtop = [0.0, 0.0, 0.0];
+    const tcbot = [0.0, 0.0];
+    const tctop = [0.0, 0.0];
+    for (let i = 0; i &lt; model.resolution; i++) {
+      // x coordinate
+      nbot[0] = Math.cos(i * angle);
+      ntop[0] = nbot[0];
+      xbot[0] = model.radius * nbot[0] + model.center[0];
+      xtop[0] = xbot[0];
+      tcbot[0] = Math.abs((2.0 * i) / model.resolution - 1.0);
+      tctop[0] = tcbot[0];
+&nbsp;
+      // y coordinate
+      xbot[1] = 0.5 * model.height + model.center[1];
+      xtop[1] = -0.5 * model.height + model.center[1];
+      tcbot[1] = 0.0;
+      tctop[1] = 1.0;
+&nbsp;
+      // z coordinate
+      nbot[2] = -Math.sin(i * angle);
+      ntop[2] = nbot[2];
+      xbot[2] = model.radius * nbot[2] + model.center[2];
+      xtop[2] = xbot[2];
+&nbsp;
+      const pointIdx = 2 * i;
+      for (let j = 0; j &lt; 3; j++) {
+        normalsData[pointIdx * 3 + j] = nbot[j];
+        normalsData[(pointIdx + 1) * 3 + j] = ntop[j];
+        points[pointIdx * 3 + j] = xbot[j];
+        points[(pointIdx + 1) * 3 + j] = xtop[j];
+        if (j &lt; 2) {
+          tcData[pointIdx * 2 + j] = tcbot[j];
+          tcData[(pointIdx + 1) * 2 + j] = tctop[j];
+        }
+      }
+    }
+&nbsp;
+    // Generate polygons for sides
+    for (let i = 0; i &lt; model.resolution; i++) {
+      polys[cellLocation++] = 4;
+      polys[cellLocation++] = 2 * i;
+      polys[cellLocation++] = 2 * i + 1;
+      const pt = (2 * i + 3) % (2 * model.resolution);
+      polys[cellLocation++] = pt;
+      polys[cellLocation++] = pt - 1;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (model.capping) {
+      // Generate points for top/bottom polygons
+      for (let i = 0; i &lt; model.resolution; i++) {
+        // x coordinate
+        xbot[0] = model.radius * Math.cos(i * angle);
+        xtop[0] = xbot[0];
+        tcbot[0] = xbot[0];
+        tctop[0] = xbot[0];
+        xbot[0] += model.center[0];
+        xtop[0] += model.center[0];
+&nbsp;
+        // y coordinate
+        nbot[1] = 1.0;
+        ntop[1] = -1.0;
+        xbot[1] = 0.5 * model.height + model.center[1];
+        xtop[1] = -0.5 * model.height + model.center[1];
+&nbsp;
+        // z coordinate
+        xbot[2] = -model.radius * Math.sin(i * angle);
+        xtop[2] = xbot[2];
+        tcbot[1] = xbot[2];
+        tctop[1] = xbot[2];
+        xbot[2] += model.center[2];
+        xtop[2] += model.center[2];
+        const botIdx = 2 * model.resolution + i;
+        const topIdx = 3 * model.resolution + model.resolution - i - 1;
+        for (let j = 0; j &lt; 3; j++) {
+          normalsData[3 * botIdx + j] = nbot[j];
+          normalsData[3 * topIdx + j] = ntop[j];
+          points[3 * botIdx + j] = xbot[j];
+          points[3 * topIdx + j] = xtop[j];
+          if (j &lt; 2) {
+            tcData[2 * botIdx + j] = tcbot[j];
+            tcData[2 * topIdx + j] = tctop[j];
+          }
+        }
+      }
+&nbsp;
+      // Generate polygons for top/bottom
+      polys[cellLocation++] = model.resolution;
+      for (let i = 0; i &lt; model.resolution; i++) {
+        polys[cellLocation++] = 2 * model.resolution + i;
+      }
+      polys[cellLocation++] = model.resolution;
+      for (let i = 0; i &lt; model.resolution; i++) {
+        polys[cellLocation++] = 3 * model.resolution + i;
+      }
+    }
+&nbsp;
+    // Apply tranformation to the points coordinates
+    vtkMatrixBuilder
+      .buildFromRadian()
+      .translate(...model.center)
+      .rotateFromDirections([0, 1, 0], model.direction)
+      .translate(...model.center.map((c) =&gt; c * -1))
+      .apply(points);
+&nbsp;
+    dataset = vtkPolyData.newInstance();
+    dataset.getPoints().setData(points, 3);
+    dataset.getPolys().setData(polys, 1);
+    dataset.getPointData().setNormals(normals);
+    dataset.getPointData().setTCoords(tcoords);
+&nbsp;
+    // Update output
+    outData[0] = dataset;
+  }
+&nbsp;
+  // Expose methods
+  publicAPI.requestData = requestData;
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  height: 1.0,
+  radius: 1.0,
+  resolution: 6,
+  center: [0, 0, 0],
+  direction: [0.0, 1.0, 0.0],
+  capping: true,
+  pointType: 'Float32Array',
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Build VTK API
+  macro.obj(publicAPI, model);
+  macro.setGet(publicAPI, model, ['height', 'radius', 'resolution', 'capping']);
+  macro.setGetArray(publicAPI, model, ['center', 'direction'], 3);
+  macro.algo(publicAPI, model, 0, 1);
+  vtkCylinderSource(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkCylinderSource');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/Core/PointPicker/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/Core/PointPicker/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/89</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/85</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
+import vtkPicker from 'vtk.js/Sources/Rendering/Core/Picker';
+&nbsp;
+const { vtkErrorMacro } = macro;
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkPointPicker methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkPointPicker(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkPointPicker');
+&nbsp;
+  publicAPI.intersectWithLine = (p1, p2, tol, mapper) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    let tMin = <span class="cstat-no" title="statement not covered" >Number.MAX_VALUE;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (mapper.isA('vtkImageMapper')) {</span>
+      const pickData = <span class="cstat-no" title="statement not covered" >mapper.intersectWithLineForPointPicking(p1, p2);</span>
+<span class="cstat-no" title="statement not covered" >      if (pickData) {</span>
+<span class="cstat-no" title="statement not covered" >        tMin = pickData.t;</span>
+<span class="cstat-no" title="statement not covered" >        model.pointIJK = pickData.ijk;</span>
+      }
+    } else <span class="cstat-no" title="statement not covered" >if (mapper.isA('vtkMapper')) {</span>
+<span class="cstat-no" title="statement not covered" >      tMin = publicAPI.intersectActorWithLine(p1, p2, tol, mapper);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return tMin;</span>
+  };
+&nbsp;
+  publicAPI.intersectActorWithLine = (p1, p2, tol, mapper) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    // Get dataset
+    const input = <span class="cstat-no" title="statement not covered" >mapper.getInputData();</span>
+&nbsp;
+    // Determine appropriate info
+    let ptId = <span class="cstat-no" title="statement not covered" >0;</span>
+    const numPts = <span class="cstat-no" title="statement not covered" >input.getPoints().getNumberOfPoints();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (numPts &lt;= ptId) {</span>
+<span class="cstat-no" title="statement not covered" >      return 2.0;</span>
+    }
+&nbsp;
+    const ray = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; 3; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      ray[i] = p2[i] - p1[i];</span>
+    }
+&nbsp;
+    const rayFactor = <span class="cstat-no" title="statement not covered" >vtkMath.dot(ray, ray);</span>
+<span class="cstat-no" title="statement not covered" >    if (rayFactor === 0.0) {</span>
+<span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Cannot process points');</span>
+<span class="cstat-no" title="statement not covered" >      return 2.0;</span>
+    }
+&nbsp;
+    let t;
+    let minPtId = <span class="cstat-no" title="statement not covered" >-1;</span>
+    let tMin = <span class="cstat-no" title="statement not covered" >Number.MAX_VALUE;</span>
+    let minPtDist = <span class="cstat-no" title="statement not covered" >Number.MAX_VALUE;</span>
+    const projXYZ = <span class="cstat-no" title="statement not covered" >[];</span>
+    const minXYZ = <span class="cstat-no" title="statement not covered" >[];</span>
+    const x = <span class="cstat-no" title="statement not covered" >[];</span>
+    const points = <span class="cstat-no" title="statement not covered" >input.getPoints();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (model.useCells) {</span>
+      const cellData = <span class="cstat-no" title="statement not covered" >input.getPolys().getData();</span>
+      const nbPointsPerCell = <span class="cstat-no" title="statement not covered" >cellData[0];</span>
+      const nbCells = <span class="cstat-no" title="statement not covered" >input.getPolys().getNumberOfCells();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      for (let cellID = <span class="cstat-no" title="statement not covered" >0;</span> cellID &lt; nbCells; cellID++) {</span>
+        const firstPointIndex = <span class="cstat-no" title="statement not covered" >cellID * nbPointsPerCell + 1;</span>
+        const lastPointIndex = <span class="cstat-no" title="statement not covered" >firstPointIndex + nbPointsPerCell;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (</span>
+          let pointIndex = <span class="cstat-no" title="statement not covered" >firstPointIndex;</span>
+          pointIndex &lt; lastPointIndex;
+          pointIndex++
+        ) {
+          const pointDataIndex = <span class="cstat-no" title="statement not covered" >cellData[pointIndex];</span>
+<span class="cstat-no" title="statement not covered" >          points.getPoint(pointDataIndex, x);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          t =</span>
+            (ray[0] * (x[0] - p1[0]) +
+              ray[1] * (x[1] - p1[1]) +
+              ray[2] * (x[2] - p1[2])) /
+            rayFactor;
+&nbsp;
+          // If we find a point closer than we currently have, see whether it
+          // lies within the pick tolerance and clipping planes. We keep track
+          // of the point closest to the line (use a fudge factor for points
+          // nearly the same distance away.)
+<span class="cstat-no" title="statement not covered" >          if (t &gt;= 0.0 &amp;&amp; t &lt;= 1.0 &amp;&amp; t &lt;= tMin + model.tolerance) {</span>
+            let maxDist = <span class="cstat-no" title="statement not covered" >0.0;</span>
+<span class="cstat-no" title="statement not covered" >            for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; 3; i++) {</span>
+<span class="cstat-no" title="statement not covered" >              projXYZ[i] = p1[i] + t * ray[i];</span>
+              const dist = <span class="cstat-no" title="statement not covered" >Math.abs(x[i] - projXYZ[i]);</span>
+<span class="cstat-no" title="statement not covered" >              if (dist &gt; maxDist) {</span>
+<span class="cstat-no" title="statement not covered" >                maxDist = dist;</span>
+              }
+            } // end for i
+<span class="cstat-no" title="statement not covered" >            if (maxDist &lt;= tol &amp;&amp; maxDist &lt; minPtDist) {</span>
+              // within tolerance
+<span class="cstat-no" title="statement not covered" >              minPtId = ptId;</span>
+<span class="cstat-no" title="statement not covered" >              minXYZ[0] = x[0];</span>
+<span class="cstat-no" title="statement not covered" >              minXYZ[1] = x[1];</span>
+<span class="cstat-no" title="statement not covered" >              minXYZ[2] = x[2];</span>
+<span class="cstat-no" title="statement not covered" >              minPtDist = maxDist;</span>
+<span class="cstat-no" title="statement not covered" >              tMin = t;</span>
+            }
+          }
+        } // end for pointIndex
+      } // end for cellID
+    } else {
+      // end if model.useCells
+<span class="cstat-no" title="statement not covered" >      for (ptId = 0; ptId &lt; numPts; ptId++) {</span>
+<span class="cstat-no" title="statement not covered" >        points.getPoint(ptId, x);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        t =</span>
+          (ray[0] * (x[0] - p1[0]) +
+            ray[1] * (x[1] - p1[1]) +
+            ray[2] * (x[2] - p1[2])) /
+          rayFactor;
+&nbsp;
+        // If we find a point closer than we currently have, see whether it
+        // lies within the pick tolerance and clipping planes. We keep track
+        // of the point closest to the line (use a fudge factor for points
+        // nearly the same distance away.)
+<span class="cstat-no" title="statement not covered" >        if (t &gt;= 0.0 &amp;&amp; t &lt;= 1.0 &amp;&amp; t &lt;= tMin + model.tolerance) {</span>
+          let maxDist = <span class="cstat-no" title="statement not covered" >0.0;</span>
+<span class="cstat-no" title="statement not covered" >          for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; 3; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            projXYZ[i] = p1[i] + t * ray[i];</span>
+            const dist = <span class="cstat-no" title="statement not covered" >Math.abs(x[i] - projXYZ[i]);</span>
+<span class="cstat-no" title="statement not covered" >            if (dist &gt; maxDist) {</span>
+<span class="cstat-no" title="statement not covered" >              maxDist = dist;</span>
+            }
+          } // end for i
+<span class="cstat-no" title="statement not covered" >          if (maxDist &lt;= tol &amp;&amp; maxDist &lt; minPtDist) {</span>
+            // within tolerance
+<span class="cstat-no" title="statement not covered" >            minPtId = ptId;</span>
+<span class="cstat-no" title="statement not covered" >            minXYZ[0] = x[0];</span>
+<span class="cstat-no" title="statement not covered" >            minXYZ[1] = x[1];</span>
+<span class="cstat-no" title="statement not covered" >            minXYZ[2] = x[2];</span>
+<span class="cstat-no" title="statement not covered" >            minPtDist = maxDist;</span>
+<span class="cstat-no" title="statement not covered" >            tMin = t;</span>
+          }
+        }
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.pointId = minPtId;</span>
+<span class="cstat-no" title="statement not covered" >    return tMin;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  pointId: -1,
+  pointIJK: [],
+  useCells: false,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Inheritance
+  vtkPicker.extend(publicAPI, model, initialValues);
+&nbsp;
+  macro.getArray(publicAPI, model, ['pointIJK']);
+  macro.get(publicAPI, model, ['pointId']);
+  macro.setGet(publicAPI, model, ['useCells']);
+&nbsp;
+  vtkPointPicker(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkPointPicker');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Testing/testMacro.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">Sources/Testing/</a> testMacro.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>154/158</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.59% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>25/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.06% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>152/155</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import test from 'tape-catch';
+import macro from 'vtk.js/Sources/macro';
+&nbsp;
+const MY_ENUM = {
+  ZERO: 0,
+  FIRST: 1,
+  SECOND: 2,
+  THIRD: 3,
+};
+&nbsp;
+const EVENTS = ['TestAbort', 'TestPriority'];
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkMyClass methods
+// ----------------------------------------------------------------------------
+function myClass(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkMyClass');
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+const DEFAULT_VALUES = {
+  myProp1: [0, 0, 0],
+  myProp2: null, // Do not initialize internal objects here
+  myProp3: true,
+  myProp4: 6,
+  myProp5: [1, 2, 3, 4],
+  myProp6: [0.1, 0.2, 0.3, 0.4, 0.5],
+  myProp7: MY_ENUM.FIRST,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Object methods
+  macro.obj(publicAPI, model);
+&nbsp;
+  // Create get-only macros
+  macro.get(publicAPI, model, ['myProp2', 'myProp4']);
+  // Create get-set macros
+  macro.setGet(publicAPI, model, ['myProp3']);
+  // Create set macros
+  macro.set(publicAPI, model, ['myProp4']);
+  // Create set macros for array (needs to know size)
+  macro.setArray(publicAPI, model, ['myProp5'], 4);
+  // Create get macros for array
+  macro.getArray(publicAPI, model, ['myProp1', 'myProp5']);
+  macro.setGetArray(publicAPI, model, ['myProp6'], 5);
+&nbsp;
+  macro.setGet(publicAPI, model, [
+    { name: 'myProp7', enum: MY_ENUM, type: 'enum' },
+  ]);
+  // Object specific methods
+  myClass(publicAPI, model);
+&nbsp;
+  // event methods
+  EVENTS.forEach((name) =&gt; macro.event(publicAPI, model, name));
+&nbsp;
+  // keystore methods
+  macro.keystore(publicAPI, model, { key1: 'value1', key2: 'value2' });
+}
+&nbsp;
+const newInstance = macro.newInstance(extend, 'vtkMyClass');
+&nbsp;
+test('Macro methods scalar tests', (t) =&gt; {
+  t.ok('macros', 'macro setget');
+&nbsp;
+  const myTestClass = newInstance();
+&nbsp;
+  t.equal(
+    myTestClass.getMyProp3(),
+    DEFAULT_VALUES.myProp3,
+    'Initial gets should match defaults'
+  );
+  myTestClass.setMyProp3(false);
+  t.equal(myTestClass.getMyProp3(), false, 'Bool get should match set');
+&nbsp;
+  const mtime1 = myTestClass.getMTime();
+  t.equal(
+    myTestClass.getMyProp4(),
+    DEFAULT_VALUES.myProp4,
+    'Initial gets should match defaults'
+  );
+  myTestClass.setMyProp4(42);
+  const mtime2 = myTestClass.getMTime();
+  t.equal(myTestClass.getMyProp4(), 42, 'Int get should match set');
+  t.ok(mtime2 &gt; mtime1, 'mtime should increase after set');
+  myTestClass.setMyProp4(42);
+  const mtime3 = myTestClass.getMTime();
+  t.ok(mtime3 === mtime2, 'mtime should not increase after idempotent set');
+&nbsp;
+  t.end();
+});
+&nbsp;
+test('Macro methods array tests', (t) =&gt; {
+  const myTestClass = newInstance();
+&nbsp;
+  t.deepEqual(
+    myTestClass.getMyProp1(),
+    DEFAULT_VALUES.myProp1,
+    'Initial gets should match defaults'
+  );
+  // we must wrap the non-existent call inside another function to avoid test program exiting, and tape-catch generating error.
+  t.throws(
+    () =&gt; myTestClass.setMyProp1(1, 1, 1),
+    /TypeError/,
+    'Throw if no set method declared'
+  );
+&nbsp;
+  const myArray = [10, 20, 30, 40];
+  t.ok(myTestClass.setMyProp5(...myArray), 'Array spread set OK');
+  t.deepEqual(
+    myTestClass.getMyProp5(),
+    myArray,
+    'Array spread set should match get'
+  );
+&nbsp;
+  const mtime1 = myTestClass.getMTime();
+  myArray[0] = 99.9;
+  t.ok(myTestClass.setMyProp5(myArray), 'OK to set a single array argument');
+  t.deepEqual(myTestClass.getMyProp5(), myArray, 'Array set should match get');
+&nbsp;
+  const mtime2 = myTestClass.getMTime();
+  t.ok(mtime2 &gt; mtime1, 'mtime should increase after set');
+  // set a too-short array, separate args
+  t.throws(
+    () =&gt; myTestClass.setMyProp6(1, 2, 3),
+    /RangeError/,
+    'Invalid number of values should throw'
+  );
+  t.deepEqual(
+    myTestClass.getMyProp6(),
+    DEFAULT_VALUES.myProp6,
+    'Keep default value after illegal set'
+  );
+&nbsp;
+  const mtime3 = myTestClass.getMTime();
+  t.ok(mtime3 === mtime2, 'mtime should not increase after idempotent set');
+&nbsp;
+  // set a too-long array, single array arg
+  t.throws(
+    () =&gt; myTestClass.setMyProp5([].concat(myArray, 555)),
+    /RangeError/,
+    'Invalid number of values should throw'
+  );
+  t.deepEqual(
+    myTestClass.getMyProp5(),
+    myArray,
+    'Keep value after illegal set'
+  );
+&nbsp;
+  // set an string
+  t.throws(
+    () =&gt; myTestClass.setMyProp5('a string, really'),
+    /RangeError/,
+    'Invalid set with string should throw'
+  );
+  t.deepEqual(
+    myTestClass.getMyProp5(),
+    myArray,
+    'Keep value after illegal set'
+  );
+&nbsp;
+  t.end();
+});
+&nbsp;
+test('Macro methods enum tests', (t) =&gt; {
+  const myTestClass = newInstance();
+&nbsp;
+  t.equal(
+    myTestClass.getMyProp7(),
+    DEFAULT_VALUES.myProp7,
+    'Initial gets should match defaults'
+  );
+  myTestClass.setMyProp7(MY_ENUM.THIRD);
+  t.equal(myTestClass.getMyProp7(), MY_ENUM.THIRD, 'Enum set should match get');
+&nbsp;
+  t.ok(myTestClass.setMyProp7(2));
+  t.equal(
+    myTestClass.getMyProp7(),
+    MY_ENUM.SECOND,
+    'Enum set by index should get matching enum value'
+  );
+&nbsp;
+  t.notOk(
+    myTestClass.setMyProp7(2),
+    'Setting idempotent value should return false'
+  );
+&nbsp;
+  t.throws(
+    () =&gt; myTestClass.setMyProp7(42),
+    /RangeError/,
+    'Invalid enum index should throw'
+  );
+  t.equal(
+    myTestClass.getMyProp7(),
+    MY_ENUM.SECOND,
+    'Enum set out of range should be rejected'
+  );
+&nbsp;
+  t.throws(
+    () =&gt; myTestClass.setMyProp7('FORTH'),
+    /RangeError/,
+    'Invalid enum string should throw'
+  );
+  t.equal(
+    myTestClass.getMyProp7(),
+    MY_ENUM.SECOND,
+    'Enum set string out of range should be rejected'
+  );
+&nbsp;
+  t.throws(
+    () =&gt; myTestClass.setMyProp7([2]),
+    /TypeError/,
+    'Invalid enum set with array/object should throw'
+  );
+  t.equal(
+    myTestClass.getMyProp7(),
+    MY_ENUM.SECOND,
+    'Enum set string out of range should be rejected'
+  );
+&nbsp;
+  t.end();
+});
+&nbsp;
+test('Macro methods object tests', (t) =&gt; {
+  const myTestClass = newInstance();
+&nbsp;
+  t.ok(myTestClass.get(), 'Get entire model');
+  t.deepEqual(
+    myTestClass.get(...Object.keys(DEFAULT_VALUES)),
+    DEFAULT_VALUES,
+    'Get defaults back test'
+  );
+&nbsp;
+  t.throws(
+    () =&gt; {
+      myTestClass.getMyProp1 = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >'42';</span></span>
+    },
+    /TypeError/,
+    'Object should be frozen'
+  );
+&nbsp;
+  t.ok(myTestClass.set({ changeWhenModified: 'foo' }));
+  const off = myTestClass.onModified((publicAPI) =&gt; {
+    publicAPI.set({ changeWhenModified: 'bar' });
+  });
+  t.ok(myTestClass.setMyProp3(false));
+  t.deepEqual(
+    myTestClass.get('changeWhenModified'),
+    { changeWhenModified: 'bar' },
+    'Object modified fires'
+  );
+  off.unsubscribe();
+  myTestClass.set({ changeWhenModified: 'foobaz' });
+  myTestClass.setMyProp3(true);
+  t.deepEqual(
+    myTestClass.get('changeWhenModified'),
+    { changeWhenModified: 'foobaz' },
+    'Object modified does not fire after unsubscribe'
+  );
+&nbsp;
+  t.ok(
+    myTestClass.set({ myProp4: 99.9, myProp5: [1, 1, 1, 1] }),
+    'Test mult-set'
+  );
+  t.equal(myTestClass.getMyProp4(), 99.9, 'Float get should match multi-set');
+  t.deepEqual(
+    myTestClass.getMyProp5(),
+    [1, 1, 1, 1],
+    'Array multi-set should match get'
+  );
+&nbsp;
+  t.ok(myTestClass.isA('vtkMyClass'));
+  t.ok(myTestClass.isA('vtkObject'));
+  t.notOk(myTestClass.isA('vtkPoint'));
+  t.equal(myTestClass.getClassName(), 'vtkMyClass');
+&nbsp;
+  t.doesNotThrow(() =&gt; myTestClass.delete());
+  t.notOk(myTestClass.getMyProp4(), 'All calls should do nothing after delete');
+&nbsp;
+  t.end();
+});
+&nbsp;
+test('Macro methods event tests', (t) =&gt; {
+  const myTestClass = newInstance();
+&nbsp;
+  //
+  // Test event abortion
+  //
+  const { VOID, EVENT_ABORT } = macro;
+  let callCount = 0;
+&nbsp;
+  const cbAbort1 = () =&gt; {
+    ++callCount;
+    t.equal(callCount, 1, 'cbAbort1 should be called first');
+  };
+&nbsp;
+  const cbAbort2 = () =&gt; {
+    ++callCount;
+    t.equal(callCount, 2, 'cbAbort2 should be called second');
+&nbsp;
+    // this is a demonstration of the VOID and EVENT_ABORT return symbols.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (callCount !== 2) {
+<span class="cstat-no" title="statement not covered" >      return VOID;</span>
+    }
+&nbsp;
+    return EVENT_ABORT;
+  };
+&nbsp;
+  const cbAbort3 = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    ++callCount;</span>
+<span class="cstat-no" title="statement not covered" >    t.fail('cbAbort3 should not be called');</span>
+  };
+&nbsp;
+  myTestClass.onTestAbort(cbAbort1);
+  myTestClass.onTestAbort(cbAbort2);
+  myTestClass.onTestAbort(cbAbort3);
+&nbsp;
+  myTestClass.invokeTestAbort();
+  t.equal(callCount, 2, 'Only 2 callbacks should be invoked, not 3');
+&nbsp;
+  //
+  // Test callback priority and subscription
+  //
+  const called = Array(3).fill(0);
+&nbsp;
+  const cbPriorityLast = () =&gt; {
+    t.ok(
+      called[0] &amp;&amp; called[1] &amp;&amp; called[2],
+      'cbPriorityLast should be called last after 101ms'
+    );
+&nbsp;
+    // ensure callback2 was only invoked twice
+    t.equal(called[2], 2, 'cbPriority2 should be called exactly twice');
+&nbsp;
+    t.end();
+  };
+&nbsp;
+  const cbPriority0 = () =&gt; {
+    called[0]++;
+    t.ok(called[1] &amp;&amp; called[2], 'cbPriority0 should be called third');
+  };
+&nbsp;
+  const cbPriority1 = () =&gt; {
+    called[1]++;
+    t.ok(!called[0] &amp;&amp; called[2], 'cbPriority1 should be called second');
+  };
+&nbsp;
+  const cbPriority2 = () =&gt; {
+    called[2]++;
+    t.ok(!called[0] &amp;&amp; !called[1], 'cbPriority2 should be called first');
+  };
+&nbsp;
+  myTestClass.onTestPriority(cbPriorityLast, -100);
+  myTestClass.onTestPriority(cbPriority0);
+  myTestClass.onTestPriority(cbPriority1, 1.0);
+  myTestClass.onTestPriority(cbPriority2, 2.0);
+  // test duplicate listeners and unsubscribe
+  const { unsubscribe } = myTestClass.onTestPriority(cbPriority2, 2.0);
+  myTestClass.onTestPriority(cbPriority2, 2.0);
+&nbsp;
+  // test unsubscribe for the secon cbPriority2 callback
+  unsubscribe();
+&nbsp;
+  myTestClass.invokeTestPriority();
+});
+&nbsp;
+test('Macro methods keystore tests', (t) =&gt; {
+  const testClass = newInstance();
+&nbsp;
+  testClass.setKey('key3', 'value3');
+&nbsp;
+  t.equal(testClass.getKey('key1'), 'value1', 'key1 should exist in keystore');
+  t.equal(testClass.getKey('key2'), 'value2', 'key2 should exist in keystore');
+  t.equal(testClass.getKey('key3'), 'value3', 'key3 should exist in keystore');
+&nbsp;
+  t.ok(testClass.deleteKey('key2'), 'Delete key2 should succeed');
+&nbsp;
+  testClass.clearKeystore();
+&nbsp;
+  t.equal(
+    testClass.getAllKeys().length,
+    0,
+    'There should be no keys after clearing'
+  );
+&nbsp;
+  t.end();
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

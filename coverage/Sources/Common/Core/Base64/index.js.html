@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Common/Core/Base64/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Common/Core/Base64/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/84</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-bitwise */
+&nbsp;
+// ----------------------------------------------------------------------------
+// Decoding infrastructure
+// ----------------------------------------------------------------------------
+&nbsp;
+const REVERSE_LOOKUP = [];
+REVERSE_LOOKUP['-'.charCodeAt(0)] = 62;
+REVERSE_LOOKUP['_'.charCodeAt(0)] = 63;
+&nbsp;
+const BASE64_CODE =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+for (let i = 0; i &lt; BASE64_CODE.length; i++) {
+  REVERSE_LOOKUP[BASE64_CODE.charCodeAt(i)] = i;
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Base64 analysis
+// ----------------------------------------------------------------------------
+&nbsp;
+function isValidChar(c) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  return REVERSE_LOOKUP[c.charCodeAt(0)] !== undefined;</span>
+}
+&nbsp;
+function extractChunks(b64Str) <span class="fstat-no" title="function not covered" >{</span>
+  const strSize = <span class="cstat-no" title="statement not covered" >b64Str.length;</span>
+  const chunks = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+  let currentChunk = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; strSize; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isValidChar(b64Str[i])) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!currentChunk) {</span>
+<span class="cstat-no" title="statement not covered" >        currentChunk = { start: i, count: 0 };</span>
+      }
+<span class="cstat-no" title="statement not covered" >      currentChunk.count++;</span>
+<span class="cstat-no" title="statement not covered" >      currentChunk.end = i;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (b64Str[i] === '=' &amp;&amp; currentChunk) {</span>
+      // End of chunk (found padding char)
+<span class="cstat-no" title="statement not covered" >      chunks.push(currentChunk);</span>
+<span class="cstat-no" title="statement not covered" >      currentChunk = null;</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (currentChunk) {</span>
+<span class="cstat-no" title="statement not covered" >    chunks.push(currentChunk);</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return chunks;</span>
+}
+&nbsp;
+function writeChunk(b64Str, chunk, dstOffset, uint8) <span class="fstat-no" title="function not covered" >{</span>
+  const { start, count } = <span class="cstat-no" title="statement not covered" >chunk;</span>
+  const remain = <span class="cstat-no" title="statement not covered" >count % 4;</span>
+  const fourCharProcessCount = <span class="cstat-no" title="statement not covered" >Math.floor(count / 4);</span>
+  let charIdx = <span class="cstat-no" title="statement not covered" >start;</span>
+  let tmp = <span class="cstat-no" title="statement not covered" >null;</span>
+  let offset = <span class="cstat-no" title="statement not covered" >dstOffset;</span>
+&nbsp;
+  // Handle 4=&gt;3
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; fourCharProcessCount; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >      charIdx++;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    tmp = REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 18;</span>
+<span class="cstat-no" title="statement not covered" >    while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >      charIdx++;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 12;</span>
+<span class="cstat-no" title="statement not covered" >    while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >      charIdx++;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 6;</span>
+<span class="cstat-no" title="statement not covered" >    while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >      charIdx++;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint8[offset++] = (tmp &gt;&gt; 16) &amp; 0xff;</span>
+<span class="cstat-no" title="statement not covered" >    uint8[offset++] = (tmp &gt;&gt; 8) &amp; 0xff;</span>
+<span class="cstat-no" title="statement not covered" >    uint8[offset++] = tmp &amp; 0xff;</span>
+  }
+&nbsp;
+  // Handle remain
+<span class="cstat-no" title="statement not covered" >  switch (remain) {</span>
+    case 3:
+<span class="cstat-no" title="statement not covered" >      while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >        charIdx++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      tmp = REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 10;</span>
+<span class="cstat-no" title="statement not covered" >      while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >        charIdx++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 4;</span>
+<span class="cstat-no" title="statement not covered" >      while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >        charIdx++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &gt;&gt; 2;</span>
+<span class="cstat-no" title="statement not covered" >      uint8[offset++] = (tmp &gt;&gt; 8) &amp; 0xff;</span>
+<span class="cstat-no" title="statement not covered" >      uint8[offset++] = tmp &amp; 0xff;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 2:
+<span class="cstat-no" title="statement not covered" >      while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >        charIdx++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      tmp = REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &lt;&lt; 2;</span>
+<span class="cstat-no" title="statement not covered" >      while (!isValidChar(b64Str[charIdx])) {</span>
+<span class="cstat-no" title="statement not covered" >        charIdx++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      tmp |= REVERSE_LOOKUP[b64Str.charCodeAt(charIdx++)] &gt;&gt; 4;</span>
+<span class="cstat-no" title="statement not covered" >      uint8[offset++] = tmp &amp; 0xff;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 1:
+<span class="cstat-no" title="statement not covered" >      throw new Error('BASE64: remain 1 should not happen');</span>
+    case 0:
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    default:
+<span class="cstat-no" title="statement not covered" >      break;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return offset;</span>
+}
+&nbsp;
+function toArrayBuffer(b64Str) <span class="fstat-no" title="function not covered" >{</span>
+  const chunks = <span class="cstat-no" title="statement not covered" >extractChunks(b64Str);</span>
+  const totalEncodedLength = <span class="cstat-no" title="statement not covered" >chunks[chunks.length - 1].end + 1;</span>
+  const padding = <span class="cstat-no" title="statement not covered" >(4 - (totalEncodedLength % 4)) % 4;</span> // -length mod 4
+  // Any padding chars in the middle of b64Str is to be interpreted as \x00,
+  // whereas the terminating padding chars are to be interpreted as literal padding.
+  const totalSize = <span class="cstat-no" title="statement not covered" >((totalEncodedLength + padding) * 3) / 4 - padding;</span>
+&nbsp;
+  const arrayBuffer = <span class="cstat-no" title="statement not covered" >new ArrayBuffer(totalSize);</span>
+  const view = <span class="cstat-no" title="statement not covered" >new Uint8Array(arrayBuffer);</span>
+  let dstOffset = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; chunks.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    dstOffset += writeChunk(b64Str, chunks[i], dstOffset, view);</span>
+<span class="cstat-no" title="statement not covered" >    dstOffset += (4 - (chunks[i].count % 4)) % 4;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return arrayBuffer;</span>
+}
+&nbsp;
+export default {
+  toArrayBuffer,
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

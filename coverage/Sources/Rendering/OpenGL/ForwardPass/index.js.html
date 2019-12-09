@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/OpenGL/ForwardPass/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/OpenGL/ForwardPass/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.63% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.03% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/59</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+import vtkOpenGLFramebuffer from 'vtk.js/Sources/Rendering/OpenGL/Framebuffer';
+import vtkRenderPass from 'vtk.js/Sources/Rendering/SceneGraph/RenderPass';
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkForwardPass(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkForwardPass');
+&nbsp;
+  // this pass implements a forward rendering pipeline
+  // if both volumes and opaque geometry are present
+  // it will mix the two together by capturing a zbuffer
+  // first
+  publicAPI.traverse = (viewNode, parent = null) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (model.deleted) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    // we just render our delegates in order
+<span class="cstat-no" title="statement not covered" >    model.currentParent = parent;</span>
+&nbsp;
+    // build
+<span class="cstat-no" title="statement not covered" >    publicAPI.setCurrentOperation('buildPass');</span>
+<span class="cstat-no" title="statement not covered" >    viewNode.traverse(publicAPI);</span>
+&nbsp;
+    const numlayers = <span class="cstat-no" title="statement not covered" >viewNode.getRenderable().getNumberOfLayers();</span>
+&nbsp;
+    // iterate over renderers
+    const renderers = <span class="cstat-no" title="statement not covered" >viewNode.getChildren();</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; numlayers; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; renderers.length; index++) {</span>
+        const renNode = <span class="cstat-no" title="statement not covered" >renderers[index];</span>
+        const ren = <span class="cstat-no" title="statement not covered" >viewNode.getRenderable().getRenderers()[index];</span>
+<span class="cstat-no" title="statement not covered" >        if (ren.getLayer() === i) {</span>
+          // check for both opaque and volume actors
+<span class="cstat-no" title="statement not covered" >          model.opaqueActorCount = 0;</span>
+<span class="cstat-no" title="statement not covered" >          model.translucentActorCount = 0;</span>
+<span class="cstat-no" title="statement not covered" >          model.volumeCount = 0;</span>
+<span class="cstat-no" title="statement not covered" >          publicAPI.setCurrentOperation('queryPass');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          renNode.traverse(publicAPI);</span>
+&nbsp;
+          // do we need to capture a zbuffer?
+<span class="cstat-no" title="statement not covered" >          if (</span>
+            (model.opaqueActorCount &gt; 0 &amp;&amp; model.volumeCount &gt; 0) ||
+            model.depthRequested
+          ) {
+            const size = <span class="cstat-no" title="statement not covered" >viewNode.getFramebufferSize();</span>
+            // make sure the framebuffer is setup
+<span class="cstat-no" title="statement not covered" >            if (model.framebuffer === null) {</span>
+<span class="cstat-no" title="statement not covered" >              model.framebuffer = vtkOpenGLFramebuffer.newInstance();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            model.framebuffer.setOpenGLRenderWindow(viewNode);</span>
+<span class="cstat-no" title="statement not covered" >            model.framebuffer.saveCurrentBindingsAndBuffers();</span>
+            const fbSize = <span class="cstat-no" title="statement not covered" >model.framebuffer.getSize();</span>
+<span class="cstat-no" title="statement not covered" >            if (</span>
+              fbSize === null ||
+              fbSize[0] !== size[0] ||
+              fbSize[1] !== size[1]
+            ) {
+<span class="cstat-no" title="statement not covered" >              model.framebuffer.create(size[0], size[1]);</span>
+<span class="cstat-no" title="statement not covered" >              model.framebuffer.populateFramebuffer();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            model.framebuffer.bind();</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.setCurrentOperation('opaqueZBufferPass');</span>
+<span class="cstat-no" title="statement not covered" >            renNode.traverse(publicAPI);</span>
+<span class="cstat-no" title="statement not covered" >            model.framebuffer.restorePreviousBindingsAndBuffers();</span>
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          publicAPI.setCurrentOperation('cameraPass');</span>
+<span class="cstat-no" title="statement not covered" >          renNode.traverse(publicAPI);</span>
+<span class="cstat-no" title="statement not covered" >          if (model.opaqueActorCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.setCurrentOperation('opaquePass');</span>
+<span class="cstat-no" title="statement not covered" >            renNode.traverse(publicAPI);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          if (model.translucentActorCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.setCurrentOperation('translucentPass');</span>
+<span class="cstat-no" title="statement not covered" >            renNode.traverse(publicAPI);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          if (model.volumeCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.setCurrentOperation('volumePass');</span>
+<span class="cstat-no" title="statement not covered" >            renNode.traverse(publicAPI);</span>
+          }
+        }
+      }
+    }
+  };
+&nbsp;
+  publicAPI.getZBufferTexture = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (model.framebuffer) {</span>
+<span class="cstat-no" title="statement not covered" >      return model.framebuffer.getColorTexture();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  };
+&nbsp;
+  publicAPI.incrementOpaqueActorCount = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.opaqueActorCount++;</span></span>
+  publicAPI.incrementTranslucentActorCount = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    model.translucentActorCount++;</span></span>
+  publicAPI.incrementVolumeCount = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.volumeCount++;</span></span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  opaqueActorCount: 0,
+  translucentActorCount: 0,
+  volumeCount: 0,
+  framebuffer: null,
+  depthRequested: false,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  // Build VTK API
+  vtkRenderPass.extend(publicAPI, model, initialValues);
+&nbsp;
+  macro.get(publicAPI, model, ['framebuffer']);
+  macro.setGet(publicAPI, model, ['depthRequested']);
+&nbsp;
+  // Object methods
+  vtkForwardPass(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkForwardPass');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

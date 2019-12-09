@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Common/Core/DataArray/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Common/Core/DataArray/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>121/165</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.62% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>42/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>24/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75.16% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>115/153</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">536769×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">715255×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">212×</span>
+<span class="cline-any cline-yes">396×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">54062×</span>
+<span class="cline-any cline-yes">54062×</span>
+<span class="cline-any cline-yes">218×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54062×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54062×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">53942×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">53942×</span>
+<span class="cline-any cline-yes">53942×</span>
+<span class="cline-any cline-yes">53942×</span>
+<span class="cline-any cline-yes">53942×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54062×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">265×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">816×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">816×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-yes">69×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">357683×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179036×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">179086×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Constants from 'vtk.js/Sources/Common/Core/DataArray/Constants';
+import macro from 'vtk.js/Sources/macro';
+import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
+&nbsp;
+const { DefaultDataType } = Constants;
+const TUPLE_HOLDER = [];
+&nbsp;
+// ----------------------------------------------------------------------------
+// Global methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function createRangeHelper() {
+  let min = Number.MAX_VALUE;
+  let max = -Number.MAX_VALUE;
+  let count = 0;
+  let sum = 0;
+&nbsp;
+  return {
+    add(value) {
+      if (min &gt; value) {
+        min = value;
+      }
+      if (max &lt; value) {
+        max = value;
+      }
+      count++;
+      sum += value;
+    },
+    get() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return { min, max, count, sum, mean: sum / count };</span>
+    },
+    getRange() {
+      return { min, max };
+    },
+  };
+}
+&nbsp;
+function computeRange(values, component = 0, numberOfComponents = 1) {
+  const helper = createRangeHelper();
+  const size = values.length;
+  let value = 0;
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (component &lt; 0 &amp;&amp; numberOfComponents &gt; 1) {
+    // Compute magnitude
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; size; i += numberOfComponents) {</span>
+<span class="cstat-no" title="statement not covered" >      value = 0;</span>
+<span class="cstat-no" title="statement not covered" >      for (let j = <span class="cstat-no" title="statement not covered" >0;</span> j &lt; numberOfComponents; j++) {</span>
+<span class="cstat-no" title="statement not covered" >        value += values[i + j] * values[i + j];</span>
+      }
+<span class="cstat-no" title="statement not covered" >      value **= 0.5;</span>
+<span class="cstat-no" title="statement not covered" >      helper.add(value);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return helper.getRange();</span>
+  }
+&nbsp;
+  const offset = component &lt; 0 ? 0 : component;
+  for (let i = offset; i &lt; size; i += numberOfComponents) {
+    helper.add(values[i]);
+  }
+&nbsp;
+  return helper.getRange();
+}
+&nbsp;
+function ensureRangeSize(rangeArray, size = 0) {
+  const ranges = rangeArray || [];
+  // Pad ranges with null value to get the
+  while (ranges.length &lt;= size) {
+    ranges.push(null);
+  }
+  return ranges;
+}
+&nbsp;
+function getDataType(typedArray) {
+  // Expects toString() to return "[object ...Array]"
+  return Object.prototype.toString.call(typedArray).slice(8, -1);
+}
+&nbsp;
+function getMaxNorm(normArray) <span class="fstat-no" title="function not covered" >{</span>
+  const numComps = <span class="cstat-no" title="statement not covered" >normArray.getNumberOfComponents();</span>
+  let maxNorm = <span class="cstat-no" title="statement not covered" >0.0;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; normArray.getNumberOfTuples(); ++i) {</span>
+    const norm = <span class="cstat-no" title="statement not covered" >vtkMath.norm(normArray.getTuple(i), numComps);</span>
+<span class="cstat-no" title="statement not covered" >    if (norm &gt; maxNorm) {</span>
+<span class="cstat-no" title="statement not covered" >      maxNorm = norm;</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return maxNorm;</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Static API
+// ----------------------------------------------------------------------------
+&nbsp;
+export const STATIC = {
+  computeRange,
+  createRangeHelper,
+  getDataType,
+  getMaxNorm,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkDataArray methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkDataArray(publicAPI, model) {
+  // Set our className
+  model.classHierarchy.push('vtkDataArray');
+&nbsp;
+  function dataChange() {
+    model.ranges = null;
+    publicAPI.modified();
+  }
+&nbsp;
+  publicAPI.getElementComponentSize = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.values.BYTES_PER_ELEMENT;</span></span>
+&nbsp;
+  // Description:
+  // Return the data component at the location specified by tupleIdx and
+  // compIdx.
+  publicAPI.getComponent = (tupleIdx, compIdx = 0) =&gt;
+    model.values[tupleIdx * model.numberOfComponents + compIdx];
+&nbsp;
+  // Description:
+  // Set the data component at the location specified by tupleIdx and compIdx
+  // to value.
+  // Note that i is less than NumberOfTuples and j is less than
+  //  NumberOfComponents. Make sure enough memory has been allocated
+  // (use SetNumberOfTuples() and SetNumberOfComponents()).
+  publicAPI.setComponent = (tupleIdx, compIdx, value) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (value !== model.values[tupleIdx * model.numberOfComponents + compIdx]) {</span>
+<span class="cstat-no" title="statement not covered" >      model.values[tupleIdx * model.numberOfComponents + compIdx] = value;</span>
+<span class="cstat-no" title="statement not covered" >      dataChange();</span>
+    }
+  };
+&nbsp;
+  publicAPI.getData = () =&gt; model.values;
+&nbsp;
+  publicAPI.getRange = (componentIndex = -1) =&gt; {
+    const rangeIdx =
+      componentIndex &lt; 0 ? model.numberOfComponents : componentIndex;
+    let range = null;
+&nbsp;
+    if (!model.ranges) {
+      model.ranges = ensureRangeSize(model.ranges, model.numberOfComponents);
+    }
+    range = model.ranges[rangeIdx];
+&nbsp;
+    if (range) {
+      model.rangeTuple[0] = range.min;
+      model.rangeTuple[1] = range.max;
+      return model.rangeTuple;
+    }
+&nbsp;
+    // Need to compute ranges...
+    range = computeRange(
+      model.values,
+      componentIndex,
+      model.numberOfComponents
+    );
+    model.ranges[rangeIdx] = range;
+    model.rangeTuple[0] = range.min;
+    model.rangeTuple[1] = range.max;
+    return model.rangeTuple;
+  };
+&nbsp;
+  publicAPI.setRange = (rangeValue, componentIndex) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (!model.ranges) {</span>
+<span class="cstat-no" title="statement not covered" >      model.ranges = ensureRangeSize(model.ranges, model.numberOfComponents);</span>
+    }
+    const range = <span class="cstat-no" title="statement not covered" >{ min: rangeValue.min, max: rangeValue.max };</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.ranges[componentIndex] = range;</span>
+<span class="cstat-no" title="statement not covered" >    model.rangeTuple[0] = range.min;</span>
+<span class="cstat-no" title="statement not covered" >    model.rangeTuple[1] = range.max;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return model.rangeTuple;</span>
+  };
+&nbsp;
+  publicAPI.setTuple = (idx, tuple) =&gt; {
+    const offset = idx * model.numberOfComponents;
+    for (let i = 0; i &lt; model.numberOfComponents; i++) {
+      model.values[offset + i] = tuple[i];
+    }
+  };
+&nbsp;
+  publicAPI.getTuple = (idx, tupleToFill = TUPLE_HOLDER) =&gt; {
+    const numberOfComponents = model.numberOfComponents || <span class="branch-1 cbranch-no" title="branch not covered" >1;</span>
+    if (tupleToFill.length !== numberOfComponents) {
+      tupleToFill.length = numberOfComponents;
+    }
+    const offset = idx * numberOfComponents;
+    // Check most common component sizes first
+    // to avoid doing a for loop if possible
+    if (numberOfComponents === 1) {
+      tupleToFill[0] = model.values[offset];
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (numberOfComponents === 2) {
+<span class="cstat-no" title="statement not covered" >      tupleToFill[0] = model.values[offset];</span>
+<span class="cstat-no" title="statement not covered" >      tupleToFill[1] = model.values[offset + 1];</span>
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (numberOfComponents === 3) {
+      tupleToFill[0] = model.values[offset];
+      tupleToFill[1] = model.values[offset + 1];
+      tupleToFill[2] = model.values[offset + 2];
+    } else <span class="cstat-no" title="statement not covered" >if (numberOfComponents === 4) {</span>
+<span class="cstat-no" title="statement not covered" >      tupleToFill[0] = model.values[offset];</span>
+<span class="cstat-no" title="statement not covered" >      tupleToFill[1] = model.values[offset + 1];</span>
+<span class="cstat-no" title="statement not covered" >      tupleToFill[2] = model.values[offset + 2];</span>
+<span class="cstat-no" title="statement not covered" >      tupleToFill[3] = model.values[offset + 3];</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; numberOfComponents; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        tupleToFill[i] = model.values[offset + i];</span>
+      }
+    }
+    return tupleToFill;
+  };
+&nbsp;
+  publicAPI.getTupleLocation = (idx = 1) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >idx * model.numberOfComponents;</span></span>
+  publicAPI.getNumberOfComponents = () =&gt; model.numberOfComponents;
+  publicAPI.getNumberOfValues = () =&gt; model.values.length;
+  publicAPI.getNumberOfTuples = () =&gt;
+    model.values.length / model.numberOfComponents;
+  publicAPI.getDataType = () =&gt; model.dataType;
+  /* eslint-disable no-use-before-define */
+  publicAPI.newClone = () =&gt;
+    newInstance({
+      empty: true,
+      name: model.name,
+      dataType: model.dataType,
+      numberOfComponents: model.numberOfComponents,
+    });
+  /* eslint-enable no-use-before-define */
+&nbsp;
+  publicAPI.getName = () =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!model.name) {
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+<span class="cstat-no" title="statement not covered" >      model.name = `vtkDataArray${publicAPI.getMTime()}`;</span>
+    }
+    return model.name;
+  };
+&nbsp;
+  publicAPI.setData = (typedArray, numberOfComponents) =&gt; {
+    model.values = typedArray;
+    model.size = typedArray.length;
+    model.dataType = getDataType(typedArray);
+    if (numberOfComponents) {
+      model.numberOfComponents = numberOfComponents;
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (model.size % model.numberOfComponents !== 0) {
+<span class="cstat-no" title="statement not covered" >      model.numberOfComponents = 1;</span>
+    }
+    dataChange();
+  };
+&nbsp;
+  // Override serialization support
+  publicAPI.getState = () =&gt; {
+    const jsonArchive = Object.assign({}, model, {
+      vtkClass: publicAPI.getClassName(),
+    });
+&nbsp;
+    // Convert typed array to regular array
+    jsonArchive.values = Array.from(jsonArchive.values);
+    delete jsonArchive.buffer;
+&nbsp;
+    // Clean any empty data
+    Object.keys(jsonArchive).forEach((keyName) =&gt; {
+      if (!jsonArchive[keyName]) {
+        delete jsonArchive[keyName];
+      }
+    });
+&nbsp;
+    // Sort resulting object by key name
+    const sortedObj = {};
+    Object.keys(jsonArchive)
+      .sort()
+      .forEach((name) =&gt; {
+        sortedObj[name] = jsonArchive[name];
+      });
+&nbsp;
+    // Remove mtime
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (sortedObj.mtime) {
+      delete sortedObj.mtime;
+    }
+&nbsp;
+    return sortedObj;
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  name: '',
+  numberOfComponents: 1,
+  size: 0,
+  dataType: DefaultDataType,
+  rangeTuple: [0, 0],
+  // values: null,
+  // ranges: null,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!model.empty &amp;&amp; !model.values &amp;&amp; !model.size) {
+<span class="cstat-no" title="statement not covered" >    throw new TypeError(</span>
+      'Cannot create vtkDataArray object without: size &gt; 0, values'
+    );
+  }
+&nbsp;
+  if (!model.values) {
+    model.values = new window[model.dataType](model.size);
+  } else if (Array.isArray(model.values)) {
+    model.values = window[model.dataType].from(model.values);
+  }
+&nbsp;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (model.values) {
+    model.size = model.values.length;
+    model.dataType = getDataType(model.values);
+  }
+&nbsp;
+  // Object methods
+  macro.obj(publicAPI, model);
+  macro.set(publicAPI, model, ['name', 'numberOfComponents']);
+&nbsp;
+  // Object specific methods
+  vtkDataArray(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkDataArray');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default Object.assign({ newInstance, extend }, STATIC, Constants);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Rendering/Core/ImageMapper/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Rendering/Core/ImageMapper/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.79% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/223</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/88</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.81% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/221</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Constants from 'vtk.js/Sources/Rendering/Core/ImageMapper/Constants';
+import macro from 'vtk.js/Sources/macro';
+import vtkAbstractMapper from 'vtk.js/Sources/Rendering/Core/AbstractMapper';
+import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
+import vtkPlane from 'vtk.js/Sources/Common/DataModel/Plane';
+&nbsp;
+import { vec3 } from 'gl-matrix';
+&nbsp;
+const { vtkWarningMacro } = macro;
+const { SlicingMode } = Constants;
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkImageMapper methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkImageMapper(publicAPI, model) <span class="fstat-no" title="function not covered" >{</span>
+  // Set our className
+<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkImageMapper');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getSliceAtPosition = (pos) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const image = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+&nbsp;
+    let pos3;
+<span class="cstat-no" title="statement not covered" >    if (pos.length === 3) {</span>
+<span class="cstat-no" title="statement not covered" >      pos3 = pos;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (Number.isFinite(pos)) {</span>
+      const bds = <span class="cstat-no" title="statement not covered" >image.getBounds();</span>
+<span class="cstat-no" title="statement not covered" >      switch (model.slicingMode) {</span>
+        case SlicingMode.X:
+<span class="cstat-no" title="statement not covered" >          pos3 = [pos, (bds[3] + bds[2]) / 2, (bds[5] + bds[4]) / 2];</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case SlicingMode.Y:
+<span class="cstat-no" title="statement not covered" >          pos3 = [(bds[1] + bds[0]) / 2, pos, (bds[5] + bds[4]) / 2];</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case SlicingMode.Z:
+<span class="cstat-no" title="statement not covered" >          pos3 = [(bds[1] + bds[0]) / 2, (bds[3] + bds[2]) / 2, pos];</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        default:
+<span class="cstat-no" title="statement not covered" >          break;</span>
+      }
+    }
+&nbsp;
+    const ijk = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+<span class="cstat-no" title="statement not covered" >    image.worldToIndex(pos3, ijk);</span>
+&nbsp;
+    const ex = <span class="cstat-no" title="statement not covered" >image.getExtent();</span>
+    const { ijkMode } = <span class="cstat-no" title="statement not covered" >publicAPI.getClosestIJKAxis();</span>
+    let slice = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >    switch (ijkMode) {</span>
+      case SlicingMode.I:
+<span class="cstat-no" title="statement not covered" >        slice = vtkMath.clampValue(ijk[0], ex[0], ex[1]);</span>
+<span class="cstat-no" title="statement not covered" >        slice = Math.round(slice);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.J:
+<span class="cstat-no" title="statement not covered" >        slice = vtkMath.clampValue(ijk[1], ex[2], ex[3]);</span>
+<span class="cstat-no" title="statement not covered" >        slice = Math.round(slice);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.K:
+<span class="cstat-no" title="statement not covered" >        slice = vtkMath.clampValue(ijk[2], ex[4], ex[5]);</span>
+<span class="cstat-no" title="statement not covered" >        slice = Math.round(slice);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        return 0;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return slice;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setSliceFromCamera = (cam) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const fp = <span class="cstat-no" title="statement not covered" >cam.getFocalPoint();</span>
+<span class="cstat-no" title="statement not covered" >    switch (model.slicingMode) {</span>
+      case SlicingMode.I:
+      case SlicingMode.J:
+      case SlicingMode.K:
+        {
+          const slice = <span class="cstat-no" title="statement not covered" >publicAPI.getSliceAtPosition(fp);</span>
+<span class="cstat-no" title="statement not covered" >          publicAPI.setSlice(slice);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.X:
+<span class="cstat-no" title="statement not covered" >        publicAPI.setSlice(fp[0]);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Y:
+<span class="cstat-no" title="statement not covered" >        publicAPI.setSlice(fp[1]);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Z:
+<span class="cstat-no" title="statement not covered" >        publicAPI.setSlice(fp[2]);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setXSlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.X);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setYSlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.Y);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setZSlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.Z);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setISlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.I);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setJSlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.J);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setKSlice = (id) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlicingMode(SlicingMode.K);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.setSlice(id);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getSlicingModeNormal = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const out = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+    const a = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData().getDirection();</span>
+    const mat3 = <span class="cstat-no" title="statement not covered" >[[a[0], a[1], a[2]], [a[3], a[4], a[5]], [a[6], a[7], a[8]]];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    switch (model.slicingMode) {</span>
+      case SlicingMode.X:
+<span class="cstat-no" title="statement not covered" >        out[0] = 1;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Y:
+<span class="cstat-no" title="statement not covered" >        out[1] = 1;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Z:
+<span class="cstat-no" title="statement not covered" >        out[2] = 1;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.I:
+<span class="cstat-no" title="statement not covered" >        vtkMath.multiply3x3_vect3(mat3, [1, 0, 0], out);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.J:
+<span class="cstat-no" title="statement not covered" >        vtkMath.multiply3x3_vect3(mat3, [0, 1, 0], out);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.K:
+<span class="cstat-no" title="statement not covered" >        vtkMath.multiply3x3_vect3(mat3, [0, 0, 1], out);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return out;</span>
+  };
+&nbsp;
+  function computeClosestIJKAxis() <span class="fstat-no" title="function not covered" >{</span>
+    let inVec3;
+<span class="cstat-no" title="statement not covered" >    switch (model.slicingMode) {</span>
+      case SlicingMode.X:
+<span class="cstat-no" title="statement not covered" >        inVec3 = [1, 0, 0];</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Y:
+<span class="cstat-no" title="statement not covered" >        inVec3 = [0, 1, 0];</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.Z:
+<span class="cstat-no" title="statement not covered" >        inVec3 = [0, 0, 1];</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        model.closestIJKAxis = {</span>
+          ijkMode: model.slicingMode,
+          flip: false,
+        };
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+&nbsp;
+    // Project vec3 onto direction cosines
+    const out = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+    // The direction matrix in vtkImageData is the indexToWorld rotation matrix
+    // with a column-major data layout since it is stored as a WebGL matrix.
+    // We need the worldToIndex rotation matrix for the projection, and it needs
+    // to be in a row-major data layout to use vtkMath for operations.
+    // To go from the indexToWorld column-major matrix to the worldToIndex
+    // row-major matrix, we need to transpose it (column -&gt; row) then inverse it.
+    // However, that 3x3 matrix is a rotation matrix which is orthonormal, meaning
+    // that its inverse is equal to its transpose. We therefore need to apply two
+    // transpositions resulting in a no-op.
+    const a = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData().getDirection();</span>
+    const mat3 = <span class="cstat-no" title="statement not covered" >[[a[0], a[1], a[2]], [a[3], a[4], a[5]], [a[6], a[7], a[8]]];</span>
+<span class="cstat-no" title="statement not covered" >    vtkMath.multiply3x3_vect3(mat3, inVec3, out);</span>
+&nbsp;
+    let maxAbs = <span class="cstat-no" title="statement not covered" >0.0;</span>
+    let ijkMode = <span class="cstat-no" title="statement not covered" >-1;</span>
+    let flip = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >    for (let axis = <span class="cstat-no" title="statement not covered" >0;</span> axis &lt; out.length; ++axis) {</span>
+      const absValue = <span class="cstat-no" title="statement not covered" >Math.abs(out[axis]);</span>
+<span class="cstat-no" title="statement not covered" >      if (absValue &gt; maxAbs) {</span>
+<span class="cstat-no" title="statement not covered" >        maxAbs = absValue;</span>
+<span class="cstat-no" title="statement not covered" >        flip = out[axis] &lt; 0.0;</span>
+<span class="cstat-no" title="statement not covered" >        ijkMode = axis;</span>
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (maxAbs !== 1.0) {</span>
+      const xyzLabel = <span class="cstat-no" title="statement not covered" >'IJKXYZ'[model.slicingMode];</span>
+      const ijkLabel = <span class="cstat-no" title="statement not covered" >'IJKXYZ'[ijkMode];</span>
+<span class="cstat-no" title="statement not covered" >      vtkWarningMacro(</span>
+        `Unaccurate slicing along ${xyzLabel} axis which ` +
+          `is not aligned with any IJK axis of the image data. ` +
+          `Using ${ijkLabel} axis  as a fallback (${maxAbs}% aligned). ` +
+          `Necessitates slice reformat that is not yet implemented.  ` +
+          `You can switch the slicing mode on your mapper to do IJK slicing instead.`
+      );
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.closestIJKAxis = { ijkMode, flip };</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setSlicingMode = (mode) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (model.slicingMode === mode) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    model.slicingMode = mode;</span>
+<span class="cstat-no" title="statement not covered" >    if (publicAPI.getInputData()) {</span>
+<span class="cstat-no" title="statement not covered" >      computeClosestIJKAxis();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getClosestIJKAxis = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      (model.closestIJKAxis === undefined ||
+        model.closestIJKAxis.ijkMode === SlicingMode.NONE) &amp;&amp;
+      publicAPI.getInputData()
+    ) {
+<span class="cstat-no" title="statement not covered" >      computeClosestIJKAxis();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return model.closestIJKAxis;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getBounds = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const image = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+<span class="cstat-no" title="statement not covered" >    if (!image) {</span>
+<span class="cstat-no" title="statement not covered" >      return vtkMath.createUninitializedBounds();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (!model.useCustomExtents) {</span>
+<span class="cstat-no" title="statement not covered" >      return image.getBounds();</span>
+    }
+&nbsp;
+    const ex = <span class="cstat-no" title="statement not covered" >model.customDisplayExtent.slice();</span>
+    const { ijkMode } = <span class="cstat-no" title="statement not covered" >publicAPI.getClosestIJKAxis();</span>
+    let nSlice = <span class="cstat-no" title="statement not covered" >model.slice;</span>
+<span class="cstat-no" title="statement not covered" >    if (ijkMode !== model.slicingMode) {</span>
+      // If not IJK slicing, get the IJK slice from the XYZ position/slice
+<span class="cstat-no" title="statement not covered" >      nSlice = publicAPI.getSliceAtPosition(model.slice);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    switch (ijkMode) {</span>
+      case SlicingMode.I:
+<span class="cstat-no" title="statement not covered" >        ex[0] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        ex[1] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.J:
+<span class="cstat-no" title="statement not covered" >        ex[2] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        ex[3] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.K:
+<span class="cstat-no" title="statement not covered" >        ex[4] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        ex[5] = nSlice;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return image.extentToBounds(ex);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getBoundsForSlice = (slice = model.slice, thickness = 0) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const image = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+<span class="cstat-no" title="statement not covered" >    if (!image) {</span>
+<span class="cstat-no" title="statement not covered" >      return vtkMath.createUninitializedBounds();</span>
+    }
+    const extent = <span class="cstat-no" title="statement not covered" >image.getExtent();</span>
+    const { ijkMode } = <span class="cstat-no" title="statement not covered" >publicAPI.getClosestIJKAxis();</span>
+    let nSlice = <span class="cstat-no" title="statement not covered" >slice;</span>
+<span class="cstat-no" title="statement not covered" >    if (ijkMode !== model.slicingMode) {</span>
+      // If not IJK slicing, get the IJK slice from the XYZ position/slice
+<span class="cstat-no" title="statement not covered" >      nSlice = publicAPI.getSliceAtPosition(slice);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    switch (ijkMode) {</span>
+      case SlicingMode.I:
+<span class="cstat-no" title="statement not covered" >        extent[0] = nSlice - thickness;</span>
+<span class="cstat-no" title="statement not covered" >        extent[1] = nSlice + thickness;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.J:
+<span class="cstat-no" title="statement not covered" >        extent[2] = nSlice - thickness;</span>
+<span class="cstat-no" title="statement not covered" >        extent[3] = nSlice + thickness;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case SlicingMode.K:
+<span class="cstat-no" title="statement not covered" >        extent[4] = nSlice - thickness;</span>
+<span class="cstat-no" title="statement not covered" >        extent[5] = nSlice + thickness;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return image.extentToBounds(extent);</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.getIsOpaque = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >true;</span></span></span>
+&nbsp;
+  function doPicking(p1, p2) <span class="fstat-no" title="function not covered" >{</span>
+    const imageData = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+    const extent = <span class="cstat-no" title="statement not covered" >imageData.getExtent();</span>
+&nbsp;
+    // Slice origin
+    const ijk = <span class="cstat-no" title="statement not covered" >[extent[0], extent[2], extent[4]];</span>
+    const { ijkMode } = <span class="cstat-no" title="statement not covered" >publicAPI.getClosestIJKAxis();</span>
+    let nSlice = <span class="cstat-no" title="statement not covered" >model.slice;</span>
+<span class="cstat-no" title="statement not covered" >    if (ijkMode !== model.slicingMode) {</span>
+      // If not IJK slicing, get the IJK slice from the XYZ position/slice
+<span class="cstat-no" title="statement not covered" >      nSlice = publicAPI.getSliceAtPosition(nSlice);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    ijk[ijkMode] += nSlice;</span>
+    const worldOrigin = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+<span class="cstat-no" title="statement not covered" >    imageData.indexToWorld(ijk, worldOrigin);</span>
+&nbsp;
+    // Normal computation
+<span class="cstat-no" title="statement not covered" >    ijk[ijkMode] += 1;</span>
+    const worldNormal = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+<span class="cstat-no" title="statement not covered" >    imageData.indexToWorld(ijk, worldNormal);</span>
+<span class="cstat-no" title="statement not covered" >    worldNormal[0] -= worldOrigin[0];</span>
+<span class="cstat-no" title="statement not covered" >    worldNormal[1] -= worldOrigin[1];</span>
+<span class="cstat-no" title="statement not covered" >    worldNormal[2] -= worldOrigin[2];</span>
+<span class="cstat-no" title="statement not covered" >    vec3.normalize(worldNormal, worldNormal);</span>
+&nbsp;
+    const intersect = <span class="cstat-no" title="statement not covered" >vtkPlane.intersectWithLine(</span>
+      p1,
+      p2,
+      worldOrigin,
+      worldNormal
+    );
+<span class="cstat-no" title="statement not covered" >    if (intersect.intersection) {</span>
+      const point = <span class="cstat-no" title="statement not covered" >intersect.x;</span>
+      const absoluteIJK = <span class="cstat-no" title="statement not covered" >[0, 0, 0];</span>
+<span class="cstat-no" title="statement not covered" >      imageData.worldToIndex(point, absoluteIJK);</span>
+      // `t` is the parametric position along the line
+      // defined in Plane.intersectWithLine
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        t: intersect.t,
+        absoluteIJK,
+      };
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.intersectWithLineForPointPicking = (p1, p2) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const pickingData = <span class="cstat-no" title="statement not covered" >doPicking(p1, p2);</span>
+<span class="cstat-no" title="statement not covered" >    if (pickingData) {</span>
+      const imageData = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+      const extent = <span class="cstat-no" title="statement not covered" >imageData.getExtent();</span>
+&nbsp;
+      // Get closer integer ijk
+      // NB: point picking means closest slice, means rounding
+      const ijk = <span class="cstat-no" title="statement not covered" >[</span>
+        Math.round(pickingData.absoluteIJK[0]),
+        Math.round(pickingData.absoluteIJK[1]),
+        Math.round(pickingData.absoluteIJK[2]),
+      ];
+&nbsp;
+      // Are we outside our actual extent
+<span class="cstat-no" title="statement not covered" >      if (</span>
+        ijk[0] &lt; extent[0] ||
+        ijk[0] &gt; extent[1] ||
+        ijk[1] &lt; extent[2] ||
+        ijk[1] &gt; extent[3] ||
+        ijk[2] &lt; extent[4] ||
+        ijk[2] &gt; extent[5]
+      ) {
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        t: pickingData.t,
+        ijk,
+      };
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.intersectWithLineForCellPicking = (p1, p2) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const pickingData = <span class="cstat-no" title="statement not covered" >doPicking(p1, p2);</span>
+<span class="cstat-no" title="statement not covered" >    if (pickingData) {</span>
+      const imageData = <span class="cstat-no" title="statement not covered" >publicAPI.getInputData();</span>
+      const extent = <span class="cstat-no" title="statement not covered" >imageData.getExtent();</span>
+      const absIJK = <span class="cstat-no" title="statement not covered" >pickingData.absoluteIJK;</span>
+&nbsp;
+      // Get closer integer ijk
+      // NB: cell picking means closest voxel, means flooring
+      const ijk = <span class="cstat-no" title="statement not covered" >[</span>
+        Math.floor(absIJK[0]),
+        Math.floor(absIJK[1]),
+        Math.floor(absIJK[2]),
+      ];
+&nbsp;
+      // Are we outside our actual extent
+<span class="cstat-no" title="statement not covered" >      if (</span>
+        ijk[0] &lt; extent[0] ||
+        ijk[0] &gt; extent[1] - 1 ||
+        ijk[1] &lt; extent[2] ||
+        ijk[1] &gt; extent[3] - 1 ||
+        ijk[2] &lt; extent[4] ||
+        ijk[2] &gt; extent[5] - 1
+      ) {
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+&nbsp;
+      // Parametric coordinates within cell
+      const pCoords = <span class="cstat-no" title="statement not covered" >[</span>
+        absIJK[0] - ijk[0],
+        absIJK[1] - ijk[1],
+        absIJK[2] - ijk[2],
+      ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        t: pickingData.t,
+        ijk,
+        pCoords,
+      };
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  };
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+// Object factory
+// ----------------------------------------------------------------------------
+&nbsp;
+const DEFAULT_VALUES = {
+  displayExtent: [0, 0, 0, 0, 0, 0],
+  customDisplayExtent: [0, 0, 0, 0],
+  useCustomExtents: false,
+  slice: 0,
+  slicingMode: SlicingMode.NONE,
+  closestIJKAxis: { ijkMode: SlicingMode.NONE, flip: false },
+  renderToRectangle: false,
+  sliceAtFocalPoint: false,
+};
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+&nbsp;
+  // Build VTK API
+<span class="cstat-no" title="statement not covered" >  vtkAbstractMapper.extend(publicAPI, model, initialValues);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  macro.get(publicAPI, model, ['slicingMode']);</span>
+<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, [</span>
+    'slice',
+    'closestIJKAxis',
+    'useCustomExtents',
+    'renderToRectangle',
+    'sliceAtFocalPoint',
+  ]);
+<span class="cstat-no" title="statement not covered" >  macro.setGetArray(publicAPI, model, ['customDisplayExtent'], 4);</span>
+&nbsp;
+  // Object methods
+<span class="cstat-no" title="statement not covered" >  vtkImageMapper(publicAPI, model);</span>
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkImageMapper');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default Object.assign({ newInstance, extend }, Constants);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

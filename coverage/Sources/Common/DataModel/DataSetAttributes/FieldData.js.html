@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Sources/Common/DataModel/DataSetAttributes/FieldData.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">Sources/Common/DataModel/DataSetAttributes/</a> FieldData.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>75/124</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.79% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>29/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>70/107</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">199×</span>
+<span class="cline-any cline-yes">366×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-yes">190×</span>
+<span class="cline-any cline-yes">190×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import vtk from 'vtk.js/Sources/vtk';
+import macro from 'vtk.js/Sources/macro';
+import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+&nbsp;
+// ----------------------------------------------------------------------------
+// vtkFieldData methods
+// ----------------------------------------------------------------------------
+&nbsp;
+function vtkFieldData(publicAPI, model) {
+  model.classHierarchy.push('vtkFieldData');
+  const superGetState = publicAPI.getState;
+&nbsp;
+  // Decode serialized data if any
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (model.arrays) {
+    model.arrays = model.arrays.map((item) =&gt; (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{ data: vtk(item.data) })</span></span>);
+  }
+&nbsp;
+  publicAPI.initialize = () =&gt; {
+    publicAPI.initializeFields();
+    publicAPI.copyAllOn();
+    publicAPI.clearFieldFlags();
+  };
+&nbsp;
+  publicAPI.initializeFields = () =&gt; {
+    model.arrays = [];
+    model.copyFieldFlags = {};
+    publicAPI.modified();
+  };
+&nbsp;
+  publicAPI.copyStructure = (other) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.initializeFields();</span>
+<span class="cstat-no" title="statement not covered" >    model.copyFieldFlags = other.getCopyFieldFlags().map((x) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >x)</span></span>; </span>// Deep-copy
+<span class="cstat-no" title="statement not covered" >    model.arrays = other.arrays().map((x) =&gt; (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{ array: x })</span></span>); </span>// Deep-copy
+    // TODO: Copy array information objects (once we support information objects)
+  };
+&nbsp;
+  publicAPI.getNumberOfArrays = () =&gt; model.arrays.length;
+  publicAPI.getNumberOfActiveArrays = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.arrays.length;</span></span>
+  publicAPI.addArray = (arr) =&gt; {
+    model.arrays = [].concat(model.arrays, { data: arr });
+    return model.arrays.length - 1;
+  };
+  publicAPI.removeAllArrays = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.arrays = [];</span>
+  };
+  publicAPI.removeArray = (arrayName) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.arrays = model.arrays.filter(</span>
+      (entry) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >arrayName !== entry.data.getName()</span></span>
+    );
+  };
+  publicAPI.removeArrayByIndex = (arrayIdx) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.arrays = model.arrays.filter((entry, idx) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >idx !== arrayIdx)</span></span>;</span>
+  };
+  publicAPI.getArrays = () =&gt; model.arrays.map((entry) =&gt; entry.data);
+  publicAPI.getArray = (arraySpec) =&gt;
+    typeof arraySpec === 'number'
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >publicAPI.getArrayByIndex(arraySpec)</span>
+      : publicAPI.getArrayByName(arraySpec);
+  publicAPI.getArrayByName = (arrayName) =&gt;
+    model.arrays.reduce(
+      (a, b, i) =&gt; (b.data.getName() === arrayName ? b.data : a),
+      null
+    );
+  publicAPI.getArrayWithIndex = (arrayName) =&gt;
+    model.arrays.reduce(
+      (a, b, i) =&gt;
+        b.data &amp;&amp; b.data.getName() === arrayName
+          ? { array: b.data, index: i }
+          : a,
+      { array: null, index: -1 }
+    );
+  publicAPI.getArrayByIndex = (idx) =&gt;
+    idx &gt;= 0 &amp;&amp; idx &lt; model.arrays.length ? model.arrays[idx].data : null;
+  publicAPI.hasArray = (arrayName) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    publicAPI.getArrayWithIndex(arrayName).index &gt;= 0;</span></span>
+  publicAPI.getArrayName = (idx) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    const arr = <span class="cstat-no" title="statement not covered" >model.arrays[idx];</span>
+<span class="cstat-no" title="statement not covered" >    return arr ? arr.data.getName() : '';</span>
+  };
+  publicAPI.getCopyFieldFlags = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.copyFieldFlags;</span></span>
+  publicAPI.getFlag = (arrayName) =&gt; model.copyFieldFlags[arrayName];
+  publicAPI.passData = (other, fromId = -1, toId = -1) =&gt; {
+    other.getArrays().forEach((arr) =&gt; {
+      const copyFlag = publicAPI.getFlag(arr.getName());
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (
+        copyFlag !== false &amp;&amp;
+        !(model.doCopyAllOff &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >copyFlag !== true)</span> &amp;&amp;
+        arr
+      ) {
+        let destArr = publicAPI.getArrayByName(arr.getName());
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!destArr) {
+<span class="cstat-no" title="statement not covered" >          if (fromId &lt; 0 || fromId &gt; arr.getNumberOfTuples()) {</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.addArray(arr);</span>
+          } else {
+            const ncomps = <span class="cstat-no" title="statement not covered" >arr.getNumberOfComponents();</span>
+            let newSize = <span class="cstat-no" title="statement not covered" >arr.getNumberOfValues();</span>
+            const tId = <span class="cstat-no" title="statement not covered" >toId &gt; -1 ? toId : fromId;</span>
+<span class="cstat-no" title="statement not covered" >            if (newSize &lt; tId * ncomps) {</span>
+<span class="cstat-no" title="statement not covered" >              newSize = (tId + 1) * ncomps;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            destArr = vtkDataArray.newInstance({</span>
+              name: arr.getName(),
+              dataType: arr.getDataType(),
+              numberOfComponents: arr.getNumberOfComponents(),
+              size: newSize,
+            });
+<span class="cstat-no" title="statement not covered" >            destArr.setTuple(tId, arr.getTuple(fromId));</span>
+<span class="cstat-no" title="statement not covered" >            publicAPI.addArray(destArr);</span>
+          }
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (
+          arr.getNumberOfComponents() === destArr.getNumberOfComponents()
+        ) {
+          if (fromId &gt; -1 &amp;&amp; fromId &lt; arr.getNumberOfTuples()) {
+            const tId = toId &gt; -1 ? toId : <span class="branch-1 cbranch-no" title="branch not covered" >fromId;</span>
+            destArr.setTuple(tId, arr.getTuple(fromId));
+          } else {
+            // if fromId and not provided, just copy all (or as much possible)
+            // of arr to destArr.
+            for (let i = 0; i &lt; arr.getNumberOfTuples(); ++i) {
+              destArr.setTuple(i, arr.getTuple(i));
+            }
+          }
+        }
+      }
+    });
+  };
+  publicAPI.copyFieldOn = (arrayName) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.copyFieldFlags[arrayName] = true;</span>
+  };
+  publicAPI.copyFieldOff = (arrayName) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.copyFieldFlags[arrayName] = false;</span>
+  };
+  publicAPI.copyAllOn = () =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!model.doCopyAllOn || model.doCopyAllOff) {
+<span class="cstat-no" title="statement not covered" >      model.doCopyAllOn = true;</span>
+<span class="cstat-no" title="statement not covered" >      model.doCopyAllOff = false;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+  publicAPI.copyAllOff = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (model.doCopyAllOn || !model.doCopyAllOff) {</span>
+<span class="cstat-no" title="statement not covered" >      model.doCopyAllOn = false;</span>
+<span class="cstat-no" title="statement not covered" >      model.doCopyAllOff = true;</span>
+<span class="cstat-no" title="statement not covered" >      publicAPI.modified();</span>
+    }
+  };
+  publicAPI.clearFieldFlags = () =&gt; {
+    model.copyFieldFlags = {};
+  };
+  publicAPI.deepCopy = (other) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    model.arrays = other.getArrays().map((arr) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+      const arrNew = <span class="cstat-no" title="statement not covered" >arr.newClone();</span>
+<span class="cstat-no" title="statement not covered" >      arrNew.deepCopy(arr);</span>
+<span class="cstat-no" title="statement not covered" >      return { data: arrNew };</span>
+    });
+  };
+  publicAPI.copyFlags = (other) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >other.getCopyFieldFlags().map((x) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >x)</span></span>;</span></span>
+  // TODO: publicAPI.squeeze = () =&gt; model.arrays.forEach(entry =&gt; entry.data.squeeze());
+  publicAPI.reset = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >model.arrays.forEach((entry) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >entry.data.reset())</span></span>;</span></span>
+  // TODO: getActualMemorySize
+  publicAPI.getMTime = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    model.arrays.reduce(</span></span>
+      (a, b) =&gt; (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >b.data.getMTime() &gt; a ? b.data.getMTime() : a)</span></span>,
+      model.mtime
+    );
+  // TODO: publicAPI.getField = (ids, other) =&gt; { copy ids from other into this model's arrays }
+  // TODO: publicAPI.getArrayContainingComponent = (component) =&gt; ...
+  publicAPI.getNumberOfComponents = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    model.arrays.reduce((a, b) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >a + b.data.getNumberOfComponents(),</span></span> 0);</span></span>
+  publicAPI.getNumberOfTuples = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    model.arrays.length &gt; 0 ? model.arrays[0].getNumberOfTuples() : 0;</span></span>
+&nbsp;
+  publicAPI.getState = () =&gt; {
+    const result = superGetState();
+    result.arrays = model.arrays.map((item) =&gt; (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+      data: item.data.getState(),
+    }));
+    return result;
+  };
+}
+&nbsp;
+const DEFAULT_VALUES = {
+  arrays: [],
+  copyFieldFlags: [], // fields not to copy
+  doCopyAllOn: true,
+  doCopyAllOff: false,
+};
+&nbsp;
+export function extend(publicAPI, model, initialValues = {}) {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+&nbsp;
+  macro.obj(publicAPI, model);
+&nbsp;
+  vtkFieldData(publicAPI, model);
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export const newInstance = macro.newInstance(extend, 'vtkFieldData');
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+export default { newInstance, extend };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 09 2019 18:51:44 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
