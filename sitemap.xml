@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
+    
+    <lastmod>2019-12-11T17:22:57.161Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/docs/develop_widget.html</loc>
+    
+    <lastmod>2019-12-11T17:22:56.549Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/examples/SynchronizableRenderWindow.html</loc>
     
     <lastmod>2019-12-09T18:52:05.407Z</lastmod>
@@ -30,23 +44,9 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/docs/develop_widget.html</loc>
-    
-    <lastmod>2019-12-09T17:33:17.909Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/api/Common_DataModel_ImageData.html</loc>
     
     <lastmod>2019-12-09T10:00:40.469Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
-    
-    <lastmod>2019-12-05T00:30:03.941Z</lastmod>
     
   </url>
   
