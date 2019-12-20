@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Misc_SynchronizableRenderWindow.html</loc>
+    
+    <lastmod>2019-12-20T17:48:37.008Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Interaction_Style_InteractorStyleManipulator.html</loc>
     
     <lastmod>2019-12-20T17:09:56.672Z</lastmod>
@@ -131,13 +138,6 @@
     <loc>https://kitware.github.io/vtk-js/examples/SynchronizableRenderWindow.html</loc>
     
     <lastmod>2019-12-09T18:52:05.407Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Misc_SynchronizableRenderWindow.html</loc>
-    
-    <lastmod>2019-12-09T17:33:18.565Z</lastmod>
     
   </url>
   
