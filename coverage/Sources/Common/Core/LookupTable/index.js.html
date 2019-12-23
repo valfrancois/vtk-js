@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20.47% </span>
+        <span class="strong">20.81% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>35/171</span>
+        <span class='fraction'>36/173</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">3.45% </span>
+        <span class="strong">5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/58</span>
+        <span class='fraction'>3/60</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">14.29% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>2/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.34% </span>
+        <span class="strong">21.69% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>35/164</span>
+        <span class='fraction'>36/166</span>
       </div>
     </div>
   </div>
@@ -437,7 +437,13 @@
 392
 393
 394
-395</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+395
+396
+397
+398
+399
+400
+401</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -732,6 +738,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1079,7 +1091,7 @@ function vtkLookupTable(publicAPI, model) {
     const { numberOfColors } = <span class="cstat-no" title="statement not covered" >model;</span>
 &nbsp;
     const tptr = <span class="cstat-no" title="statement not covered" >model.table;</span>
-    let base = <span class="cstat-no" title="statement not covered" >(model.numberOfColors + BELOW_RANGE_COLOR_INDEX) * 4;</span>
+    let base = <span class="cstat-no" title="statement not covered" >(numberOfColors + BELOW_RANGE_COLOR_INDEX) * 4;</span>
 &nbsp;
     // Below range color
 <span class="cstat-no" title="statement not covered" >    if (model.useBelowRangeColor || numberOfColors === 0) {</span>
@@ -1096,7 +1108,7 @@ function vtkLookupTable(publicAPI, model) {
     }
 &nbsp;
     // Above range color
-<span class="cstat-no" title="statement not covered" >    base = (model.numberOfColors + ABOVE_RANGE_COLOR_INDEX) * 4;</span>
+<span class="cstat-no" title="statement not covered" >    base = (numberOfColors + ABOVE_RANGE_COLOR_INDEX) * 4;</span>
 <span class="cstat-no" title="statement not covered" >    if (model.useAboveRangeColor || numberOfColors === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      tptr[base] = model.aboveRangeColor[0] * 255.0 + 0.5;</span>
 <span class="cstat-no" title="statement not covered" >      tptr[base + 1] = model.aboveRangeColor[1] * 255.0 + 0.5;</span>
@@ -1111,7 +1123,7 @@ function vtkLookupTable(publicAPI, model) {
     }
 &nbsp;
     // Always use NanColor
-<span class="cstat-no" title="statement not covered" >    base = (model.numberOfColors + NAN_COLOR_INDEX) * 4;</span>
+<span class="cstat-no" title="statement not covered" >    base = (numberOfColors + NAN_COLOR_INDEX) * 4;</span>
 <span class="cstat-no" title="statement not covered" >    tptr[base] = model.nanColor[0] * 255.0 + 0.5;</span>
 <span class="cstat-no" title="statement not covered" >    tptr[base + 1] = model.nanColor[1] * 255.0 + 0.5;</span>
 <span class="cstat-no" title="statement not covered" >    tptr[base + 2] = model.nanColor[2] * 255.0 + 0.5;</span>
@@ -1127,6 +1139,12 @@ function vtkLookupTable(publicAPI, model) {
 <span class="cstat-no" title="statement not covered" >      publicAPI.forceBuild();</span>
     }
   };
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (model.table.length &gt; 0) {
+    // ensure insertTime is more recently modified than buildTime if
+    // a table is provided via the constructor
+<span class="cstat-no" title="statement not covered" >    model.insertTime.modified();</span>
+  }
 }
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -1231,7 +1249,7 @@ export default Object.assign({ newInstance, extend });
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 23 2019 18:17:11 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 23 2019 19:00:53 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

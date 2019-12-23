@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Common_Core_ScalarsToColors.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Common_Core_LookupTable.html</loc>
     
-    <lastmod>2019-12-23T18:18:08.443Z</lastmod>
+    <lastmod>2019-12-23T19:01:35.157Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Common_Core_LookupTable.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Common_Core_ScalarsToColors.html</loc>
     
-    <lastmod>2019-12-23T18:18:08.431Z</lastmod>
+    <lastmod>2019-12-23T18:18:08.443Z</lastmod>
     
   </url>
   
