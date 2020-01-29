@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">4.26% </span>
+        <span class="strong">3.77% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/47</span>
+        <span class='fraction'>2/53</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/42</span>
+        <span class='fraction'>0/46</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">4.26% </span>
+        <span class="strong">3.77% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/47</span>
+        <span class='fraction'>2/53</span>
       </div>
     </div>
   </div>
@@ -167,7 +167,27 @@
 122
 123
 124
-125</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,13 +209,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,6 +225,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,6 +305,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -305,6 +345,10 @@ let requestCount = 0;
 function getContent(url) <span class="fstat-no" title="function not covered" >{</span>
   const el = <span class="cstat-no" title="statement not covered" >document.querySelector(`.webResource[data-url="${url}"]`);</span>
 <span class="cstat-no" title="statement not covered" >  return el ? el.innerHTML : null;</span>
+}
+&nbsp;
+function getElement(url) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  return document.querySelector(`.webResource[data-url="${url}"]`);</span>
 }
 &nbsp;
 function removeLeadingSlash(str) <span class="fstat-no" title="function not covered" >{</span>
@@ -409,11 +453,27 @@ function fetchArray(instance = {}, baseURL, array, options = {}) <span class="fs
   });
 }
 &nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
+function fetchImage(instance = {}, url, options = {}) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  return new Promise((resolve, reject) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+    const img = <span class="cstat-no" title="statement not covered" >getElement(url);</span>
+<span class="cstat-no" title="statement not covered" >    if (img) {</span>
+<span class="cstat-no" title="statement not covered" >      resolve(img);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      reject(new Error(`No such image ${url}`));</span>
+    }
+  });
+}
+&nbsp;
+// ----------------------------------------------------------------------------
+&nbsp;
 // Export fetch methods
 export default {
   fetchJSON,
   fetchText,
   fetchArray,
+  fetchImage,
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -421,7 +481,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 29 2020 15:16:40 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 29 2020 15:48:28 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

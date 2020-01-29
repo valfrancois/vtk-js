@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">2.17% </span>
+        <span class="strong">1.89% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/92</span>
+        <span class='fraction'>2/106</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/66</span>
+        <span class='fraction'>0/72</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>0/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">2.2% </span>
+        <span class="strong">1.92% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/91</span>
+        <span class='fraction'>2/104</span>
       </div>
     </div>
   </div>
@@ -266,7 +266,38 @@
 221
 222
 223
-224</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -277,6 +308,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -460,6 +502,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -497,6 +559,17 @@ import Endian from 'vtk.js/Sources/Common/Core/Endian';
 import { DataTypeByteSize } from 'vtk.js/Sources/Common/Core/DataArray/Constants';
 &nbsp;
 const { vtkErrorMacro, vtkDebugMacro } = macro;
+&nbsp;
+function toMimeType(url) <span class="fstat-no" title="function not covered" >{</span>
+  const ext = <span class="cstat-no" title="statement not covered" >url</span>
+    .split('.')
+    .pop()
+    .toLowerCase();
+<span class="cstat-no" title="statement not covered" >  if (ext === 'jpg') {</span>
+<span class="cstat-no" title="statement not covered" >    return 'jpeg';</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return ext;</span>
+}
 &nbsp;
 function handleUint8Array(array, compression, done) <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >  return (uint8array) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
@@ -685,6 +758,26 @@ function create(createOptions) <span class="fstat-no" title="function not covere
         .then((str) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >Promise.resolve(str))</span></span>;
     },
 &nbsp;
+    fetchImage(instance = {}, url, options = {}) <span class="fstat-no" title="function not covered" >{</span>
+      const path = <span class="cstat-no" title="statement not covered" >removeLeadingSlash(url);</span>
+<span class="cstat-no" title="statement not covered" >      if (!ready) {</span>
+<span class="cstat-no" title="statement not covered" >        vtkErrorMacro('ERROR!!! zip not ready...');</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return new Promise((resolve, reject) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+        const img = <span class="cstat-no" title="statement not covered" >new Image();</span>
+<span class="cstat-no" title="statement not covered" >        img.onload = () =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >resolve(img);</span></span></span>
+<span class="cstat-no" title="statement not covered" >        img.onerror = reject;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        zipRoot</span>
+          .file(path)
+          .async('base64')
+          .then((str) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            img.src = `data:image/${toMimeType(path)};base64,${str}`;</span>
+          });
+      });
+    },
+&nbsp;
     fetchBinary(instance = {}, url, options = {}) <span class="fstat-no" title="function not covered" >{</span>
       const path = <span class="cstat-no" title="statement not covered" >removeLeadingSlash(url);</span>
 <span class="cstat-no" title="statement not covered" >      if (!ready) {</span>
@@ -718,7 +811,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 29 2020 15:16:40 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 29 2020 15:48:28 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
