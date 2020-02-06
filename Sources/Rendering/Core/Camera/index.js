@@ -540,15 +540,6 @@ function vtkCamera(publicAPI, model) {
 
     mat4.identity(tmpMatrix);
 
-    // FIXME: Not sure what to do about adjust z buffer here
-    // adjust Z-buffer range
-    // this->ProjectionTransform->AdjustZBuffer( -1, +1, nearz, farz );
-    const cWidth = model.clippingRange[1] - model.clippingRange[0];
-    const cRange = [
-      model.clippingRange[0] + ((nearz + 1) * cWidth) / 2.0,
-      model.clippingRange[0] + ((farz + 1) * cWidth) / 2.0,
-    ];
-
     if (model.parallelProjection) {
       // set up a rectangular parallelipiped
       const width = model.parallelScale * aspect;
@@ -559,7 +550,15 @@ function vtkCamera(publicAPI, model) {
       const ymin = (model.windowCenter[1] - 1.0) * height;
       const ymax = (model.windowCenter[1] + 1.0) * height;
 
-      mat4.ortho(tmpMatrix, xmin, xmax, ymin, ymax, cRange[0], cRange[1]);
+      mat4.ortho(
+        tmpMatrix,
+        xmin,
+        xmax,
+        ymin,
+        ymax,
+        model.clippingRange[0],
+        model.clippingRange[1]
+      );
       mat4.transpose(tmpMatrix, tmpMatrix);
     } else if (model.useOffAxisProjection) {
       throw new Error('Off-Axis projection is not supported at this time');
@@ -579,8 +578,8 @@ function vtkCamera(publicAPI, model) {
       const xmax = (model.windowCenter[0] + 1.0) * width;
       const ymin = (model.windowCenter[1] - 1.0) * height;
       const ymax = (model.windowCenter[1] + 1.0) * height;
-      const znear = cRange[0];
-      const zfar = cRange[1];
+      const znear = model.clippingRange[0];
+      const zfar = model.clippingRange[1];
 
       tmpMatrix[0] = (2.0 * znear) / (xmax - xmin);
       tmpMatrix[5] = (2.0 * znear) / (ymax - ymin);
@@ -592,7 +591,9 @@ function vtkCamera(publicAPI, model) {
       tmpMatrix[15] = 0.0;
     }
 
-    mat4.copy(result, tmpMatrix);
+    result[10] = (farz - nearz) / 2.0;
+    result[11] = (nearz + farz) / 2.0;
+    mat4.multiply(result, tmpMatrix, result);
 
     return result;
   };

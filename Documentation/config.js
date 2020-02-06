@@ -35,7 +35,8 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [["@babel/preset-env", { useBuiltIns: false }]]
+              presets: [["@babel/preset-env", { useBuiltIns: false }]],
+              plugins: [["@babel/plugin-syntax-dynamic-import"]],
             },
           },
         ],

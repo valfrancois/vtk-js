@@ -3,6 +3,7 @@ import 'vtk.js/Sources/favicon';
 import vtkActor from 'vtk.js/Sources/Rendering/Core/Actor';
 import vtkConeSource from 'vtk.js/Sources/Filters/Sources/ConeSource';
 import vtkMapper from 'vtk.js/Sources/Rendering/Core/Mapper';
+// import vtkWebGPURenderWindow from 'vtk.js/Sources/Rendering/WebGPU/RenderWindow';
 import vtkOpenGLRenderWindow from 'vtk.js/Sources/Rendering/OpenGL/RenderWindow';
 import vtkRenderWindow from 'vtk.js/Sources/Rendering/Core/RenderWindow';
 import vtkRenderWindowInteractor from 'vtk.js/Sources/Rendering/Core/RenderWindowInteractor';
@@ -37,11 +38,12 @@ renderer.addActor(actor);
 renderer.resetCamera();
 
 // ----------------------------------------------------------------------------
-// Use OpenGL as the backend to view the all this
+// Use OpenGL/WebGPU as the backend to view the all this
 // ----------------------------------------------------------------------------
 
-const openglRenderWindow = vtkOpenGLRenderWindow.newInstance();
-renderWindow.addView(openglRenderWindow);
+// const webRenderWindow = vtkWebGPURenderWindow.newInstance();
+const webRenderWindow = vtkOpenGLRenderWindow.newInstance();
+renderWindow.addView(webRenderWindow);
 
 // ----------------------------------------------------------------------------
 // Create a div section to put this into
@@ -49,21 +51,21 @@ renderWindow.addView(openglRenderWindow);
 
 const container = document.createElement('div');
 document.querySelector('body').appendChild(container);
-openglRenderWindow.setContainer(container);
+webRenderWindow.setContainer(container);
 
 // ----------------------------------------------------------------------------
 // Capture size of the container and set it to the renderWindow
 // ----------------------------------------------------------------------------
 
 const { width, height } = container.getBoundingClientRect();
-openglRenderWindow.setSize(width, height);
+webRenderWindow.setSize(width, height);
 
 // ----------------------------------------------------------------------------
 // Setup an interactor to handle mouse events
 // ----------------------------------------------------------------------------
 
 const interactor = vtkRenderWindowInteractor.newInstance();
-interactor.setView(openglRenderWindow);
+interactor.setView(webRenderWindow);
 interactor.initialize();
 interactor.bindEvents(container);
 
