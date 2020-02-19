@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_PolyDataMapper.html</loc>
+    
+    <lastmod>2020-02-19T16:29:29.637Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/IO_Geometry_DracoReader.html</loc>
     
     <lastmod>2020-02-19T14:13:22.386Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://kitware.github.io/vtk-js/examples/HardwareSelector.html</loc>
     
     <lastmod>2020-01-14T12:03:19.312Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_PolyDataMapper.html</loc>
-    
-    <lastmod>2020-01-14T12:03:18.469Z</lastmod>
     
   </url>
   
