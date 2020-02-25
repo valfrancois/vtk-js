@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.45% </span>
+        <span class="strong">30.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>116/381</span>
+        <span class='fraction'>116/383</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">7.41% </span>
@@ -1275,7 +1275,19 @@
 1230
 1231
 1232
-1233</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+1233
+1234
+1235
+1236
+1237
+1238
+1239
+1240
+1241
+1242
+1243
+1244
+1245</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1507,14 +1519,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1522,9 +1528,27 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2738,26 +2762,38 @@ function vtkOpenGLRenderWindow(publicAPI, model) {
     return [x * size[0], y * size[1], z];
   };
 &nbsp;
-  publicAPI.worldToView = (x, y, z, renderer) =&gt; <span class="fstat-no" title="function not covered" >{</span>
-    const dims = <span class="cstat-no" title="statement not covered" >publicAPI.getViewportSize(renderer);</span>
-<span class="cstat-no" title="statement not covered" >    return renderer.worldToView(x, y, z, dims[0] / dims[1]);</span>
-  };
+  publicAPI.worldToView = (x, y, z, renderer) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >renderer.worldToView(x, y, z);</span></span>
 &nbsp;
-  publicAPI.viewToWorld = (x, y, z, renderer) =&gt; <span class="fstat-no" title="function not covered" >{</span>
-    const dims = <span class="cstat-no" title="statement not covered" >publicAPI.getViewportSize(renderer);</span>
-<span class="cstat-no" title="statement not covered" >    return renderer.viewToWorld(x, y, z, dims[0] / dims[1]);</span>
-  };
+  publicAPI.viewToWorld = (x, y, z, renderer) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >renderer.viewToWorld(x, y, z);</span></span>
 &nbsp;
   publicAPI.worldToDisplay = (x, y, z, renderer) =&gt; <span class="fstat-no" title="function not covered" >{</span>
-    const val = <span class="cstat-no" title="statement not covered" >publicAPI.worldToView(x, y, z, renderer);</span>
-    const val2 = <span class="cstat-no" title="statement not covered" >renderer.viewToNormalizedDisplay(val[0], val[1], val[2]);</span>
-<span class="cstat-no" title="statement not covered" >    return publicAPI.normalizedDisplayToDisplay(val2[0], val2[1], val2[2]);</span>
+    const val = <span class="cstat-no" title="statement not covered" >renderer.worldToView(x, y, z);</span>
+    const dims = <span class="cstat-no" title="statement not covered" >publicAPI.getViewportSize(renderer);</span>
+    const val2 = <span class="cstat-no" title="statement not covered" >renderer.viewToProjection(</span>
+      val[0],
+      val[1],
+      val[2],
+      dims[0] / dims[1]
+    );
+    const val3 = <span class="cstat-no" title="statement not covered" >publicAPI.projectionToNormalizedDisplay(</span>
+      val2[0],
+      val2[1],
+      val2[2]
+    );
+<span class="cstat-no" title="statement not covered" >    return publicAPI.normalizedDisplayToDisplay(val3[0], val3[1], val3[2]);</span>
   };
 &nbsp;
   publicAPI.displayToWorld = (x, y, z, renderer) =&gt; <span class="fstat-no" title="function not covered" >{</span>
     const val = <span class="cstat-no" title="statement not covered" >publicAPI.displayToNormalizedDisplay(x, y, z);</span>
-    const val2 = <span class="cstat-no" title="statement not covered" >renderer.normalizedDisplayToView(val[0], val[1], val[2]);</span>
-<span class="cstat-no" title="statement not covered" >    return publicAPI.viewToWorld(val2[0], val2[1], val2[2], renderer);</span>
+    const val2 = <span class="cstat-no" title="statement not covered" >renderer.normalizedDisplayToProjection(val[0], val[1], val[2]);</span>
+    const dims = <span class="cstat-no" title="statement not covered" >publicAPI.getViewportSize(renderer);</span>
+    const val3 = <span class="cstat-no" title="statement not covered" >renderer.projectionToView(</span>
+      val2[0],
+      val2[1],
+      val2[2],
+      dims[0] / dims[1]
+    );
+<span class="cstat-no" title="statement not covered" >    return renderer.viewToWorld(val3[0], val3[1], val3[2]);</span>
   };
 &nbsp;
   publicAPI.normalizedDisplayToViewport = (x, y, z, renderer) =&gt; {
@@ -3745,7 +3781,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Feb 24 2020 09:05:46 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 25 2020 20:13:08 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
