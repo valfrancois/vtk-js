@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_RenderWindow.html</loc>
+    
+    <lastmod>2020-02-26T16:08:44.892Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_glsl.html</loc>
     
     <lastmod>2020-02-25T20:13:25.608Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Skybox.html</loc>
     
     <lastmod>2020-02-25T20:13:25.596Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_RenderWindow.html</loc>
-    
-    <lastmod>2020-02-25T20:13:25.588Z</lastmod>
     
   </url>
   
