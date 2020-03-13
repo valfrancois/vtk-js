@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_ColorTransferFunction.html</loc>
+    
+    <lastmod>2020-03-13T14:37:51.805Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
     
     <lastmod>2020-03-11T14:13:49.430Z</lastmod>
@@ -233,14 +240,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ViewNodeFactory.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_VertexArrayObject.html</loc>
     
     <lastmod>2020-02-24T09:06:28.262Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_VertexArrayObject.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ViewNodeFactory.html</loc>
     
     <lastmod>2020-02-24T09:06:28.262Z</lastmod>
     
@@ -306,13 +313,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Mapper.html</loc>
     
     <lastmod>2020-02-24T09:06:28.194Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_ColorTransferFunction.html</loc>
-    
-    <lastmod>2020-02-24T09:06:28.178Z</lastmod>
     
   </url>
   
