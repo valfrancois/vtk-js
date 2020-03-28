@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0.82% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/613</span>
+        <span class='fraction'>5/609</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/250</span>
+        <span class='fraction'>0/244</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/37</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0.85% </span>
+        <span class="strong">0.86% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/585</span>
+        <span class='fraction'>5/581</span>
       </div>
     </div>
   </div>
@@ -1393,16 +1393,7 @@
 1348
 1349
 1350
-1351
-1352
-1353
-1354
-1355
-1356
-1357
-1358
-1359
-1360</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+1351</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1718,10 +1709,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1777,8 +1764,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1874,9 +1859,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3076,10 +3058,6 @@ function vtkOpenGLTexture(publicAPI, model) <span class="fstat-no" title="functi
 &nbsp;
   //----------------------------------------------------------------------------
 <span class="cstat-no" title="statement not covered" >  publicAPI.getInternalFormat = (vtktype, numComps) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" >    if (model.internalFormat) {</span>
-<span class="cstat-no" title="statement not covered" >      return model.internalFormat;</span>
-    }
-&nbsp;
 <span class="cstat-no" title="statement not covered" >    model.internalFormat = publicAPI.getDefaultInternalFormat(</span>
       vtktype,
       numComps
@@ -3135,9 +3113,7 @@ function vtkOpenGLTexture(publicAPI, model) <span class="fstat-no" title="functi
 &nbsp;
   //----------------------------------------------------------------------------
 <span class="cstat-no" title="statement not covered" >  publicAPI.getFormat = (vtktype, numComps) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" >    if (!model.format) {</span>
-<span class="cstat-no" title="statement not covered" >      model.format = publicAPI.getDefaultFormat(vtktype, numComps);</span>
-    }
+<span class="cstat-no" title="statement not covered" >    model.format = publicAPI.getDefaultFormat(vtktype, numComps);</span>
 <span class="cstat-no" title="statement not covered" >    return model.format;</span>
   };
 &nbsp;
@@ -3232,10 +3208,7 @@ function vtkOpenGLTexture(publicAPI, model) <span class="fstat-no" title="functi
 &nbsp;
   //----------------------------------------------------------------------------
 <span class="cstat-no" title="statement not covered" >  publicAPI.getOpenGLDataType = (vtkScalarType) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" >    if (!model.openGLDataType) {</span>
-<span class="cstat-no" title="statement not covered" >      model.openGLDataType = publicAPI.getDefaultDataType(vtkScalarType);</span>
-    }
-&nbsp;
+<span class="cstat-no" title="statement not covered" >    model.openGLDataType = publicAPI.getDefaultDataType(vtkScalarType);</span>
 <span class="cstat-no" title="statement not covered" >    return model.openGLDataType;</span>
   };
 &nbsp;
@@ -4126,7 +4099,7 @@ export default Object.assign({ newInstance, extend }, Constants);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 18 2020 17:06:52 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Mar 28 2020 00:34:27 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
