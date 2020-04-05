@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_VolumeProperty.html</loc>
+    
+    <lastmod>2020-04-05T10:13:20.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_ImageProperty.html</loc>
+    
+    <lastmod>2020-04-05T10:13:20.664Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Misc_SynchronizableRenderWindow.html</loc>
     
     <lastmod>2020-04-04T11:10:21.096Z</lastmod>
@@ -79,23 +93,9 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_VolumeProperty.html</loc>
-    
-    <lastmod>2020-03-28T00:35:14.653Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Volume.html</loc>
     
     <lastmod>2020-03-28T00:35:14.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_ImageProperty.html</loc>
-    
-    <lastmod>2020-03-28T00:35:14.621Z</lastmod>
     
   </url>
   
