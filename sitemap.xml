@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ImageMapper.html</loc>
+    
+    <lastmod>2020-04-07T03:52:22.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_VolumeProperty.html</loc>
     
     <lastmod>2020-04-05T10:13:20.696Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://kitware.github.io/vtk-js/examples/TestVolumeTypes.html</loc>
     
     <lastmod>2020-04-01T22:37:37.229Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ImageMapper.html</loc>
-    
-    <lastmod>2020-04-01T22:37:36.365Z</lastmod>
     
   </url>
   
