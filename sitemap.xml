@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
+    
+    <lastmod>2020-04-08T19:21:00.804Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ReplacementShaderMapper.html</loc>
     
     <lastmod>2020-04-08T09:59:18.535Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Common_DataModel_ImageData.html</loc>
     
     <lastmod>2020-04-07T16:31:46.017Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_WidgetManager.html</loc>
-    
-    <lastmod>2020-04-07T06:47:38.939Z</lastmod>
     
   </url>
   
