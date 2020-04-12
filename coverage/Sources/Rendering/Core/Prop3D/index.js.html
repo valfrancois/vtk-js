@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">2.27% </span>
+        <span class="strong">2.02% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/88</span>
+        <span class='fraction'>2/99</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>0/26</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/19</span>
+        <span class='fraction'>0/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">2.5% </span>
+        <span class="strong">2.2% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/80</span>
+        <span class='fraction'>2/91</span>
       </div>
     </div>
   </div>
@@ -239,7 +239,20 @@
 194
 195
 196
-197</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,6 +329,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -412,11 +442,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -518,6 +544,23 @@ function vtkProp3D(publicAPI, model) <span class="fstat-no" title="function not 
 <span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
   };
 &nbsp;
+<span class="cstat-no" title="statement not covered" >  publicAPI.setOrientation = (x, y, z) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      x === model.orientation[0] &amp;&amp;
+      y === model.orientation[1] &amp;&amp;
+      z === model.orientation[2]
+    ) {
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    model.orientation = [x, y, z];</span>
+<span class="cstat-no" title="statement not covered" >    mat4.identity(model.rotation);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.rotateZ(z);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.rotateX(x);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.rotateY(y);</span>
+<span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  };
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  publicAPI.setUserMatrix = (matrix) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    mat4.copy(model.userMatrix, matrix);</span>
 <span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
@@ -607,12 +650,8 @@ export function extend(publicAPI, model, initialValues = {}) <span class="fstat-
 &nbsp;
   // Build VTK API
 <span class="cstat-no" title="statement not covered" >  macro.get(publicAPI, model, ['bounds', 'isIdentity']);</span>
-<span class="cstat-no" title="statement not covered" >  macro.setGetArray(</span>
-    publicAPI,
-    model,
-    ['origin', 'position', 'orientation', 'scale'],
-    3
-  );
+<span class="cstat-no" title="statement not covered" >  macro.getArray(publicAPI, model, ['orientation']);</span>
+<span class="cstat-no" title="statement not covered" >  macro.setGetArray(publicAPI, model, ['origin', 'position', 'scale'], 3);</span>
 &nbsp;
   // Object internal instance
 <span class="cstat-no" title="statement not covered" >  model.matrix = mat4.create();</span>
@@ -637,7 +676,7 @@ export default { newInstance, extend };
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 12 2020 06:14:27 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 12 2020 10:22:26 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
