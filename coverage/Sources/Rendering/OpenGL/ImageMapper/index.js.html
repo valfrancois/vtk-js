@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0.88% </span>
+        <span class="strong">0.89% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/457</span>
+        <span class='fraction'>4/449</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/150</span>
+        <span class='fraction'>0/146</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/25</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0.91% </span>
+        <span class="strong">0.93% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/439</span>
+        <span class='fraction'>4/432</span>
       </div>
     </div>
   </div>
@@ -1058,19 +1058,7 @@
 1013
 1014
 1015
-1016
-1017
-1018
-1019
-1020
-1021
-1022
-1023
-1024
-1025
-1026
-1027
-1028</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+1016</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1104,19 +1092,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1124,7 +1102,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1823,7 +1800,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2127,21 +2103,10 @@ const { SlicingMode } = Constants;
 // ----------------------------------------------------------------------------
 &nbsp;
 function computeFnToString(property, fn, numberOfComponents) <span class="fstat-no" title="function not covered" >{</span>
-  let pwfun = <span class="cstat-no" title="statement not covered" >fn.apply(property);</span>
+  const pwfun = <span class="cstat-no" title="statement not covered" >fn.apply(property);</span>
 <span class="cstat-no" title="statement not covered" >  if (pwfun) {</span>
     const iComps = <span class="cstat-no" title="statement not covered" >property.getIndependentComponents();</span>
-    let pwfunToString = <span class="cstat-no" title="statement not covered" >`${property.getMTime()}-${iComps}-0-${pwfun.getMTime()}`;</span>
-<span class="cstat-no" title="statement not covered" >    if (iComps) {</span>
-<span class="cstat-no" title="statement not covered" >      for (let c = <span class="cstat-no" title="statement not covered" >1;</span> c &lt; numberOfComponents; c++) {</span>
-<span class="cstat-no" title="statement not covered" >        pwfun = fn.apply(property, [c]);</span>
-<span class="cstat-no" title="statement not covered" >        if (pwfun) {</span>
-<span class="cstat-no" title="statement not covered" >          pwfunToString += `-${c}-${pwfun.getMTime()}`;</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >          pwfunToString += `-${c}-none`;</span>
-        }
-      }
-    }
-<span class="cstat-no" title="statement not covered" >    return pwfunToString;</span>
+<span class="cstat-no" title="statement not covered" >    return `${property.getMTime()}-${iComps}-${numberOfComponents}`;</span>
   }
 <span class="cstat-no" title="statement not covered" >  return '0';</span>
 }
@@ -2841,20 +2806,19 @@ function vtkOpenGLImageMapper(publicAPI, model) <span class="fstat-no" title="fu
 <span class="cstat-no" title="statement not covered" >          pwfun = actorProperty.getPiecewiseFunction(c);</span>
 <span class="cstat-no" title="statement not covered" >          if (pwfun === null) {</span>
             // Piecewise constant max if no function supplied for this component
-<span class="cstat-no" title="statement not covered" >            pwfFloatTable.fill(255.0);</span>
+<span class="cstat-no" title="statement not covered" >            pwfFloatTable.fill(1.0);</span>
           } else {
             const pwfRange = <span class="cstat-no" title="statement not covered" >pwfun.getRange();</span>
 <span class="cstat-no" title="statement not covered" >            pwfun.getTable(pwfRange[0], pwfRange[1], pwfWidth, tmpTable, 1);</span>
             // adjust for sample distance etc
 <span class="cstat-no" title="statement not covered" >            if (iComps) {</span>
 <span class="cstat-no" title="statement not covered" >              for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; pwfWidth; i++) {</span>
-<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i] = 255.0 * tmpTable[i];</span>
-<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i + pwfWidth] =</span>
-                  255.0 * tmpTable[i];
+<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i] = tmpTable[i];</span>
+<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i + pwfWidth] = tmpTable[i];</span>
               }
             } else {
 <span class="cstat-no" title="statement not covered" >              for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; pwfWidth; i++) {</span>
-<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i] = 255.0 * tmpTable[i];</span>
+<span class="cstat-no" title="statement not covered" >                pwfFloatTable[c * pwfWidth * 2 + i] = tmpTable[i];</span>
               }
             }
           }
@@ -3130,7 +3094,7 @@ export default { newInstance, extend };
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 12 2020 10:22:26 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 16 2020 15:46:37 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
