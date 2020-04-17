@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">91.6% </span>
+        <span class="strong">91.47% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>120/131</span>
+        <span class='fraction'>118/129</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">67.39% </span>
+        <span class="strong">68.18% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>31/46</span>
+        <span class='fraction'>30/44</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">83.33% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">91.27% </span>
+        <span class="strong">91.13% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>115/126</span>
+        <span class='fraction'>113/124</span>
       </div>
     </div>
   </div>
@@ -540,30 +540,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -571,6 +566,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -613,10 +613,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as macro from 'vtk.js/Sources/macro';
 import vtkPolyData from 'vtk.js/Sources/Common/DataModel/PolyData';
 &nbsp;
-const { vtkErrorMacro } = macro;
+const { vtkErrorMacro, TYPED_ARRAYS } = macro;
 &nbsp;
 // ----------------------------------------------------------------------------
 // vtkCutter methods
@@ -824,19 +824,19 @@ function vtkCutter(publicAPI, model) {
 &nbsp;
     // Set points
     const outputPoints = output.getPoints();
-    outputPoints.setData(newPointsData);
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (outputPoints.getNumberOfComponents !== 3) {
-      outputPoints.setNumberOfComponents(3);
-    }
+    outputPoints.setData(
+      TYPED_ARRAYS[points.getDataType()].from(newPointsData),
+      3
+    );
 &nbsp;
     // Set lines
     <span class="missing-if-branch" title="else path not taken" >E</span>if (newLinesData.length !== 0) {
-      output.getLines().setData(newLinesData);
+      output.getLines().setData(Uint16Array.from(newLinesData));
     }
 &nbsp;
     // Set polys
     <span class="missing-if-branch" title="if path not taken" >I</span>if (newPolysData.length !== 0) {
-<span class="cstat-no" title="statement not covered" >      output.getPolys().setData(newPolysData);</span>
+<span class="cstat-no" title="statement not covered" >      output.getPolys().setData(Uint16Array.from(newPolysData));</span>
     }
   }
 &nbsp;
@@ -904,7 +904,7 @@ export default { newInstance, extend };
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 16 2020 15:46:37 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Apr 17 2020 09:46:34 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
