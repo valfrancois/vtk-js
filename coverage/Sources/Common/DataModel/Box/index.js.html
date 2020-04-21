@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">77.98% </span>
+        <span class="strong">81.4% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>85/109</span>
+        <span class='fraction'>105/129</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70.59% </span>
+        <span class="strong">72.58% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>36/51</span>
+        <span class='fraction'>45/62</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>6/7</span>
+        <span class='fraction'>7/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.22% </span>
+        <span class="strong">81.36% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>79/101</span>
+        <span class='fraction'>96/118</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -261,7 +261,42 @@
 216
 217
 218
-219</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -349,7 +384,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -481,6 +549,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macro';
 import vtkBoundingBox from 'vtk.js/Sources/Common/DataModel/BoundingBox';
+import vtkPlane from 'vtk.js/Sources/Common/DataModel/Plane';
 &nbsp;
 // ----------------------------------------------------------------------------
 // Global methods
@@ -563,12 +632,45 @@ function intersectBox(bounds, origin, dir, coord, tolerance) {
   return 1;
 }
 &nbsp;
+// Plane intersection with box
+// The plane is infinite in extent and defined by an origin and normal.The function indicates
+// whether the plane intersects, not the particulars of intersection points and such
+// The function returns non-zero if the plane and box intersect; zero otherwise.
+function intersectPlane(bounds, origin, normal) {
+  const p = [];
+  let d = 0;
+  let sign = 1;
+  let firstOne = 1;
+&nbsp;
+  // Evaluate the eight points. If there is a sign change, there is an intersection
+  for (let z = 4; z &lt;= 5; ++z) {
+    p[2] = bounds[z];
+    for (let y = 2; y &lt;= 3; ++y) {
+      p[1] = bounds[y];
+      for (let x = 0; x &lt;= 1; ++x) {
+        p[0] = bounds[x];
+        d = vtkPlane.evaluate(normal, origin, p);
+        if (firstOne) {
+          sign = d &gt;= 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>: -1;
+          firstOne = 0;
+        }
+        if (d === 0.0 || (sign &gt; 0 &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >d &lt; 0.0)</span> || (sign &lt; 0 &amp;&amp; d &gt; 0.0)) {
+          return 1;
+        }
+      }
+    }
+  }
+&nbsp;
+  return 0; // no intersection
+}
+&nbsp;
 // ----------------------------------------------------------------------------
 // Static API
 // ----------------------------------------------------------------------------
 &nbsp;
 export const STATIC = {
   intersectBox,
+  intersectPlane,
 };
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -703,7 +805,7 @@ export default Object.assign({ newInstance, extend }, STATIC);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Apr 17 2020 09:46:34 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 21 2020 12:29:49 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
