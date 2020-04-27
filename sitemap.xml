@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Texture.html</loc>
+    
+    <lastmod>2020-04-27T10:23:33.953Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ShaderProgram.html</loc>
+    
+    <lastmod>2020-04-27T10:23:33.949Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Framebuffer.html</loc>
+    
+    <lastmod>2020-04-27T10:23:33.937Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_RenderWindow.html</loc>
     
     <lastmod>2020-04-21T20:07:05.557Z</lastmod>
@@ -170,13 +191,6 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Texture.html</loc>
-    
-    <lastmod>2020-03-28T00:35:14.697Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Volume.html</loc>
     
     <lastmod>2020-03-28T00:35:14.649Z</lastmod>
@@ -240,14 +254,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_SphereMapper.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Skybox.html</loc>
     
     <lastmod>2020-02-25T20:13:25.596Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Skybox.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_SphereMapper.html</loc>
     
     <lastmod>2020-02-25T20:13:25.596Z</lastmod>
     
@@ -345,14 +359,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/examples/VolumeMapperBlendModes.html</loc>
+    <loc>https://kitware.github.io/vtk-js/examples/VolumeMapperParallelProjection.html</loc>
     
     <lastmod>2020-02-24T09:06:29.126Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/examples/VolumeMapperParallelProjection.html</loc>
+    <loc>https://kitware.github.io/vtk-js/examples/VolumeMapperBlendModes.html</loc>
     
     <lastmod>2020-02-24T09:06:29.126Z</lastmod>
     
@@ -415,13 +429,6 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ShaderProgram.html</loc>
-    
-    <lastmod>2020-02-24T09:06:28.254Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_ShaderCache.html</loc>
     
     <lastmod>2020-02-24T09:06:28.250Z</lastmod>
@@ -443,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Picker.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_PixelSpaceCallbackMapper.html</loc>
     
     <lastmod>2020-02-24T09:06:28.194Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_PixelSpaceCallbackMapper.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Picker.html</loc>
     
     <lastmod>2020-02-24T09:06:28.194Z</lastmod>
     
@@ -464,14 +471,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/IO_XML_XMLWriter.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/IO_XML_XMLReader.html</loc>
     
     <lastmod>2020-02-24T09:06:28.138Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/IO_XML_XMLReader.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/IO_XML_XMLWriter.html</loc>
     
     <lastmod>2020-02-24T09:06:28.138Z</lastmod>
     
@@ -513,14 +520,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Interaction_Widgets_HandleWidget.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Interaction_Widgets_ImageCroppingRegionsWidget.html</loc>
     
     <lastmod>2020-02-24T09:06:28.078Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Interaction_Widgets_ImageCroppingRegionsWidget.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Interaction_Widgets_HandleWidget.html</loc>
     
     <lastmod>2020-02-24T09:06:28.078Z</lastmod>
     
@@ -611,13 +618,6 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/docs/develop_test.html</loc>
-    
-    <lastmod>2020-02-24T09:06:27.663Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/docs/develop_widget.html</loc>
     
     <lastmod>2020-02-24T09:06:27.663Z</lastmod>
@@ -626,6 +626,13 @@
   
   <url>
     <loc>https://kitware.github.io/vtk-js/docs/develop_build.html</loc>
+    
+    <lastmod>2020-02-24T09:06:27.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/docs/develop_test.html</loc>
     
     <lastmod>2020-02-24T09:06:27.663Z</lastmod>
     
@@ -688,13 +695,6 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_OpenGL_Framebuffer.html</loc>
-    
-    <lastmod>2020-01-14T12:03:18.461Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Property.html</loc>
     
     <lastmod>2020-01-11T16:24:50.713Z</lastmod>
@@ -709,14 +709,14 @@
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Proxy_Representations_SlicedGeometryRepresentationProxy.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Proxy_Representations_VolumeRepresentationProxy.html</loc>
     
     <lastmod>2020-01-09T15:28:42.847Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Proxy_Representations_VolumeRepresentationProxy.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Proxy_Representations_SlicedGeometryRepresentationProxy.html</loc>
     
     <lastmod>2020-01-09T15:28:42.847Z</lastmod>
     
