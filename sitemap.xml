@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kitware.github.io/vtk-js/api/Rendering_Misc_SynchronizableRenderWindow.html</loc>
+    
+    <lastmod>2020-05-01T19:18:53.502Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_ColorTransferFunction.html</loc>
     
     <lastmod>2020-04-29T20:07:47.837Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Filters_General_PaintFilter.html</loc>
     
     <lastmod>2020-04-12T06:15:05.395Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Rendering_Misc_SynchronizableRenderWindow.html</loc>
-    
-    <lastmod>2020-04-11T09:42:03.485Z</lastmod>
     
   </url>
   
