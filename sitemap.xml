@@ -4,98 +4,105 @@
   <url>
     <loc>https://kitware.github.io/vtk-js/examples/WidgetManager.html</loc>
     
-    <lastmod>2020-05-07T15:25:58.013Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_SVG_SVGRepresentation.html</loc>
-    
-    <lastmod>2020-05-07T15:25:57.197Z</lastmod>
+    <lastmod>2020-05-07T15:53:51.099Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_WidgetRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.197Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.312Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_RectangleContextRepresentation.html</loc>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_SVG_SVGRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.193Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_SplineContextRepresentation.html</loc>
-    
-    <lastmod>2020-05-07T15:25:57.193Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.312Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_SphereHandleRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.193Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.308Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_SplineContextRepresentation.html</loc>
+    
+    <lastmod>2020-05-07T15:53:50.308Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_RectangleContextRepresentation.html</loc>
+    
+    <lastmod>2020-05-07T15:53:50.308Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_PolyLineRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.189Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.304Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_OutlineContextRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.189Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.304Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_ImplicitPlaneRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.189Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.304Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_CroppingOutlineRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.185Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.300Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_CubeHandleRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_ConvexFaceContextRepresentation.html</loc>
-    
-    <lastmod>2020-05-07T15:25:57.185Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.300Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_CircleContextRepresentation.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.181Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Widgets_Representations_ConvexFaceContextRepresentation.html</loc>
+    
+    <lastmod>2020-05-07T15:53:50.296Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kitware.github.io/vtk-js/api/Widgets_Core_AbstractWidgetFactory.html</loc>
     
-    <lastmod>2020-05-07T15:25:57.169Z</lastmod>
+    <lastmod>2020-05-07T15:53:50.284Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kitware.github.io/vtk-js/api/Filters_General_PaintFilter.html</loc>
+    
+    <lastmod>2020-05-07T15:53:49.996Z</lastmod>
     
   </url>
   
@@ -194,13 +201,6 @@
     <loc>https://kitware.github.io/vtk-js/api/Rendering_Core_Prop3D.html</loc>
     
     <lastmod>2020-04-12T10:23:02.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kitware.github.io/vtk-js/api/Filters_General_PaintFilter.html</loc>
-    
-    <lastmod>2020-04-12T06:15:05.395Z</lastmod>
     
   </url>
   
