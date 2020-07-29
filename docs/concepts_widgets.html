@@ -47,7 +47,7 @@
 <meta property="og:description" content="Widgets allow users to interact with scene objects and drive functionalitythrough clicking, dragging, and touch. VTK.js currently has two flavors of widgets: the first, located inSources/Interaction/W">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://kitware.github.io/vtk-js/docs/gallery/widgets_diagram.png">
-<meta property="og:updated_time" content="2019-09-12T20:21:58.605Z">
+<meta property="og:updated_time" content="2020-07-29T19:26:04.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Widgets">
 <meta name="twitter:description" content="Widgets allow users to interact with scene objects and drive functionalitythrough clicking, dragging, and touch. VTK.js currently has two flavors of widgets: the first, located inSources/Interaction/W">
@@ -124,6 +124,9 @@
 <p>Widget representations are implemented as VTK.js algorithms. That is, they must<br>implement <code>requestData(inData, outData)</code>, where <code>inData</code> contains the widget<br>state and <code>outData</code> should be set with the resultant <code>vtkPolyData</code>. Here,<br><code>requestData</code> is intended to generate a relevant representation given a widget<br>state, e.g. placing spheres at points provided as a list in the widget state.</p>
 <p>When using a representation, care must be taken to ensure that the state has<br>certain properties available. As an example, <code>vtkSphereHandleRepresentation</code><br>expects “origin” and “position” mixins to be specified, but optionally can take<br>the “visible” and “scale1” mixins. Each representation specifies their<br>dependency in their documentation and their <code>requestData</code> method.</p>
 <p>Widget representations must generate actors to be added to a scene. Internally,<br>all actors should be appended to the <code>model.actors</code> array in order to be<br>rendered.</p>
+<h3 id="Scaling-representations-to-have-fixed-pixel-size" class="article-heading"><a href="#Scaling-representations-to-have-fixed-pixel-size" class="headerlink" title="Scaling representations to have fixed pixel size"></a>Scaling representations to have fixed pixel size<a class="article-anchor" href="#Scaling-representations-to-have-fixed-pixel-size" aria-hidden="true"></a></h3><p>In order to scale a representation such that it retains the same size in<br>display space, a widget representation should use the <code>scaleInPixels</code> property<br>and the <code>getPixelWorldHeightAtCoord(coord)</code> method. When <code>scaleInPixels</code> is set<br>to true, a widget representation should multiply whatever scaling they perform<br>by the output of <code>getDisplayScaleAtCoord(coord)</code>.</p>
+<p>Look at the <code>SphereHandleRepresentation</code> as an example for how<br><code>getPixelWorldHeightAtCoord</code> is used.</p>
+<p>If <code>scaleInPixels</code> is false, then all scale values should be interpreted as<br>world scales.</p>
 <h2 id="Widget-Manager" class="article-heading"><a href="#Widget-Manager" class="headerlink" title="Widget Manager"></a>Widget Manager<a class="article-anchor" href="#Widget-Manager" aria-hidden="true"></a></h2><p>The widget manager manages the lifecycle of a widget associated with a<br>view/renderer. In order to add a widget into a renderer, a widget manager must<br>first exist for that renderer (via the widget manager’s <code>setRenderer(ren)</code><br>call). The widget manager’s <code>addWidget()</code> method takes in a<br><code>vtkAbstractWidgetFactory</code> and uses the factory to construct a widget and<br>associated representations for the particular view.</p>
 <h2 id="Widget-manipulators" class="article-heading"><a href="#Widget-manipulators" class="headerlink" title="Widget manipulators"></a>Widget manipulators<a class="article-anchor" href="#Widget-manipulators" aria-hidden="true"></a></h2><p>Manipulators are objects that implement a single method, <code>handleEvent(callData,
 glRenderWindow)</code>. This method takes a mouse event (in <code>callData</code>) and<br>transforms it into a 3D coordinate position. This is different from<br>interactivity manipulators in that interactivity manipulators change how the<br>scene is viewed via manipulating the camera, whereas widget manipulators<br>transform mouse input into meaningful world coordinates, e.g. snapping<br>positions to a line.</p>
@@ -131,7 +134,7 @@ glRenderWindow)</code>. This method takes a mouse event (in <code>callData</code
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-09-12T20:21:58.605Z" itemprop="dateModified">Last updated: 2019-09-12</time>
+                <time class="article-footer-updated" datetime="2020-07-29T19:26:04.853Z" itemprop="dateModified">Last updated: 2020-07-29</time>
                 <a href="develop_widget.html" class="article-footer-prev" title="Developing Widgets"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="misc_tools.html" class="article-footer-next" title="Tools"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -140,7 +143,7 @@ glRenderWindow)</code>. This method takes a mouse event (in <code>callData</code
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Architecture-Overview"><span class="toc-text">Widget Architecture Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Factory"><span class="toc-text">Widget Factory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-State"><span class="toc-text">Widget State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Representation"><span class="toc-text">Widget Representation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Manager"><span class="toc-text">Widget Manager</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-manipulators"><span class="toc-text">Widget manipulators</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Architecture-Overview"><span class="toc-text">Widget Architecture Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Factory"><span class="toc-text">Widget Factory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-State"><span class="toc-text">Widget State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Representation"><span class="toc-text">Widget Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scaling-representations-to-have-fixed-pixel-size"><span class="toc-text">Scaling representations to have fixed pixel size</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-Manager"><span class="toc-text">Widget Manager</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widget-manipulators"><span class="toc-text">Widget manipulators</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
@@ -158,10 +161,22 @@ glRenderWindow)</code>. This method takes a mouse event (in <code>callData</code
     <div id="footer-copyright">
       &copy; 2020 <a href="https://www.kitware.com/" target="_blank">Kitware Inc.</a>
     </div>
+
     <div id="footer-links">
       <a href="https://github.com/kitware/vtk-js" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
     </div>
   </div>
+    <a
+      style="position: fixed; background: #00529b; color: white; top: 0; right: 0; height: 70px"
+      href="https://www.kitware.com/careers"
+    >
+      <div style="position: relative; text-align: center;">
+        <div
+          style="margin-top: 5px; background: url(https://www.cmake.org/wp-content/uploads/2018/09/jobs_icon.png) no-repeat; background-size: 100%; width: 50px; height: 40px; margin: 5px auto 0;"
+        ></div>
+        <span style="padding: 5px 10px">Kitware is Hiring</span>
+      </div>
+    </a>
 </footer>
 
   </div>
