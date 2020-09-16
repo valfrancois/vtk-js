@@ -404,10 +404,14 @@ vec4 getColorForValue(vec4 tValue, vec3 posIS, vec3 tstep)
   // Only perform outline check on fragments rendering voxels that aren't invisible.
   // Saves a bunch of needless checks on the background.
   // TODO define epsilon when building shader?
+  const int maxIter = 10;
   if (float(tColor.a) > 0.01) {
-    for (int i = -outlineThickness; i <= outlineThickness; i++) {
-      for (int j = -outlineThickness; j <= outlineThickness; j++) {
-        if (i == 0 || j == 0) {
+    for (int i = -maxIter; i <= maxIter; i++) {
+      for (int j = -maxIter; j <= maxIter; j++) {
+        if (i == 0 || j == 0
+            || i > outlineThickness || j > outlineThickness
+            || i < -outlineThickness || j < -outlineThickness)
+        {
           continue;
         }
 
@@ -437,7 +441,7 @@ vec4 getColorForValue(vec4 tValue, vec3 posIS, vec3 tstep)
       tColor.a = 1.0;
     }
   }
-  
+
 #else
   // compute the normal and gradient magnitude if needed
   // We compute it as a vec4 if possible otherwise a mat4
