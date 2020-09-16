@@ -434,9 +434,9 @@ vec4 getColorForValue(vec4 tValue, vec3 posIS, vec3 tstep)
   if (float(tColor.a) > 0.01) {
     for (int i = -maxIter; i <= maxIter; i++) {
       for (int j = -maxIter; j <= maxIter; j++) {
-        if (i == 0 || j == 0)
-           || (i > outlineThickness || j > outlineThickness)
-           || (i < -outlineThickness || j < -outlineThickness)
+        if (i == 0 || j == 0
+            || i > outlineThickness || j > outlineThickness
+            || i < -outlineThickness || j < -outlineThickness)
         {
           continue;
         }
