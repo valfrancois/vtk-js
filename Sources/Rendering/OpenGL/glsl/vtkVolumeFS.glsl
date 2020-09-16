@@ -430,9 +430,10 @@ vec4 getColorForValue(vec4 tValue, vec3 posIS, vec3 tstep)
   // Only perform outline check on fragments rendering voxels that aren't invisible.
   // Saves a bunch of needless checks on the background.
   // TODO define epsilon when building shader?
+  const int constOutlineThickness = outlineThickness;
   if (float(tColor.a) > 0.01) {
-    for (int i = -outlineThickness; i <= outlineThickness; i++) {
-      for (int j = -outlineThickness; j <= outlineThickness; j++) {
+    for (int i = -constOutlineThickness; i <= constOutlineThickness; i++) {
+      for (int j = -constOutlineThickness; j <= constOutlineThickness; j++) {
         if (i == 0 || j == 0) {
           continue;
         }
